@@ -1,0 +1,2 @@
+# 2024-T0008-EC05-G02
+Repositório do grupo 2024-T0008-EC05-G02
