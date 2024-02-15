@@ -10,67 +10,64 @@ Aba dos documentos de **Negócios**
 
 ## Matriz Oceano Azul
 
-A análise da Matriz de Avaliação de Valor Oceano Azul realizada a seguir se encontra no livro ”A Estratégia do Oceano Azul” – Como criar novos mercados e tornar a concorrência irrelevante de Renée Mauborgne e W. Chan Kim. Essa estratégia serve para desenhar modelos de mercados “inexistentes” que, quando encontrados e explorados, são potenciais geradores de vantagens competitivas sustentáveis. O conceito de Oceano Azul é definido justamente como o novo mercado, criado por uma organização, no qual a estratégia não é enfrentar a concorrência, mas gerar um ambiente não concorrencial, cujos concorrentes sofrem dificuldades para replicar, ou imitar, o modelo de negócio proposto pelo inovador de valor, levando a concorrência a ter dificuldade em seguir os passos deste inovador, que entrega ao seu cliente, um valor superior. 
+O conceito por trás da análise da Matriz de Avaliação de Valor Oceano Azul realizada a seguir se encontra no livro ”A Estratégia do Oceano Azul” – Como criar novos mercados e tornar a concorrência irrelevante de Renée Mauborgne e W. Chan Kim. Essa estratégia serve para desenhar modelos de mercados “inexistentes” que, quando encontrados e explorados, são potenciais geradores de vantagens competitivas sustentáveis. O conceito de Oceano Azul é definido justamente como o novo mercado, criado por uma organização, no qual a estratégia não é enfrentar a concorrência, mas gerar um ambiente não concorrencial, cujos concorrentes sofrem dificuldades para replicar, ou imitar, o modelo de negócio proposto pelo inovador de valor, levando a concorrência a ter dificuldade em seguir os passos deste inovador, que entrega ao seu cliente, um valor superior. 
 
 Em nosso contexto, tendo o Hospital Sírio Libanês como parceiro, estamos levando em consideração o seu problema de automatizar a montagem dos carrinhos de emergência, que, justamente, pode trazer vantagem competitiva para o Hospital ao reduzir ineficiências como falhas humanas e minimizar o tempo de montagem dos carrinhos. 
 
-Dois concorrentes de mercado são analisados nessa matriz: Hospital Albert Einstein e Hospital Oswaldo Cruz. Os seguintes atributos discutidos abaixo receberam notas de 0 a 10 e foram escolhidos como parâmetros importantes para o Hospital Sírio Libanês nessa análise: 
+A solução atual em contrapartida com a solução proposta de solucionar o problema pelo nosso grupo receberam notas de 0 a 10 para os seguintes atributos discutidos abaixo. Esses atributos foram escolhidos como parâmetros importantes para o Hospital Sírio Libanês nessa análise: 
 
-**1. Acessibilidade e inclusão:**
+![Tabela Oceano Azul](../../static/img/tabela_oceano_azul.png)
 
-Sírio Libanês: 5
-Einstein: 7
-Oswaldo Cruz: 8
-Justificativa: Neste atributo levamos em consideração as diferentes ofertas de serviços das instituições. Embora todos os hospitais se esforcem para fornecer acessibilidade e inclusão, o Oswaldo Cruz tem uma reputação particularmente forte nesses aspectos, oferecendo uma gama de programas e serviços para pacientes de diferentes origens socioeconômicas.
+**1. Rastreabilidade:**
 
-**2. Qualidade de atendimento:**
+Neste atributo levamos em consideração a estratégia utilizada por cada solução para 'rastrear' os medicamentos. Entende-se por rastrear processos como o de alertar quando há remédios prestes a vencer com 6 meses de antecedência, a dosagem correta solicitada e a quantidade de medicamentos que foram retirados e precisa repor. 
 
-Sírio Libanês: 9
-Einstein: 8
-Oswaldo Cruz: 7
-Justificativa: Neste tópico é discutido O Hospital Sírio Libanês é reconhecido por sua qualidade excepcional no atendimento ao paciente, com uma equipe altamente qualificada e um foco contínuo na excelência do serviço.
+**2. Qualidade de produção:**
 
-**3. Tecnologia de ponta:**
+Neste tópico foi levado em consideração a qualidade em que o trabalho de criar os carrinhos de emergência é realizado. O Hospital Sírio Libanês é reconhecido por sua qualidade excepcional no atendimento ao paciente, com uma equipe altamente qualificada e um foco contínuo em excelência ao realizar seus serviços. No entanto, a tarefa de criar os carrinhos, pelo fato de ser um processo repetitivo em larga escala e manual, é suscetível a falhas humanas, não entregando qualidade de forma total. Aspectos como posição dos medicamentos na montagem dos kits, quantidade correta de remédios alocados e dosagem corretas foram avaliados aqui. 
 
-Sírio Libanês: 10
-Einstein: 9
-Oswaldo Cruz: 7
-Justificativa: O Sírio Libanês é conhecido por investir constantemente em tecnologia de ponta e inovações médicas, mantendo-se na vanguarda da medicina e dos tratamentos disponíveis.
+**3. Automação:**
 
-**4. Conforto:**
+O Sírio Libanês é conhecido por investir constantemente em tecnologia de ponta e inovações médicas, mantendo-se atualizado na medicina e dos tratamentos disponíveis, sendo referência aqui no Brasil. No entanto, no que tange a automação da solução discutida, isso não acontece. A solução proposta traz mais vantagens para automatizar o processo. 
 
-Sírio Libanês: 8
-Einstein: 9
-Oswaldo Cruz: 7
-Justificativa: Embora todos os hospitais busquem proporcionar conforto aos pacientes, o Einstein é frequentemente elogiado por suas instalações modernas e ambiente acolhedor.
+**4. Esforço:**
+
+Este atributo leva em consideração os esforços necessários para gerir o suprimento dessa cadeia de medicamentos. Em média, há 227 itens por carro de emergência. Somente na unidade da Bela Vista do Hospital, há em torno de 89 carros destes. Logo, a gestão de equipes e processos necessária é alta. 
 
 **5. Compromisso social:**
 
-Sírio Libanês: 7
-Einstein: 8
-Oswaldo Cruz: 9
-Justificativa: O Oswaldo Cruz tem um forte compromisso com iniciativas sociais e comunitárias, demonstrando um papel ativo na promoção da saúde e do bem-estar além dos serviços médicos tradicionais.
 
 **6. Rapidez:**
 
-Sírio Libanês: 8
-Einstein: 9
-Oswaldo Cruz: 7
-Justificativa: O Einstein é reconhecido por seus tempos de espera curtos e eficiência no atendimento, proporcionando uma experiência rápida e conveniente para os pacientes.
+Médicos(as) e enfermeiros(as) constantemente precisam de medicamentos, de forma rápida e segura. Por isto, quanto mais rápido a montagem dos kits forem, melhor é o resultado. 
 
 **7. Segurança:**
 
-Sírio Libanês: 9
-Einstein: 8
-Oswaldo Cruz: 8
-Justificativa: Todos os hospitais têm altos padrões de segurança, mas o Sírio Libanês é conhecido por sua cultura de segurança robusta e práticas rigorosas para garantir a segurança dos pacientes.
+Todos os hospitais têm altos padrões de segurança, mas o Sírio Libanês é conhecido por sua cultura de segurança robusta e práticas rigorosas para garantir a segurança dos pacientes. Não pode-se medicar um paciente com uma dosagem inadequada ou até mesmo prover um medicamento incorreto. Médicos(as) e enfermeiros(as) não pensam ao pegar os remédios do carrinho, eles só fazem. Por isso, a segurançã é um parâmetro muito importante a ser levado em consideração. 
 
-**8. Preço:**
+**8. Custo:**
 
-Sírio Libanês: 5
-Einstein: 6
-Oswaldo Cruz: 8
-Justificativa: O Oswaldo Cruz muitas vezes é percebido como mais acessível em termos de preço, oferecendo uma variedade de opções de pagamento e programas de assistência financeira para pacientes carentes.
+Todos os itens acima, atualmente, são garantidos por uma equipe. Aqui, avaliamos os custos de manter uma equipe contra a compra de robôs e a manutenção dos mesmos. 
+
+### Reduzir, Eliminar, Aumentar, Criar
+A seguir, de acordo com os atributos levantados acima, vamos diferenciar a solução atual com a solução proposta. 
+
+**Reduzir:**
+O atributo *custo* pode ser reduzido com relação a solução atual. Pelo fato de não ter mais uma grande equipe tendo que montar de forma manual os carrinhos, os custos salariais diminuíram comparados ao preço de comprar os robôs para automatizar o processo e realizar manutenções. 
+
+Outro atributo que pode potencialmente diminuir é o *esforço* para gerir processos. De forma automatizada, haverá menos estresses e falhas humanas. 
+
+**Eliminar:**
+
+De forma lógica, um atributo que irá eliminar é *falha*. Garantindo um processo de qualidade e seguro, hábitos como posição errônea dos medicamentos na montagem dos kits, quantidade incorreta de remédios alocados e dosagem inadequada não irão acontecer mais.  
+
+**Aumentar:**
+Atributos que irão aumentar o valor da solução são: *rastreabilidade, qualidade de produção, segurança*. 
+
+**Criar:** 
+*Automação* e *Rapidez* no processo são atributos que não existem atualmente e passariam a existir com a solução proposta, englobando todos os benefícios citados ao longo da análise. 
+
+
 
 ## Matriz de Risco
 ## Canvas Proposta de Valor
