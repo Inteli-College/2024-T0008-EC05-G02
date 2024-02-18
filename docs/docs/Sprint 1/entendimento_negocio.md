@@ -5,7 +5,8 @@ sidebar_position: 1
 
 # Entendimento do Negócio
 
-Aba dos documentos de **Negócios**
+Abaixo se encontram documentos do Entendimento do **Negócio** referentes à Sprint 1. Eles servem para auxiliar na compreensão do Hospital Sírio-Libanês, avaliando o mercado, riscos, oportunidades e valor do parceiro. 
+
 <!-- Escreva embaixo de cada título com '##' -->
 
 ## Matriz Oceano Azul
@@ -17,6 +18,8 @@ Em nosso contexto, tendo o Hospital Sírio Libanês como parceiro, estamos levan
 A solução atual em contrapartida com a solução proposta de solucionar o problema pelo nosso grupo receberam notas de 0 a 10 para os seguintes atributos discutidos abaixo. Esses atributos foram escolhidos como parâmetros importantes para o Hospital Sírio Libanês nessa análise: 
 
 ![Tabela Oceano Azul](../../static/img/tabela_oceano_azul.png)
+
+### Matriz
 
 **1. Rastreabilidade:**
 
@@ -34,7 +37,9 @@ O Sírio Libanês é conhecido por investir constantemente em tecnologia de pont
 
 Este atributo leva em consideração os esforços necessários para gerir o suprimento dessa cadeia de medicamentos. Em média, há 227 itens por carro de emergência. Somente na unidade da Bela Vista do Hospital, há em torno de 89 carros destes. Logo, a gestão de equipes e processos necessária é alta. 
 
-**5. Compromisso social:**
+**5. Falha:**
+
+Posição errônea dos medicamentos na montagem dos kits, quantidade incorreta de remédios alocados, dosagem inadequada e medicamentos vencidos são falhas que estamos considerando nessa análise. 
 
 
 **6. Rapidez:**
@@ -43,7 +48,7 @@ Médicos(as) e enfermeiros(as) constantemente precisam de medicamentos, de forma
 
 **7. Segurança:**
 
-Todos os hospitais têm altos padrões de segurança, mas o Sírio Libanês é conhecido por sua cultura de segurança robusta e práticas rigorosas para garantir a segurança dos pacientes. Não pode-se medicar um paciente com uma dosagem inadequada ou até mesmo prover um medicamento incorreto. Médicos(as) e enfermeiros(as) não pensam ao pegar os remédios do carrinho, eles só fazem. Por isso, a segurançã é um parâmetro muito importante a ser levado em consideração. 
+Todos os hospitais têm altos padrões de segurança, mas o Sírio Libanês é conhecido por sua cultura de segurança robusta e práticas rigorosas para garantir a segurança dos pacientes. Não pode-se medicar um paciente com uma dosagem inadequada ou até mesmo prover um medicamento incorreto. Médicos(as) e enfermeiros(as) não pensam ao pegar os remédios do carrinho, eles só fazem. Por isso, a segurança é um parâmetro muito importante a ser levado em consideração. 
 
 **8. Custo:**
 
@@ -62,12 +67,15 @@ Outro atributo que pode potencialmente diminuir é o *esforço* para gerir proce
 De forma lógica, um atributo que irá eliminar é *falha*. Garantindo um processo de qualidade e seguro, hábitos como posição errônea dos medicamentos na montagem dos kits, quantidade incorreta de remédios alocados e dosagem inadequada não irão acontecer mais.  
 
 **Aumentar:**
-Atributos que irão aumentar o valor da solução são: *rastreabilidade, qualidade de produção, segurança*. 
+Atributos que irão aumentar o valor da solução são: *rastreabilidade, qualidade de produção, segurança*. A solução atual já possui, mas a probabilidade de aumentar é muito maior na solução proposta. 
 
 **Criar:** 
 *Automação* e *Rapidez* no processo são atributos que não existem atualmente e passariam a existir com a solução proposta, englobando todos os benefícios citados ao longo da análise. 
 
+### Conclusão
+É possível notar que o Hospital Sírio-Libanês poderá criar uma vantagem competitiva com a solução proposta, explorando uma área desconhecida no setor de hospitais: automação. Justamente como comentado anteriormente, este foi o intuito dessa matriz, de criar um ambiente novo e explorável.
 
+![Gráfico Oceano Azul](../../static/img/gráfico_oceano_azul.png)
 
 ## Matriz de Risco
 ## Canvas Proposta de Valor
