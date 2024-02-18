@@ -15,11 +15,11 @@ O conceito por trás da análise da Matriz de Avaliação de Valor Oceano Azul r
 
 Em nosso contexto, tendo o Hospital Sírio Libanês como parceiro, estamos levando em consideração o seu problema de automatizar a montagem dos carrinhos de emergência, que, justamente, pode trazer vantagem competitiva para o Hospital ao reduzir ineficiências como falhas humanas e minimizar o tempo de montagem dos carrinhos. 
 
+### Atributos
+
 A solução atual em contrapartida com a solução proposta de solucionar o problema pelo nosso grupo receberam notas de 0 a 10 para os seguintes atributos discutidos abaixo. Esses atributos foram escolhidos como parâmetros importantes para o Hospital Sírio Libanês nessa análise: 
 
 ![Tabela Oceano Azul](../../static/img/tabela_oceano_azul.png)
-
-### Matriz
 
 **1. Rastreabilidade:**
 
@@ -76,6 +76,8 @@ Atributos que irão aumentar o valor da solução são: *rastreabilidade, qualid
 É possível notar que o Hospital Sírio-Libanês poderá criar uma vantagem competitiva com a solução proposta, explorando uma área desconhecida no setor de hospitais: automação. Justamente como comentado anteriormente, este foi o intuito dessa matriz, de criar um ambiente novo e explorável.
 
 ![Gráfico Oceano Azul](../../static/img/gráfico_oceano_azul.png)
+
+Pode-se observar o gráfico e a tabela neste [link](https://docs.google.com/spreadsheets/d/1Fo8MluvH3LwzdM6_R_9w_iJGFozd0OFP/edit?usp=sharing&ouid=111633637216461954292&rtpof=true&sd=true).
 
 ## Matriz de Risco
 ## Canvas Proposta de Valor
