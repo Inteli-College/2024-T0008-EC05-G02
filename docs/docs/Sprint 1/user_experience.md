@@ -5,7 +5,7 @@ sidebar_position: 2
 
 # Experiência do Usuário
 
-Aba dos documentos de **UX**
+Abaixo se encontram documentos do Entendimento do **Usuário** referentes à Sprint 1. Eles auxiliam em uma melhor compreensão do usuário, suas dores e fluxo na solução. 
 <!-- Escreva embaixo de cada título com '##' -->
 
 ## Imersão Preliminar
@@ -96,5 +96,18 @@ Os carrinhos são montados por demanda ou existe uma quantidade definida de carr
 
 ## Definição das Personas
 ## Jornada do Usuário
+
+O Mapa de Jornada do Usuário fornece uma narrativa clara e organizada das experiências, sentimentos, pontos de dor e pontos de satisfação de um usuário ao longo de um processo.
+
+Abaixo se encontram os mapas referentes a cada uma das personas: auxiliar de enfermagem e gerente de estoque. Tentamos mapear o fluxo geral que os usuários vão ter ao acessar a nossa plataforma e ter contato com o robô para automação.
+
+### Jornada - Laís: Auxiliar de Enfermagem
+![Jornada - Laís: Auxiliar de Enfermagem](../../static/img/jornada_lais.png)
+
+### Jornada - João: Gerente de Estoque
+![Jornada - João: Gerente de Estoque](../../static/img/jornada_joao.png)
+
+Ambos documentos podem ser observados atráves deste [link.](https://miro.com/app/board/uXjVNr1y_C0=/?share_link_id=190601990822)
+
 ## User Stories
 
