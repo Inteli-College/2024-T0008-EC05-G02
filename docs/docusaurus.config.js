@@ -24,7 +24,7 @@ const config = {
   projectName: '2024-T0008-EC05-G02', // Usually your repo name.
 
   onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'ignore',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
