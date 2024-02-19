@@ -95,6 +95,44 @@ Como vocês imaginam o fluxo da  montagem dos carrinhos de emergência com a aut
 Os carrinhos são montados por demanda ou existe uma quantidade definida de carrinhos que devem estar de prontidão? 
 
 ## Definição das Personas
+
+### Persona 1: Laís
+
+![Personas](../../static/img/Persona%201.jpg)
+[Autoria Propria](https://www.canva.com/design/DAF8HdCbgpY/NNtg2eGmZL2ivqMbgsg1Pg/edit?utm_content=DAF8HdCbgpY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+
+Laís Bezerra é um exemplo de persona que ilustra uma profissional da área de saúde, especificamente no setor de farmácia hospitalar. Aos 30 anos, ela é uma operadora de centro de emergência em São Paulo, Brasil, com 5 anos de experiência na montagem de carrinhos de emergência. Solteira, Laís é descrita como uma pessoa muito dedicada e experiente, que tem facilidade em localizar o que precisa no estoque e é notavelmente organizada e focada.
+
+Pontos Negativos e Desafios:
+Laís enfrenta desafios como o desconforto ao assumir riscos e a miopia, que podem influenciar sua performance no trabalho. O processo de montagem dos carros é desgastante e burocrático, o que torna a tarefa demorada e burocrática.
+
+Pontos Positivos e Habilidades:
+Ela possui uma habilidade notável para encontrar rapidamente o que precisa no estoque, o que indica uma forte familiaridade com o sistema de organização do local. Além disso, sua dedicação e experiência são ativos valiosos para sua equipe.
+
+Oportunidades e Esperanças:
+A oportunidade identificada para Laís é ter mais tempo para concluir outras tarefas, potencialmente através da otimização do processo de montagem dos carros de emergência, o que também é sua esperança. Reduzir o tempo de montagem atual de 50 minutos poderia permitir que ela se dedicasse a outras áreas importantes de seu trabalho.
+
+
+Ao analisar a persona de Laís Bezerra, fica claro que qualquer solução ou proposta de melhoria deve visar à otimização dos processos burocráticos e à eficiência na montagem dos carrinhos de emergência. Além disso, deve-se considerar o suporte para a tomada de decisão e a compensação de pequenas limitações pessoais, como a miopia. Entender e atender às necessidades e desafios de Laís pode resultar em uma melhoria significativa não apenas em seu desempenho individual, mas também na eficiência operacional geral do centro de emergência. Com isso em mente, as intervenções devem ser direcionadas para a simplificação dos processos, o que, por sua vez, pode aumentar a satisfação no trabalho e a produtividade.
+
+### Persona 2: João
+![Personas](../../static/img/Persona%202.jpg)
+[Autoria Propria](https://www.canva.com/design/DAF8HdCbgpY/NNtg2eGmZL2ivqMbgsg1Pg/edit?utm_content=DAF8HdCbgpY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+
+João Marques representa uma persona com papel crucial na gestão de estoque dentro de um contexto hospitalar. Com 50 anos de idade, ele é gerente de estoque no Hospital Sírio Libanês, em São Paulo, Brasil, onde trabalha há uma década. Casado e pai de dois filhos, João é um profissional que valoriza a eficiência e a precisão no controle de inventário.
+
+Pontos Negativos e Desafios:
+João é descrito como uma pessoa que pode ser muito estressada e extremamente perfeccionista, o que, por um lado, assegura a qualidade do trabalho, mas por outro, pode gerar uma carga emocional considerável. Ele também enfrenta dificuldades com a confusão gerada pela necessidade de memorizar a quantidade de medicamentos que existem no estoque, o que é uma tarefa desgastante.
+
+Pontos Positivos e Habilidades:
+Entre seus pontos fortes estão a vasta experiência e uma boa memória, características que certamente contribuem para a sua competência como gerente de estoque. Tais habilidades são essenciais em um ambiente que exige atenção constante aos detalhes e conhecimento profundo do inventário.
+
+Oportunidades e Esperanças:
+Uma oportunidade identificada para João é a implementação de um sistema de notificação que o informe quando a quantidade de itens importantes estiver baixa. Isso não só ajudaria a aliviar o estresse relacionado ao seu perfeccionismo, mas também otimizaria o processo de gestão do estoque. Além disso, João espera por uma otimização geral do processo de montagem, o que poderia aumentar a eficiência do trabalho e permitir que ele se dedicasse a outras responsabilidades estratégicas.
+
+A persona de João Marques nos mostra que a eficiência no gerenciamento de estoque de um hospital não depende apenas da habilidade individual, mas também de sistemas eficazes que possam apoiar o trabalho do gerente. Intervenções que visam a otimização dos processos e a implementação de sistemas automatizados de notificação podem ser altamente benéficas, resultando em uma gestão de estoque mais eficiente e em um ambiente de trabalho menos estressante. Ao abordar as necessidades e esperanças de João, as soluções propostas podem levar a melhorias significativas na operação do hospital e na satisfação dos colaboradores.
 ## Jornada do Usuário
 
 O Mapa de Jornada do Usuário fornece uma narrativa clara e organizada das experiências, sentimentos, pontos de dor e pontos de satisfação de um usuário ao longo de um processo.
