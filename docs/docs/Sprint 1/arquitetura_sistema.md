@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # Proposta de Arquitetura do Sistema
 
-Aba dos documentos de **Computação**
+Abaixo se encontram documentos de computação referentes à Sprint 1. Eles auxiliam a entender os requisitos, arquitetura e funcionalidades do projeto.
 <!-- Escreva embaixo de cada título com '##' -->
 
 ## Requisitos Funcionais
