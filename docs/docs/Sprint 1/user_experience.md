@@ -179,13 +179,13 @@ Como um cliente, quero poder fazer login no aplicativo para acessar minha conta 
 
 Em resumo, as user stories são uma ferramenta valiosa para garantir que o desenvolvimento de software seja centrado no usuário, flexível e focado nas necessidades reais do negócio.
 
-### **User Stories do Projeto**
+### User Stories do Projeto
 
-### Laís Bezerra
+#### Laís Bezerra
 - **Descrição:** Operadora do centro de emergência, 30 anos, solteira. Trabalha na área da Farmácia Hospitalar há 5 anos. Faz a montagem dos carrinhos de emergência.
 - **Necessidades:** Diminuir o tempo de montagem do carrinho, atualmente, é de 50 minutos.
 
-### João Marques
+#### João Marques
 - **Descrição:** Gerente de Estoque, 50 anos, casado, 2 filhos. Trabalha no Hospital Sírio Libanês há 10 anos.
 - **Necessidades:** Gostaria de receber algum aviso quando os níveis de itens importantes estiverem baixos no estoque.
 
