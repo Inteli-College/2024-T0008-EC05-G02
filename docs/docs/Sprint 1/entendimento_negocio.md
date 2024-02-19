@@ -18,13 +18,13 @@ Em nosso contexto, tendo o Hospital Sírio Libanês como parceiro, estamos levan
 
 ### Atributos
 
-A solução atual em contrapartida com a solução proposta de solucionar o problema pelo nosso grupo receberam notas de 0 a 10 para os seguintes atributos discutidos abaixo. Esses atributos foram escolhidos como parâmetros importantes para o Hospital Sírio Libanês nessa análise: 
+O processo atual e a solução proposta pelo nosso grupo receberam notas de 0 a 10 para os seguintes atributos discutidos abaixo. Esses atributos foram escolhidos como parâmetros importantes para o Hospital Sírio Libanês nessa análise: 
 
 ![Tabela Oceano Azul](../../static/img/tabela_oceano_azul.png)
 
 **1. Rastreabilidade:**
 
-Neste atributo levamos em consideração a estratégia utilizada por cada solução para 'rastrear' os medicamentos. Entende-se por rastrear processos como o de alertar quando há remédios prestes a vencer com 6 meses de antecedência, a dosagem correta solicitada e a quantidade de medicamentos que foram retirados e precisa repor. 
+Neste atributo levamos em consideração a estratégia utilizada por cada solução para 'rastrear' os medicamentos. Rastrear, neste caso, significa o processo de alertar quando há remédios prestes a vencer com 6 meses de antecedência, quando a dosagem está incorreta e a quantidade de medicamentos que foram retirados e precisa repor. 
 
 **2. Qualidade de produção:**
 
@@ -59,7 +59,7 @@ Todos os itens acima, atualmente, são garantidos por uma equipe. Aqui, avaliamo
 A seguir, de acordo com os atributos levantados acima, vamos diferenciar a solução atual com a solução proposta. 
 
 **Reduzir:**
-O atributo *custo* pode ser reduzido com relação a solução atual. Pelo fato de não ter mais uma grande equipe tendo que montar de forma manual os carrinhos, os custos salariais diminuíram comparados ao preço de comprar os robôs para automatizar o processo e realizar manutenções. 
+O atributo *custo* pode ser reduzido com relação a solução atual. Pelo fato de não ter mais uma grande equipe tendo que montar de forma manual os carrinhos, os custos salariais diminuiriam comparados ao preço de comprar os robôs para automatizar o processo e realizar manutenções.
 
 Outro atributo que pode potencialmente diminuir é o *esforço* para gerir processos. De forma automatizada, haverá menos estresses e falhas humanas. 
 
@@ -80,11 +80,13 @@ Atributos que irão aumentar o valor da solução são: *rastreabilidade, qualid
 
 Pode-se observar o gráfico e a tabela neste [link](https://docs.google.com/spreadsheets/d/1Fo8MluvH3LwzdM6_R_9w_iJGFozd0OFP/edit?usp=sharing&ouid=111633637216461954292&rtpof=true&sd=true).
 
+Fonte: autoria própria.
+
 ## Matriz de Risco
 
 &nbsp;&nbsp; Uma matriz de risco é uma ferramenta de gerenciamento de projetos amplamente utilizada para identificar, avaliar e priorizar os riscos potenciais que podem afetar o sucesso do projeto. Ela se torna relevante pois metrifica e categoriza os riscos e oportunidades numa matriz probabilidade x impacto, tornando assim mais tangível a mitigação dos riscos e o aproveitamento das oportunidades. No contexto do projeto para o Hospital Sírio-Libanês, a matriz de risco é crucial para antecipar e mitigar possíveis obstáculos que poderiam atrasar a conclusão do projeto ou comprometer sua eficácia e, considerando que envolve a saúde dos pacientes, é vital antecipar esses riscos. Além disso, ela ajuda a identificar oportunidades que podem ser aproveitadas para estender os benefícios do projeto além de seu escopo inicial.
 
-&nbsp;&nbsp;Tendo isso em mente, segue uma lista com os principais riscos e oportunidades levantados pela equipe e como elas se enquadram na matriz.
+&nbsp;&nbsp;Tendo isso em mente, segue uma lista com os principais riscos e oportunidades levantados pela equipe e como eles se enquadram na matriz.
 
 ### Riscos
 
@@ -121,7 +123,7 @@ Pode-se observar o gráfico e a tabela neste [link](https://docs.google.com/spre
 
 #### Imagem 1 - Matriz de risco
 ![Matriz de risco](../../static/img/matriz_de_risco_G2.png)
-[Autoria Própria](https://docs.google.com/spreadsheets/d/1AOd8tvEviWtPYGU7tg4_KYf8s9u_XR6VpP41e34wfy8/edit?usp=sharing)
+Fonte: [Autoria Própria](https://docs.google.com/spreadsheets/d/1AOd8tvEviWtPYGU7tg4_KYf8s9u_XR6VpP41e34wfy8/edit?usp=sharing)
 
 &nbsp;&nbsp;Portanto, a partir dos riscos mapeados e elencados, espera-se que a equipe consiga prevenir e antecipar comportamentos para mitigar os riscos e garantir o sucesso do projeto.
 
@@ -133,6 +135,7 @@ O Canvas Proposta de Valor é uma ferramenta estratégica utilizada para compree
 Abaixo, segue o Canvas Proposta de Valor do projeto:
 
 ![Canvas Proposta de Valor](../../static/img/canvas-de-valor.png)
+Fonte: [Autoria Própria](https://www.canva.com/design/DAF8DNvytQ4/daB5pzZhd5eBLRklEkWZ7A/edit?utm_content=DAF8DNvytQ4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ### Conclusão 
 A estratégia proposta busca alinhar de maneira holística os produtos e serviços oferecidos, os benefícios proporcionados e as necessidades específicas do segmento de cliente. Com um foco incisivo na inovação, precisão e adaptabilidade, a proposta de valor é robustamente fortalecida, visando não apenas atender, mas superar as expectativas do mercado. 
@@ -149,9 +152,4 @@ A respeito do custo pelos robôs, foram enviados 3 modelos diferentes. O MG400, 
 
 Além disso, cada robô precisaria estar acompanhado de um notebook, e foi utilizado como configuração mínima um computador com um core i3 e 8GB de RAM, que fica em uma média de R$2000.
 
-Pensando apenas no carrinho, a faixa de preço ficaria entre R$34.000,00 e R$252.000,00, porém é necessário manter uma aplicação web + Backend rodando 24 horas por dia, que poderia ser mantido junto com os outros serviços web do cliente, porém caso um serviço cloud fosse contratado (AWS utilizada como referência), custaria uma média entre USD20 e USD40, totalizando USD240-USD480 por ano. Que resulta em R$1200 a R$2400 por ano, utilizando o câmbio do dia 14/02/2024 (R$4,97)
-
-Fontes: 
-- [Aws Calculator](https://calculator.aws)
-- Documentos da Minipa
-- [Amazon](https://www.amazon.com.br/s?k=notebook+core+i3&__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3405JDRES1CZK&sprefix=notebook+core+%2Caps%2C262&ref=nb_sb_noss_2)
+Pensando apenas no carrinho, a faixa de preço ficaria entre R$34.000,00 e R$252.000,00, porém é necessário manter uma aplicação web + Backend rodando 24 horas por dia, que poderia ser mantido junto com os outros serviços web do cliente. No entanto, caso um serviço cloud fosse contratado (AWS utilizada como referência), custaria uma média entre USD20 e USD40, totalizando USD240-USD480 por ano. Portanto, resulta em R$1200 a R$2400 por ano, utilizando o câmbio do dia 14/02/2024 (R$4,97).
