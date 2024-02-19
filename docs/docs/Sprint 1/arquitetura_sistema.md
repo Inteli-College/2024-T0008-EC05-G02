@@ -54,5 +54,8 @@ A solução deve apresentar um sistema que possa:
 - O processamento do código do medicamento, assim que lido, deve ser o mais rápido possível para possibilitar a continuidade do processo e o melhor desempenho, utilizando técnicas de otimização de código e hardware.
 
 ## Diagrama de blocos da arquitetura do sistema
-## Descrição da arquitetura
+![Diagrama de Blocos](./diagrama_de_blocos.jpg)
+## Descrição da forma como os componentes propostos no sistema estão interligados e trocam informações
+O Robô vai estar acompanhado de um notebook que será essencial tanto para o processo de bipagem quanto para a comunicação com o resto do sistema. No momento que o robô pega um remédio, ele irá mostrar o remédio para a webcam do notebook que fará a leitura do QRCODE contendo as informações desse remédio, com a leitura realizada o notebook irá realizar a inserção dos dados desse remédio (lote, data de Validade, data de Uso, etc) no banco de dados via API. Com as informações inseridas no banco de dados, a aplicação web terá acesso (também via API) à elas, assim possibilitando a liberação desses dados em relatórios e aumentando a rastreabilidade.
+## Proposta com baixo acoplamento e facilidade de realizar as modificações necessárias no sistema
 
