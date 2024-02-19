@@ -25,7 +25,7 @@ A solução deve apresentar um sistema que possa:
   - Durante o processo de bipagem, mostrar as informações dos medicamentos bipados, incluindo lote e validade.
   - Apresentar um relatório ao final do processo com as informações coletadas.
 
-** RF4 - Relatório com as informações coletadas durante o processo**
+**RF4 - Relatório com as informações coletadas durante o processo**
 - O relatório deve conter as seguintes informações: o código do carrinho, itens faltantes, itens registrados, itens descartados por estarem próximos à validade e imagens registradas pela webcam.
 - Deve ser possível baixar o relatório gerado e guardá-lo no banco de dados do hospital para controle dos dados.
 
@@ -55,7 +55,11 @@ A solução deve apresentar um sistema que possa:
 
 ## Diagrama de blocos da arquitetura do sistema
 ![Diagrama de Blocos](./diagrama_de_blocos.jpg)
+Basicamente, O Robô vai estar acompanhado de um notebook que será essencial tanto para o processo de bipagem quanto para a comunicação com o resto do sistema. No momento que o robô pega um remédio, ele irá mostrar o remédio para a webcam do notebook que fará a leitura do QRCODE contendo as informações desse remédio, com a leitura realizada o notebook irá realizar a inserção dos dados desse remédio (lote, data de Validade, data de Uso, etc) no banco de dados via API. Com as informações inseridas no banco de dados, a aplicação web terá acesso (também via API) à elas, assim possibilitando a liberação desses dados em relatórios e aumentando a rastreabilidade.
 ## Descrição da forma como os componentes propostos no sistema estão interligados e trocam informações
-O Robô vai estar acompanhado de um notebook que será essencial tanto para o processo de bipagem quanto para a comunicação com o resto do sistema. No momento que o robô pega um remédio, ele irá mostrar o remédio para a webcam do notebook que fará a leitura do QRCODE contendo as informações desse remédio, com a leitura realizada o notebook irá realizar a inserção dos dados desse remédio (lote, data de Validade, data de Uso, etc) no banco de dados via API. Com as informações inseridas no banco de dados, a aplicação web terá acesso (também via API) à elas, assim possibilitando a liberação desses dados em relatórios e aumentando a rastreabilidade.
-## Proposta com baixo acoplamento e facilidade de realizar as modificações necessárias no sistema
+Nesse sistema existem 5 partes principais. O Robô industrial, o notebook que acompanha o robô, o backend (APIs + Banco de Dados) e o Front end, cada um responsável por uma parte da solução.
+- Robô Industrial: O componente principal responsável pela movimentação e interação física com os medicamentos. Após pegar um remédio, o robô exibe-o à webcam do notebook para que esta possa ler o QR code contendo as informações do medicamento.
+- Notebook: O notebook acompanha o robô e desempenha um papel crucial no processo de bipagem e comunicação com o resto do sistema. Utiliza sua webcam para realizar a leitura do QR code do medicamento, e uma vez feita a leitura, envia os dados relevantes (lote, data de validade, data de uso, etc.) para o backend por meio de uma API.
+- Backend (APIs + Banco de Dados): É o cérebro do sistema. Recebe os dados dos medicamentos do notebook via API e os armazena no banco de dados. Além disso, disponibiliza esses dados para a aplicação web também através de APIs, permitindo a geração de relatórios e aumentando a rastreabilidade dos medicamentos.
+- Frontend: A interface através da qual os usuários interagem com o sistema. Utiliza as APIs fornecidas pelo backend para acessar as informações dos medicamentos armazenadas no banco de dados e apresentá-las de forma compreensível aos usuários.
 
