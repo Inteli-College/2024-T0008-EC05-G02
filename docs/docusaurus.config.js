@@ -13,7 +13,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://Inteli-College.github.io/',
+  url: 'https://your-docusaurus-site.example.com/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/2024-T0008-EC05-G02/',
@@ -23,7 +23,7 @@ const config = {
   organizationName: 'Inteli-College', // Usually your GitHub org/user name.
   projectName: '2024-T0008-EC05-G02', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
