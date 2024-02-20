@@ -59,7 +59,7 @@ A partir das informações coletadas, foi possível definir melhor o escopo do p
     Com base na pesquisa exploratória realizada, foram identificados os principais insights para o grupo, incluindo:
 
      - A importância de aprimorar o processo de bipagem dos itens, visando assegurar a rastreabilidade do sistema.
-a necessidade de configurar a solução para lidar com diferentes layouts de gavetas dos carrinhos, podendo essa funcionalidade ser incorporada à própria API.
+     - A necessidade de configurar a solução para lidar com diferentes layouts de gavetas dos carrinhos, podendo essa funcionalidade ser incorporada à própria API.
      - A relevância de realizar testes que comprovem a segurança da automação, garantindo que não haja riscos para os operadores nem para os pacientes do hospital.
      - A importância de considerar dois fluxos distintos: um para a verificação do prazo de validade dos itens e outro para o reabastecimento dos carrinhos.
      - A possibilidade de integrar a verificação do prazo de validade no momento do reabastecimento.
@@ -77,12 +77,12 @@ No que diz respeito a projetos relacionados que podem servir como referência, e
 Além disso, a dissertação proporcionou um entendimento mais profundo sobre a integração entre hardware, banco de dados e API, aspectos essenciais que serão implementados na solução.
 
 A partir das informações coletadas, destacaram-se dados cruciais para o desenvolvimento do projeto, tais como:
-a necessidade de antecipar potenciais problemas no processo de bipagem ou escaneamento dos códigos dos itens e estar preparado para reverter esses erros de maneira eficiente.
-a importância de compreender os fluxos e a integração do braço robótico, da API e do banco de dados em relação às funcionalidades do sistema.
-a relevância de considerar o contexto específico do Hospital Sírio Libanês e como o sistema será implementado na área de farmácia já existente.
+- a necessidade de antecipar potenciais problemas no processo de bipagem ou escaneamento dos códigos dos itens e estar preparado para reverter esses erros de maneira eficiente.
+- a importância de compreender os fluxos e a integração do braço robótico, da API e do banco de dados em relação às funcionalidades do sistema.
+- a relevância de considerar o contexto específico do Hospital Sírio Libanês e como o sistema será implementado na área de farmácia já existente.
 
 
-O método utilizado para pesquisar, definir e coletar os dados, consistiu em buscar temas relacionados ao projeto, como tecnologia, Indústria 4.0 e automação na área da saúde, por meio do Google Acadêmico, filtrando uma gama maior de textos confiáveis. Quanto às fontes utilizadas e escolhidas, considerou-se que as pesquisas acadêmicas citadas anteriormente são confiáveis sobre o assunto, uma vez que envolvem o esforço não só de estudantes das melhores universidades de São Paulo (UNIFESP e USP), mas também contam com referências e a aprovação de orientadores comprometidos com o corpo acadêmico e com experiência nas respectivas áreas tratadas. Para eventuais necessidades de especificação, as fontes utilizadas podem ser verificadas nas referências bibliográficas do projeto ou clicando nos links fornecidos acima.
+O método utilizado para pesquisar, definir e coletar os dados consistiu em buscar temas relacionados ao projeto, como tecnologia, Indústria 4.0 e automação na área da saúde, por meio do Google Acadêmico, filtrando uma gama maior de textos confiáveis. Quanto às fontes utilizadas e escolhidas, considerou-se que as pesquisas acadêmicas citadas anteriormente são confiáveis sobre o assunto, uma vez que envolvem o esforço não só de estudantes das melhores universidades de São Paulo (UNIFESP e USP), mas também contam com referências e a aprovação de orientadores comprometidos com o corpo acadêmico e com experiência nas respectivas áreas tratadas. Para eventuais necessidades de especificação, as fontes utilizadas podem ser verificadas nas referências bibliográficas do projeto ou clicando nos links fornecidos acima.
 
 **Apêndice A**
 
