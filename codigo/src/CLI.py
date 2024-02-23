@@ -30,7 +30,7 @@ def movimentos():
     print(saida)
     continuar = typer.confirm("Deseja continuar?")
     if continuar == True:
-        calculadora()
+        movimentos()
 
 def verificar(dados):
     operacao = dados["operacao"]
