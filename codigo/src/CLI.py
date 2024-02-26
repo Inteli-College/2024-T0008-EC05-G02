@@ -14,7 +14,7 @@ robot_tool = False
 def movimentos():
     # realiza lista de perguntas para o usuário
     perguntas = [
-        inquirer.List("operacao", message="Qual movimento deseja realizar?", choices=["movimento em x", "movimnto em y","movimento em z","ativar ou desativar ventosa"])
+        inquirer.List("operacao", message="Qual movimento deseja realizar?", choices=["movimento em x", "movimento em y","movimento em z","ativar ou desativar ventosa"])
     ]
     # realiza a leitura das respostas
     respostas = inquirer.prompt(perguntas)
@@ -33,6 +33,7 @@ def movimentos():
         movimentos()
 
 def verificar(dados):
+    print(dados)
     operacao = dados["operacao"]
     if operacao == "ativar ou desativar ventosa":
         return inquirer.Text("a", message="Digite (a) para ativar ou (d) para desativar")
@@ -41,6 +42,7 @@ def verificar(dados):
         
 # Função que processa a operação
 def processar(dados):
+    print(dados)
     time.sleep(1)
     operacao = dados["operacao"]
     dados = inquirer.prompt([verificar(dados)])
