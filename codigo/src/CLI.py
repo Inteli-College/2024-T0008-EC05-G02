@@ -15,7 +15,7 @@ def movimentos():
     # realiza lista de perguntas para o usuário
     perguntas = [
         inquirer.List("operacao", message="Qual movimento deseja realizar?", choices=["movimento em x", "movimento em y","movimento em z","ativar ou desativar ventosa"])
-    ]
+    ]	
     # realiza a leitura das respostas
     respostas = inquirer.prompt(perguntas)
     # chama a funcao que processa a operação e exibe uma spinner para o usuário
@@ -55,6 +55,13 @@ def processar(dados):
         return (a)
     elif operacao == "ativar ou desativar ventosa":
         return (a)
+    match(operacao):
+        case "movimento em x":
+            return (a)
+        case "movimnto em y":
+            return (a)
+        case "movimento em z":
+            return (a)
     
 # Executa a aplicação
 if __name__ == "__main__":
