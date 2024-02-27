@@ -2,7 +2,7 @@ import typer
 import inquirer
 from yaspin import yaspin
 import time
-from config import Configurar
+from CLI.classes.config import Configurar
 
 # Cria uma instância da aplicação
 app = typer.Typer()

@@ -1,7 +1,7 @@
 import yaspin
 import inquirer
 import time
-from config import Configurar
+from CLI.classes.config import Configurar
 
 class Movimentar():
     def __init__(self, continuacao: callable) -> None: 
@@ -10,6 +10,7 @@ class Movimentar():
         perguntas = [inquirer.List("escolha", message="Deseja configurar o robô ou realizar movimentações?", choices=["Movimento em X", "Movimento em Y", "Movimento em Z", "Ativar/Desativar Ventosa", "Home (Retornar para posição original)"])]
         respostas = inquirer.prompt(perguntas)
         return self.processar(respostas)
+    
     def processar(self, resposta):
         escolha = resposta["escolha"]
         match(escolha):
@@ -23,5 +24,9 @@ class Movimentar():
                 return 0
             case "Home (Retornar para posição original)":
                 return 0
+            case "Retornar para"
+    
+    def move(self):
+
             
             
