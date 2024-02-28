@@ -5,7 +5,7 @@ class Configurar():
         self.continuacao = continuacao
 
     def configurar(self):
-        perguntas = [inquirer.List("escolha", message="Deseja Configurar qual variável?", choices=["Velocidade"])]
+        perguntas = [inquirer.List("escolha", message="Deseja Configurar qual variável?", choices=["Velocidade", "Retornar para escolha"])]
         respostas = inquirer.prompt(perguntas)
         return self.processar(respostas)
     
@@ -14,6 +14,8 @@ class Configurar():
         match(escolha):
             case "Velocidade":
                 return self.definir_velocidade()
+            case "Retornar para escolha":
+                return self.continuacao()
         
     def definir_velocidade(self):   
         resposta = int(input("Digite a velocidade desejada: "))
