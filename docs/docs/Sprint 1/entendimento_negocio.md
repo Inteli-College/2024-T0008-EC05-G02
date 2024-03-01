@@ -1,7 +1,6 @@
 ---
 sidebar_label: 'Entendimento do negócio'
 sidebar_position: 1
-slug: /
 ---
 
 # Entendimento do Negócio
