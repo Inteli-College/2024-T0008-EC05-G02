@@ -5,9 +5,13 @@ slug: /
 O presente site tem como propósito fornecer uma visão abrangente sobre o projeto Ad Alma, uma colaboração entre o Hospital Sírio Libanês e os estudantes de engenharia de computação da faculdade Inteli. Aqui, você encontrará uma documentação detalhada sobre a concepção, evolução e implementação do projeto, abordando aspectos cruciais como estratégias de negócios, experiência do usuário e tecnologias empregadas.
 
 ## Descrição do projeto
-O projeto desenvolvido tem como objetivo facilitar o dia a dia da reposição eabastecimento dos carrinhos de emerg 
+O projeto em desenvolvimento visa aprimorar o processo de reposição e abastecimento dos carrinhos de emergência do Hospital Sírio Libanês. Atualmente, a reposição é realizada manualmente, o que, apesar de funcional, demonstra falta de eficiência, pois uma pessoa é responsável por todo o processo repetitivo, resultando em fadiga e possíveis falhas na verificação das informações dos itens.
 
-## Line Inception
+Para resolver esses problemas, o projeto propõe a automatização do processo de bipagem dos itens do carrinho, que é identificado como o principal responsável pelas dificuldades mencionadas. Dessa forma, o projeto busca garantir a segurança e otimização do tempo do processo, compreendendo o impacto positivo que isso terá na vida de quem é responsável pelo abastecimento, e, em grande escala, na qualidade do atendimento prestado aos pacientes do hospital.
+
+A implementação dessa solução tecnológica não apenas reduzirá os erros humanos, mas também permitirá uma gestão mais eficiente dos recursos, garantindo que os carrinhos estejam sempre prontos para uso, o que é crucial em situações de emergência. Além disso, a automatização liberará os funcionários para se concentrarem em tarefas mais complexas e de maior valor agregado, contribuindo para uma equipe mais motivada e produtiva.
+
+## Leane Inception
 ![lean inception](../static/img/lean_inception.jpg)
 
 ## Backlog do projeto
