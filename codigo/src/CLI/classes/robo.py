@@ -52,8 +52,26 @@ class Robo():
     def pegar_medicamento(self):
         self.robo.move_to(101.83129119873047, -263.7802734375, 30.708972930908203, self.r, wait=True)
         self.robo.move_to(101.83129119873047, -263.7802734375, -10.708972930908203, self.r, wait=True)
-        # self.robo.suck(True)
-        # self.robo.move_to(101.83129119873047, -263.7802734375, 60.708972930908203, self.r, wait=True)
+        self.robo.suck(True)
+        self.robo.move_to(101.83129119873047, -263.7802734375, 120.708972930908203, self.r, wait=True)
+        self.robo.move_to(219.55491638183594, -82.54214477539062, 73.68939208984375, self.r, wait=True)
+        self.robo.move_to(219.55491638183594, -82.54214477539062, -30.708972930908203, self.r, wait=True)
+        self.robo.suck(False)
+        self.origem_global()
+    
+    def pegar_medicamento_inadequado(self):
+        self.robo.move_to(101.83129119873047, -263.7802734375, 30.708972930908203, self.r, wait=True)
+        self.robo.move_to(101.83129119873047, -263.7802734375, -19.708972930908203, self.r, wait=True)
+        self.robo.suck(True)
+        time.sleep(1)
+        self.robo.move_to(101.83129119873047, -263.7802734375, 120.708972930908203, self.r, wait=True)
+        self.robo.move_to(47.306304931640625, 210.08775329589844, 107.67615509033203, self.r, wait=True)
+        self.robo.move_to(47.306304931640625, 210.08775329589844, -30.67615509033203, self.r, wait=True)
+
+
+
+
+
 
 
 
