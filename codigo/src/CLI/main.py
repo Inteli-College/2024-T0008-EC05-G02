@@ -25,7 +25,7 @@ robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
 (x, y, z, r, j1, j2, j3, j4) = robo.pose()
 print(f'x:{x} y:{y} z:{z} j1:{j1} j2:{j2} j3:{j3} j4:{j4}')
 
-# Cria um quarto comando do CLI
+# Cria um  comando do CLI
 @app.command()
 def inicio():
     # realiza lista de perguntas para o usuário
