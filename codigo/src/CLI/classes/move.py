@@ -9,7 +9,7 @@ class Movimentar():
         self.my_robot = my_robot
 
     def movimentar(self):
-        perguntas = [inquirer.List("escolha", message="Deseja configurar o robô ou realizar movimentações?", choices=["Movimento em X", "Movimento em Y", "Movimento em Z", "Ativar/Desativar ventosa", "Home (Retornar para posição original)", "Coordenadas da posição atual","Retornar para escolha", "Pegar medicamento", "Pegar medicamento inadequado"])]
+        perguntas = [inquirer.List("escolha", message="Deseja configurar o robô ou realizar movimentações?", choices=["Movimento em X", "Movimento em Y", "Movimento em Z", "Ativar/Desativar ventosa", "Home (Retornar para posição original)", "Coordenadas da posição atual", "Pegar medicamento", "Pegar medicamento inadequado", "Retornar para escolha"])]
         respostas = inquirer.prompt(perguntas)
         return self.processar(respostas)
     
