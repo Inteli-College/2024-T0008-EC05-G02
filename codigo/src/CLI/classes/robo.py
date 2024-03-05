@@ -4,6 +4,7 @@ import inquirer
 import pydobot
 from yaspin import yaspin
 import time
+import json
 
 
 class Robo():
@@ -50,23 +51,30 @@ class Robo():
         return print(f' Posição atual: x:{self.x} y:{self.y} z:{self.z} j1:{self.j1} j2:{self.j2} j3:{self.j3} j4:{self.j4}')
     
     def pegar_medicamento(self):
-        self.robo.move_to(101.83129119873047, -263.7802734375, 30.708972930908203, self.r, wait=True)
-        self.robo.move_to(101.83129119873047, -263.7802734375, -10.708972930908203, self.r, wait=True)
+        posicoes = ler_json('./posicoes.json')
+        self.robo.move_to(posicoes["inadeq"]["p1"]["x"], posicoes["inadeq"]["p1"]["y"], posicoes["inadeq"]["p1"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["inadeq"]["p2"]["x"], posicoes["inadeq"]["p2"]["y"], posicoes["inadeq"]["p2"]["z"], self.r, wait=True)
         self.robo.suck(True)
-        self.robo.move_to(101.83129119873047, -263.7802734375, 120.708972930908203, self.r, wait=True)
-        self.robo.move_to(219.55491638183594, -82.54214477539062, 73.68939208984375, self.r, wait=True)
-        self.robo.move_to(219.55491638183594, -82.54214477539062, -30.708972930908203, self.r, wait=True)
+        self.robo.move_to(posicoes["inadeq"]["p3"]["x"], posicoes["inadeq"]["p3"]["y"], posicoes["inadeq"]["p3"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["inadeq"]["p4"]["x"], posicoes["inadeq"]["p4"]["y"], posicoes["inadeq"]["p4"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["inadeq"]["p5"]["x"], posicoes["inadeq"]["p5"]["y"], posicoes["inadeq"]["p5"]["z"], self.r, wait=True)
         self.robo.suck(False)
         self.origem_global()
+
     
     def pegar_medicamento_inadequado(self):
-        self.robo.move_to(101.83129119873047, -263.7802734375, 30.708972930908203, self.r, wait=True)
-        self.robo.move_to(101.83129119873047, -263.7802734375, -19.708972930908203, self.r, wait=True)
+        posicoes = ler_json('./posicoes.json')
+        self.robo.move_to(posicoes["adeq"]["p1"]["x"], posicoes["adeq"]["p1"]["y"], posicoes["adeq"]["p1"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["adeq"]["p2"]["x"], posicoes["adeq"]["p2"]["y"], posicoes["adeq"]["p2"]["z"], self.r, wait=True)
         self.robo.suck(True)
         time.sleep(1)
-        self.robo.move_to(101.83129119873047, -263.7802734375, 120.708972930908203, self.r, wait=True)
-        self.robo.move_to(47.306304931640625, 210.08775329589844, 107.67615509033203, self.r, wait=True)
-        self.robo.move_to(47.306304931640625, 210.08775329589844, -30.67615509033203, self.r, wait=True)
+        self.robo.move_to(posicoes["adeq"]["p3"]["x"], posicoes["adeq"]["p3"]["y"], posicoes["adeq"]["p3"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["adeq"]["p4"]["x"], posicoes["adeq"]["p4"]["y"], posicoes["adeq"]["p4"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["adeq"]["p5"]["x"], posicoes["adeq"]["p5"]["y"], posicoes["adeq"]["p5"]["z"], self.r, wait=True)
+
+def ler_json(posicoes):
+    with open(posicoes, 'r') as posicoes:
+        return json.load(posicoes)
 
 
 
