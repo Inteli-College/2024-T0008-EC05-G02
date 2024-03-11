@@ -1,0 +1,58 @@
+[
+    {
+        "Nome": "Gluconato De Calcio",
+        "Dose": "20mg",
+        "Data de validade": "18/07/2024",
+        "Lote": "0U75V0",
+        "Fornecedor": "Merck"
+    },
+    {
+        "Nome": "Prometazina",
+        "Dose": "20mg",
+        "Data de validade": "01/08/2024",
+        "Lote": "Q6GERL",
+        "Fornecedor": "Roche"
+    },
+    {
+        "Nome": "Dobutamina + Glicose 50%",
+        "Dose": "500mg",
+        "Data de validade": "15/07/2024",
+        "Lote": "E9PFC2",
+        "Fornecedor": "Roche"
+    },
+    {
+        "Nome": "Diazepam + Suxametanio",
+        "Dose": "10mg",
+        "Data de validade": "25/07/2024",
+        "Lote": "RX5YI6",
+        "Fornecedor": "Johnson & Johnson"
+    },
+    {
+        "Nome": "Dopamina",
+        "Dose": "1mg",
+        "Data de validade": "21/03/2024",
+        "Lote": "0C2BA7",
+        "Fornecedor": "Roche"
+    },
+    {
+        "Nome": "Succinil + Naloxona",
+        "Dose": "500mg",
+        "Data de validade": "25/05/2024",
+        "Lote": "M24KU2",
+        "Fornecedor": "Pfizer"
+    },
+    {
+        "Nome": "Epinefrina",
+        "Dose": "2mg",
+        "Data de validade": "15/03/2024",
+        "Lote": "974C9H",
+        "Fornecedor": "Sanofi"
+    },
+    {
+        "Nome": "Agua Destilada",
+        "Dose": "10mg",
+        "Data de validade": "28/03/2024",
+        "Lote": "GU6IEC",
+        "Fornecedor": "Pfizer"
+    }
+]
