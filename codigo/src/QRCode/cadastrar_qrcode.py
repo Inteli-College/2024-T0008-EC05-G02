@@ -24,7 +24,7 @@ def generate_qr_codes(drug_data_list):
         img = qr.make_image(fill_color="black", back_color="white")
 
         # Save the QR code as an image file
-        img.save(f"{drug_info['Name']}.png")
+        img.save(f"{drug_info['Nome']}.png")
 
 # Call the function to generate QR codes
 generate_qr_codes(drug_data_list)
