@@ -50,6 +50,22 @@ class Robo():
     def posicao_atual(self):
         return print(f' Posição atual: x:{self.x} y:{self.y} z:{self.z} j1:{self.j1} j2:{self.j2} j3:{self.j3} j4:{self.j4}')
     
+    def mover_para_ponto_fixo(self, arquivo, nome_ponto):
+        pontos_fixos = self.carregar_pontos_fixos(arquivo)
+        ponto = pontos_fixos.get(nome_ponto)
+        if ponto:
+            self.move_to(ponto["x"], ponto["y"], ponto["z"])
+            print(f"Robô movido para o ponto fixo '{nome_ponto}'.")
+        else:
+            print(f"Ponto fixo '{nome_ponto}' não encontrado.")
+
+    def carregar_pontos_fixos(self, arquivo):
+        try:
+            with open(arquivo, 'r') as f:
+                return json.load(f)
+        except FileNotFoundError:
+            return {}
+    
     def pegar_medicamento(self):
         posicoes = ler_json('./posicoes.json')
         self.robo.move_to(posicoes["inadeq"]["p1"]["x"], posicoes["inadeq"]["p1"]["y"], posicoes["inadeq"]["p1"]["z"], self.r, wait=True)
@@ -75,14 +91,6 @@ class Robo():
 def ler_json(posicoes):
     with open(posicoes, 'r') as posicoes:
         return json.load(posicoes)
-
-
-
-
-
-
-
-
 
 # # Fecha a conexão com o robô
 # robo.close()

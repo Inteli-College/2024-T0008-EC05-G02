@@ -46,6 +46,19 @@ def inicio():
             robo.close()
             print('Fechando...')
     # chama a funcao que processa a operação e exibe uma spinner para o usuário
+# Comando para configurar pontos fixos
+@app.command()
+def configurar_pontos_fixos(arquivo):
+    my_robot = Robo()  # Instância do robô
+    config = Configurar(None, my_robot)  # Instância da classe Configurar
+    config.configurar_pontos_fixos(arquivo)
+
+# Comando para mover o robô para um ponto fixo
+@app.command()
+def mover_para_ponto_fixo(arquivo, nome_ponto):
+    my_robot = Robo()  # Instância do robô
+    mov = Movimentar(None, my_robot)  # Instância da classe Movimentar
+    mov.mover_para_ponto_fixo(arquivo, nome_ponto)
             
 # Executa a aplicação
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 import yaspin
 import inquirer
 import time
+import json
 from classes.robo import Robo
 
 class Movimentar():
@@ -12,6 +13,23 @@ class Movimentar():
         perguntas = [inquirer.List("escolha", message="Deseja configurar o robô ou realizar movimentações?", choices=["Movimento em X", "Movimento em Y", "Movimento em Z", "Ativar/Desativar ventosa", "Home (Retornar para posição original)", "Coordenadas da posição atual", "Pegar medicamento", "Pegar medicamento inadequado", "Retornar para escolha"])]
         respostas = inquirer.prompt(perguntas)
         return self.processar(respostas)
+    
+    def mover_para_ponto_fixo(self, arquivo, nome_ponto):
+        pontos_fixos = self.carregar_pontos_fixos(arquivo)
+        ponto = pontos_fixos.get(nome_ponto)
+        if ponto:
+            self.my_robot.move_to(ponto["x"], ponto["y"], ponto["z"])
+            print(f"Robô movido para o ponto fixo '{nome_ponto}'.")
+        else:
+            print(f"Ponto fixo '{nome_ponto}' não encontrado.")
+            
+        # Método para carregar pontos fixos de um arquivo JSON
+    def carregar_pontos_fixos(self, arquivo):
+        try:
+            with open(arquivo, 'r') as f:
+                return json.load(f)
+        except FileNotFoundError:
+            return {}
     
     def processar(self, resposta):
         escolha = resposta["escolha"]
@@ -58,5 +76,4 @@ class Movimentar():
     
     def move(self):
         pass
-            
-            
+    
