@@ -10,3 +10,5 @@ Entendemos a importância de acompanhar o nosso desenvolvimento ao longo das spr
 <!-- ![Cronograma](../../static/img/cronograma-de-tarefas.png) -->
 
 Link da documentação [aqui](https://docs.google.com/spreadsheets/d/1J8k--61ZfvntqrVQRZ0e5L-lw19ZVX-jIk2XtKoxJ6k/edit?usp=sharing). 
+
+Link da apresentação [aqui](https://www.canva.com/design/DAF89GP0rJo/_3yWjY_K6R_lQoeCLBcQVQ/view)
