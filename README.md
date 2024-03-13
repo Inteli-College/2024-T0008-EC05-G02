@@ -9,5 +9,5 @@ A implementação dessa solução tecnológica não apenas reduzirá os erros hu
 # Acesso ao desenvolvimento da Sprint 1
 Por meio da tag com realese v1.0.0 é possível ter acesso aos arquivos referentes a Sprint 1. Ao abrir a pasta, siga o caminho: ..\2024-T0008-EC05-G02\docs\docs e execute `npm start` no terminal. Essa ação permitirá acessar o que foi realizado na documentação refeernte a Sprint 1.
 
-# Acesso a documentação atualizada
+# Acesso à documentação atualizada
 Para acessar a documentação em sua versão mais atualizada e remotamente, acesse o site: [Docusaurus Ad Alma](https://inteli-college.github.io/2024-T0008-EC05-G02/)
