@@ -3,47 +3,63 @@ from pydantic import BaseModel
 import sqlite3
 
 # Criar conexão com o banco de dados SQLite
-conn = sqlite3.connect('../data/projeto.db')
+conn = sqlite3.connect('../data/ad_alma.db')
 cur = conn.cursor()
 
 app = FastAPI()
 
-class Item(BaseModel):
-    item_id : int
+class Bipagem(BaseModel):
+    id_item : int
     id_operacao: int
     nome: str
     lote: int
     validade: int
-    imagem: str
+    fornecedor: str
 
 class Operacao(BaseModel):
     id: int
-    responsavel: str
-    data: int
+    id_responsavel: int
     id_carrinho: int
-    tipo: int
+    data: int
+    tipo: str
+
+class Carrinho(BaseModel):
+    id: int
+    car_layout: int
 
 # Rota para obter todos os itens
-@app.get("/itens/")
+@app.get("/bipagem/")
 async def get_usuarios():
-    cur.execute("SELECT * FROM itens")
-    itens = cur.fetchall()
-    return itens
+    cur.execute("SELECT * FROM bipagem")
+    bipagem = cur.fetchall()
+    return bipagem
 
 @app.get("/operacoes/")
 async def get_usuarios():
     cur.execute("SELECT * FROM operacoes")
-    itens = cur.fetchall()
-    return itens
+    operacoes = cur.fetchall()
+    return operacoes
 
-@app.post("/adicionar_item/")
-async def criar_usuario(Item:Item):
-    cur.execute("INSERT INTO itens (item_id,nome, lote, validade, imagem, id_operacao) VALUES (?,?,?,?,?,?)", (Item.item_id,Item.nome,Item.lote,Item.validade,Item.imagem, Item.id_operacao))
+@app.get("/carrinhos/")
+async def get_usuarios():
+    cur.execute("SELECT * FROM carrinhos")
+    carrinhos = cur.fetchall()
+    return carrinhos
+
+@app.post("/adicionar_bipagem/")
+async def criar_usuario(Bipagem: Bipagem):
+    cur.execute("INSERT INTO Bipagem (id_item,nome, lote, validade, fornecedor, id_operacao) VALUES (?,?,?,?,?,?)", (Bipagem.id_item,Bipagem.nome,Bipagem.lote,Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
     conn.commit()
-    return {"status": "Usuário criado com sucesso"}
+    return {"status": "Bipagem adicionada com sucesso"}
 
 @app.post("/adicionar_operacao/")
 async def criar_usuario(Operacao: Operacao):
-    cur.execute("INSERT INTO operacao (id, responsavel, data, id_carrinho, tipo) VALUES (?,?,?,?,?)", (Operacao.id,Operacao.data,Operacao.responsavel,Operacao.id_carrinho, Operacao.tipo))
+    cur.execute("INSERT INTO operacoes (id, data, id_responsavel, id_carrinho, tipo) VALUES (?,?,?,?,?)", (Operacao.id,Operacao.data,Operacao.id_responsavel,Operacao.id_carrinho, Operacao.tipo))
     conn.commit()
-    return {"status": "Usuário criado com sucesso"}
+    return {"status": "Operação adicionada com sucesso"}
+
+@app.post("/adicionar_carrinho/")
+async def criar_usuario(Carrinho: Carrinho):
+    cur.execute("INSERT INTO carrinhos (id, car_layout) VALUES (?,?)", (Carrinho.id,Carrinho.car_layout))
+    conn.commit()
+    return {"status": "Carrinho adicionado com sucesso"}
