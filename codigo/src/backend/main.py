@@ -43,7 +43,8 @@ async def root():
     return {"message": "Hello World"}
 
 @app.get("/qreader/")
-async def read_qr_code(drug_name: str, drug_dose:str):
+def read_qr_code():
+    # drug_name: str, drug_dose:str):
     cap = cv2.VideoCapture(1)  # 0 é geralmente o ID da primeira webcam detectada
     # Supondo que qreader.detect_and_decode funcione diretamente com imagens no formato do OpenCV
     while True:
@@ -66,18 +67,20 @@ async def read_qr_code(drug_name: str, drug_dose:str):
                         due_date = datetime.strptime(drug_info.get("Data de validade"), "%d/%m/%Y").strftime("%Y-%m-%d")
                         lot = drug_info.get("Lote")
                         supplier = drug_info.get("Fornecedor")
-                        if name == drug_name and due_date > six_months_ahead and dose == drug_dose:
-                            print(name,six_months_ahead, due_date, dose, drug_dose)
-                            return({"Nome": name, "Dose": dose, "Data de validade": due_date, "Lote": lot, "Fornecedor": supplier})
-                        elif name == drug_name and due_date < six_months_ahead and dose == drug_dose:
-                            print(name,six_months_ahead, due_date, dose, drug_dose)
-                            return({"error": "medicamento próximo do vencimento"})
-                        elif name == drug_name and due_date > six_months_ahead and dose != drug_dose:
-                            print(name,six_months_ahead, due_date, dose, drug_dose)
-                            return({"error": "medicamento com dose incorreta"})
+                        # if name == drug_name and due_date > six_months_ahead and dose == drug_dose:
+                        if due_date > six_months_ahead:
+                            print(name,six_months_ahead, due_date, dose)
+                            return("em conformidade")
+                        # elif name == drug_name and due_date < six_months_ahead and dose == drug_dose:
                         else:
-                            print(name,six_months_ahead, due_date, dose, drug_dose)
-                            return({"error": "Não é o medicamento correto"})
+                            print(name,six_months_ahead, due_date, dose)
+                            return("vencido")
+                        # elif name == drug_name and due_date > six_months_ahead and dose != drug_dose:
+                        #     print(name,six_months_ahead, due_date, dose, drug_dose)
+                        #     return("dose incorreta")
+                        # else:
+                        #     print(name,six_months_ahead, due_date, dose, drug_dose)
+                        #     return("medicamento invalido")
                     except json.JSONDecodeError:
                         return {"error": "Invalid QR code content"}, 400
                     # Extract information into variables
