@@ -37,6 +37,13 @@ def qr_code_detection():
 thread = threading.Thread(target=qr_code_detection)
 
 app = FastAPI()
+device_port = '/dev/ttyUSB0' # ESCOLHE A PORTA DEPENDENDO valeu
+
+try:
+    dobot = Dobot(port=device_port)
+except Exception as e:
+    print(f"Error connecting to Dobot: {e}")
+    dobot = None
 
 @app.get("/")
 async def root():
@@ -86,6 +93,30 @@ def read_qr_code():
                     # Extract information into variables
         print("Tentando ler QRCODE")
         time.sleep(2)  # Pausa para não sobrecarregar o CPU
+@app.get("/activateTool/")
+async def activate_tool():
+    if dobot is not None:
+        try:
+            # This is a placeholder for the actual command to activate the tool.
+            # Adjust this according to your tool and the pydobot documentation.
+            dobot.suck(True)  # Replace 'activate_tool' with the actual method name
+            return {"message": "Tool activated successfully"}
+        except Exception as e:
+            return {"error": f"Failed to activate tool: {e}"}
+    else:
+        return {"error": "Dobot is not connected"}
+@app.get("/deactivateTool/")
+async def deactivate_tool():
+    if dobot is not None:
+        try:
+            # This is a placeholder for the actual command to deactivate the tool.
+            # Adjust this according to your tool and the pydobot documentation.
+            dobot.suck(False)  # Replace 'deactivate_tool' with the actual method name
+            return {"message": "Tool deactivated successfully"}
+        except Exception as e:
+            return {"error": f"Failed to deactivate tool: {e}"}
+    else:
+        return {"error": "Dobot is not connected"}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="localhost", port=8000)
