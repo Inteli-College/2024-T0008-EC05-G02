@@ -5,7 +5,10 @@ import pydobot
 from yaspin import yaspin
 import time
 import json
-
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+from backend.main import read_qr_code
 
 class Robo():
     def __init__(self, continuacao: callable, robo) -> None:
@@ -52,25 +55,35 @@ class Robo():
     
     def pegar_medicamento(self):
         posicoes = ler_json('./posicoes.json')
-        self.robo.move_to(posicoes["inadeq"]["p1"]["x"], posicoes["inadeq"]["p1"]["y"], posicoes["inadeq"]["p1"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["inadeq"]["p2"]["x"], posicoes["inadeq"]["p2"]["y"], posicoes["inadeq"]["p2"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["adeq"]["p1"]["x"], posicoes["adeq"]["p1"]["y"], posicoes["adeq"]["p1"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["adeq"]["p2"]["x"], posicoes["adeq"]["p2"]["y"], posicoes["adeq"]["p2"]["z"], self.r, wait=True)
         self.robo.suck(True)
-        self.robo.move_to(posicoes["inadeq"]["p3"]["x"], posicoes["inadeq"]["p3"]["y"], posicoes["inadeq"]["p3"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["inadeq"]["p4"]["x"], posicoes["inadeq"]["p4"]["y"], posicoes["inadeq"]["p4"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["inadeq"]["p5"]["x"], posicoes["inadeq"]["p5"]["y"], posicoes["inadeq"]["p5"]["z"], self.r, wait=True)
-        self.robo.suck(False)
+        self.robo.move_to(posicoes["adeq"]["p3"]["x"], posicoes["adeq"]["p3"]["y"], posicoes["adeq"]["p3"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["adeq"]["p4"]["x"], posicoes["adeq"]["p4"]["y"], posicoes["adeq"]["p4"]["z"], self.r, wait=True)
+        # Faz validar QrCode
+        resposta = read_qr_code()
+        if resposta == "em conformidade":
+            print('Medicamento em conformidade')
+            self.robo.move_to(posicoes["adeq"]["p5"]["x"], posicoes["adeq"]["p5"]["y"], posicoes["adeq"]["p5"]["z"], self.r, wait=True)
+            self.robo.move_to(posicoes["adeq"]["p6"]["x"], posicoes["adeq"]["p6"]["y"], posicoes["adeq"]["p6"]["z"], self.r, wait=True)
+            self.robo.suck(False)
+        elif resposta == "vencido":
+            print('Medicamento vencido')
+            self.robo.move_to(posicoes["adeq"]["p5"]["x"], posicoes["adeq"]["p5"]["y"], posicoes["adeq"]["p5"]["z"], self.r, wait=True)
+            self.robo.move_to(posicoes["adeq"]["p6"]["x"], posicoes["adeq"]["p6"]["y"], posicoes["adeq"]["p6"]["z"], self.r, wait=True)
+            self.robo.suck(False)
         self.origem_global()
 
     
     def pegar_medicamento_inadequado(self):
         posicoes = ler_json('./posicoes.json')
-        self.robo.move_to(posicoes["adeq"]["p1"]["x"], posicoes["adeq"]["p1"]["y"], posicoes["adeq"]["p1"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["adeq"]["p2"]["x"], posicoes["adeq"]["p2"]["y"], posicoes["adeq"]["p2"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["inadeq"]["p1"]["x"], posicoes["inadeq"]["p1"]["y"], posicoes["inadeq"]["p1"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["inadeq"]["p2"]["x"], posicoes["inadeq"]["p2"]["y"], posicoes["inadeq"]["p2"]["z"], self.r, wait=True)
         self.robo.suck(True)
         time.sleep(1)
-        self.robo.move_to(posicoes["adeq"]["p3"]["x"], posicoes["adeq"]["p3"]["y"], posicoes["adeq"]["p3"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["adeq"]["p4"]["x"], posicoes["adeq"]["p4"]["y"], posicoes["adeq"]["p4"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["adeq"]["p5"]["x"], posicoes["adeq"]["p5"]["y"], posicoes["adeq"]["p5"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["inadeq"]["p3"]["x"], posicoes["inadeq"]["p3"]["y"], posicoes["inadeq"]["p3"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["inadeq"]["p4"]["x"], posicoes["inadeq"]["p4"]["y"], posicoes["inadeq"]["p4"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["inadeq"]["p5"]["x"], posicoes["inadeq"]["p5"]["y"], posicoes["inadeq"]["p5"]["z"], self.r, wait=True)
 
 def ler_json(posicoes):
     with open(posicoes, 'r') as posicoes:
