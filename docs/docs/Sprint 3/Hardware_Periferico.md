@@ -46,4 +46,12 @@ Esta etapa serve para garantirmos mais segurança na operação.
 
 ## Câmera com reconhecimento de QR Codes
 
+A câmera foi integrada ao sistema do robô para que ele consiga identificar os medicamentos que serão bipados, auxiliando tanto no registro da montagem de novos carrinhos quanto no reabastcimento ao possibilitar a verificação de quais medicamentos permanecem no carrinho. A câmera foi posicionada de forma que consiga capturar a imagem do QR Code que está na embalagem do medicamento durante a movimentação do robô entre a bandeja de itens a serem veficados e a bandeja dos itens já bipados e em seu devido lugar, como mostra a imagem abaixo. Dessa forma, a movimentação do robô é facilitada por estar entre as bandejas e a câmera consegue capturar a imagem do QR Code.
+
+Para a integração da câmera, foi necessário instalar as bibliotecas `opencv`, usada no tratamento da visão computacional, e `qreader`, responsável por decodificar os QR Codes. A grande vantagem do `qreader ` se dá pela sua habilidade em captar os códgiso até mesmo em ângulos não tão favorecidos devido ao seu modelo de treinamento amplo e variado, permitindo a identificação de QR Codes em diversas imagens e situações. 
+
+![Câmera com reconhecimento de QR Codes](../../static/img/camera_qr_code.jpeg)
+
+Apesar do potencial do `qreader`, a câmera ainda está em fase de testes e ajustes para garantir a eficiência do reconhecimento dos QR Codes.
+
 ## Integração com o robô
