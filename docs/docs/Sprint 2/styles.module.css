@@ -1,0 +1,21 @@
+.red {
+    color: #FA7474;
+  }
+  .red[aria-selected='true'] {
+    border-bottom-color: #FA7474;
+    ;
+  }
+  
+  .green {
+    color: #ADF3A6;
+  }
+  .green[aria-selected='true'] {
+    border-bottom-color: #ADF3A6;
+  }
+  
+  .yellow {
+    color: #FADC74;
+  }
+  .yellow[aria-selected='true'] {
+    border-bottom-color: #FADC74;
+  }
