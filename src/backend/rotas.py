@@ -63,3 +63,24 @@ async def criar_usuario(Carrinho: Carrinho):
     cur.execute("INSERT INTO carrinhos (id, car_layout) VALUES (?,?)", (Carrinho.id,Carrinho.car_layout))
     conn.commit()
     return {"status": "Carrinho adicionado com sucesso"}
+
+# Deleção do carrinho
+@app.delete("/deletar_carrinho/{id}")
+async def deletar_usuario(id: int):
+    cur.execute("DELETE FROM carrinhos WHERE id=?", (id,))
+    conn.commit()
+    return {"status": "Carrinho deletado com sucesso"}
+
+# Atualização de carrinho
+@app.post("/atualizar_carrinho/")
+async def atualizar_usuario(Carrinho: Carrinho):
+    cur.execute("UPDATE carrinhos SET car_layout=? WHERE id=?", (Carrinho.car_layout, Carrinho.id))
+    conn.commit()
+    return {"status": "Carrinho atualizado com sucesso"}
+
+# Atualização da bipagem no reabastecimento
+@app.post("/atualizar_bipagem/")
+async def atualizar_usuario(Bipagem: Bipagem):
+    cur.execute("UPDATE Bipagem SET id_item=?,nome=?,lote=?,validade=?,fornecedor=? WHERE id_operacao=?", (Bipagem.id_item,Bipagem.nome,Bipagem.lote,Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
+    conn.commit()
+    return {"status": "Bipagem atualizada com sucesso"}
