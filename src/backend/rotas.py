@@ -1,9 +1,10 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import sqlite3
+import uvicorn
 
 # Criar conexão com o banco de dados SQLite
-conn = sqlite3.connect('../data/ad_alma.db')
+conn = sqlite3.connect('data/ad_alma.db')
 cur = conn.cursor()
 
 app = FastAPI()
@@ -64,23 +65,26 @@ async def criar_usuario(Carrinho: Carrinho):
     conn.commit()
     return {"status": "Carrinho adicionado com sucesso"}
 
-# Deleção do carrinho
+# Deleção do carrinho (19/03)
 @app.delete("/deletar_carrinho/{id}")
 async def deletar_usuario(id: int):
     cur.execute("DELETE FROM carrinhos WHERE id=?", (id,))
     conn.commit()
     return {"status": "Carrinho deletado com sucesso"}
 
-# Atualização de carrinho
+# Atualização de carrinho (19/03)
 @app.post("/atualizar_carrinho/")
 async def atualizar_usuario(Carrinho: Carrinho):
     cur.execute("UPDATE carrinhos SET car_layout=? WHERE id=?", (Carrinho.car_layout, Carrinho.id))
     conn.commit()
     return {"status": "Carrinho atualizado com sucesso"}
 
-# Atualização da bipagem no reabastecimento
+# Atualização da bipagem no reabastecimento (19/03)
 @app.post("/atualizar_bipagem/")
 async def atualizar_usuario(Bipagem: Bipagem):
     cur.execute("UPDATE Bipagem SET id_item=?,nome=?,lote=?,validade=?,fornecedor=? WHERE id_operacao=?", (Bipagem.id_item,Bipagem.nome,Bipagem.lote,Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
     conn.commit()
     return {"status": "Bipagem atualizada com sucesso"}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=8000)
