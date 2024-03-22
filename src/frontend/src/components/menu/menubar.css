@@ -1,0 +1,40 @@
+.logo {
+  width: 40px; /* Tamanho da logo */
+  height: auto; /* Proporção da imagem é mantida */
+  margin-left: 10px; /* Espaço à esquerda da logo */
+}
+
+.menu-fixed-top {
+  position: fixed;
+  top: 0;
+  z-index: 1000; 
+  width: 100%;
+  left: 0;
+  right: 0;
+  display: flex; 
+  justify-content: center; 
+  background-color: #fff;
+  border-bottom: 3px solid #26B0E6; 
+}
+
+.ant-menu-horizontal {
+  width: 100%; 
+  display: flex;
+  border-bottom: none; 
+}
+.ant-menu-item-selected {
+  background-color: #007bff;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.ant-menu-item:hover {
+  background-color: transparent;
+  color: #ffffff; 
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
