@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import sqlite3
 import uvicorn
 
-# Criar conexão com o banco de dados SQLite
+##### Criar conexão com o banco de dados SQLite #####
 conn = sqlite3.connect('data/ad_alma.db')
 cur = conn.cursor()
 
@@ -28,7 +28,7 @@ class Carrinho(BaseModel):
     id: int
     car_layout: int
 
-# Rota para obter todos os itens
+##### Rota para obter todos os itens #####
 @app.get("/bipagem/")
 async def get_usuarios():
     cur.execute("SELECT * FROM bipagem")
@@ -47,7 +47,7 @@ async def get_usuarios():
     carrinhos = cur.fetchall()
     return carrinhos
 
-# Rotas para alterar os itens
+##### Rotas para alterar os itens #####
 @app.post("/adicionar_bipagem/")
 async def criar_usuario(Bipagem: Bipagem):
     cur.execute("INSERT INTO Bipagem (id_item,nome, lote, validade, fornecedor, id_operacao) VALUES (?,?,?,?,?,?)", (Bipagem.id_item,Bipagem.nome,Bipagem.lote,Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
@@ -66,7 +66,7 @@ async def criar_usuario(Carrinho: Carrinho):
     conn.commit()
     return {"status": "Carrinho adicionado com sucesso"}
 
-# Novas rotas (19/03)
+##### Novas rotas (19/03) #####
 @app.delete("/deletar_carrinho/")
 async def deletar_usuario(Carrinho: Carrinho):
     cur.execute("DELETE FROM carrinhos WHERE id=?", (Carrinho.id,))
