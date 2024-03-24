@@ -1,0 +1,8 @@
+.forms-carrinho{
+    padding: 12px;
+    border-width: 5px; 
+    border-style: solid;
+    border-image: linear-gradient(to right, #4f81c7, #a763c9)4 ;
+    border-radius: 25px;
+}
+
