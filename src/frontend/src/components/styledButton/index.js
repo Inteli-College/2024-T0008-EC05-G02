@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from 'antd';
-import './styledButton.css';
 
 const StyledButton = (props) => { 
     let buttonColor = '';
-    switch (props.text) {
+    let textColor = '';
+    switch (props.textColor) {
         case 'green':
             buttonColor = '#ADF3A6';
             textColor = 'black';
@@ -34,5 +34,9 @@ const StyledButton = (props) => {
             break;
     }
     return (
-        <Button className='styled-button' style={{ background: buttonColor, color: textColor }} onClick={props.onClick}>{props.text}</Button>
+        <Button  
+        style={{ background: buttonColor, color: textColor, minHeight:"8vh", minWidth:"10vw", borderRadius:"25"}} 
+        onClick={props.onClick}>{props.text}</Button>
     );}
+
+export default StyledButton;

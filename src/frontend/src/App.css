@@ -1,6 +1,7 @@
 .App {
   display: flex;
   justify-content: center;
+  font: 18px "Inter", sans-serif;
 }
 
 .App-logo {
@@ -37,3 +38,15 @@
     transform: rotate(360deg);
   }
 }
+
+h1{
+  font-size: 3rem;
+  color: #6A2FF5;
+}
+
+h2{
+  font-size: 1.5rem;
+  color: #3E82EB;
+}
+
+

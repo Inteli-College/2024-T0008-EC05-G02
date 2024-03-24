@@ -6,6 +6,10 @@ import atom from './components/drugCard/atom.png';
 import React from 'react';
 
 import { Button, Checkbox, Form, Input } from 'antd';
+import Home from './pages/home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';  
+import About from './pages/about';
+import Contact from './pages/contact';
 
 // const onFinish = (values) => {
 //   console.log('Success:', values);
@@ -17,19 +21,13 @@ import { Button, Checkbox, Form, Input } from 'antd';
 function App() {
   return (
     <div className="App">
-      <CreateForm />
-      {/* <DrugCard 
-        drug={{
-          status: "Em conformidade",
-          name: "Paracetamol",
-          dose: "500mg",
-          expiration: "10/10/2022",
-          batch: "123456",
-          supplier: "Farmacia",
-          color: "green",
-          image: atom
-        }}
-        /> */}
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
+      </Router>
     </div>
   );
 }
