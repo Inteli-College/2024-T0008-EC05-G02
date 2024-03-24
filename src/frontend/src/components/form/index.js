@@ -3,14 +3,19 @@ import { Button, Checkbox, Form, Input, InputNumber, Select } from 'antd';
 
 
 const onFinish = (values) => {
-  console.log('Success:', values);
-};
+  console.log('Success:', values);};
 
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
 };
 
 function CreateForm() {
+  const [varrer, setVarrer] = React.useState(false);
+
+  const handleVarrerClick = () => {
+    setVarrer(true);
+  }
+
   return (
   <div className='forms-carrinho'>
   <h3>Preencha as informações abaixo para iniciar a bipagem:</h3>
@@ -107,6 +112,9 @@ function CreateForm() {
       }}
     >
       <Button type="primary" htmlType="submit">
+        Submit
+      </Button>
+      <Button onClick={handleVarrerClick} style={{backgroundImage: 'linear-gradient(to right, #4f81c7, #a763c9)', fontStyle: "white"}}>
         Submit
       </Button>
     </Form.Item>
