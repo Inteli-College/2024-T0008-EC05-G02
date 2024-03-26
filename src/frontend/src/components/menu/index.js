@@ -5,16 +5,6 @@ import logo from './logo.png';
 
 const items = [
   {
-    label: (
-      <div>
-        <img src={logo} alt="Logo" style={{ width: '40px', height: '40px', marginRight: '50px' }} />
-        
-      </div>
-    ),
-    
-  },
-
-  {
     label: 'Manual de Instruções',
     key: 'manual',
   },
@@ -41,13 +31,20 @@ const NavBar = () => {
 
   return (
     <div className='pageBody'>
+      <div className='header-group'>
+      <img className="logo" src={logo} alt="Logo" />
       <Menu
         onClick={onClick}
+        horizontalItemSelectedBg='#EBF5FD'
+        horizontalItemHoverBg='#F2F2F2'
         selectedKeys={[current]}
-        mode="horizontal"
+        mode="inline"
         items={items}
+        
         className="menu-fixed-top"
       />
+      </div>
+      {/* <div className='colorful-bar'></div> */}
     </div> 
   );
 };
