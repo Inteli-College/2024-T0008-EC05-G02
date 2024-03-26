@@ -18,7 +18,7 @@
 ## :teacher: Professores:
 
 ### Orientador(a)
-- - <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAAykOzQB5ysfrVBflYGsa1gMYs0FJzjP_Q0&keywords=murilo%20zanini%20de%20carvalho&origin=RICH_QUERY_SUGGESTION&position=1&searchId=1a090b1e-3dbf-4e77-b2c1-79b080c71e9d&sid=jqs&spellCorrectionEnabled=false/">Murilo Zanini</a>
+-  <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAAykOzQB5ysfrVBflYGsa1gMYs0FJzjP_Q0&keywords=murilo%20zanini%20de%20carvalho&origin=RICH_QUERY_SUGGESTION&position=1&searchId=1a090b1e-3dbf-4e77-b2c1-79b080c71e9d&sid=jqs&spellCorrectionEnabled=false/">Murilo Zanini</a>
 
 ### Instrutores
 - <a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a>
