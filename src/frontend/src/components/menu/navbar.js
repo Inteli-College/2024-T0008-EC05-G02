@@ -6,8 +6,8 @@ import logo from './logo.png';
 const items = [
   {
     label: (
-      <div>
-        <img src={logo} alt="Logo" style={{ width: '40px', height: '40px', marginRight: '50px' }} />
+      <div className='divLogo'>
+        <img src={logo} alt="Logo" style={{ width: '40px', height: '40px', marginRight: '50px', alignSelf: 'center' }} />
         
       </div>
     ),

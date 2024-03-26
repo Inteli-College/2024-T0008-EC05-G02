@@ -1,82 +1,32 @@
 import React from 'react';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Input, Select, Button } from 'antd';
+import './form.css';
 
-const onFinish = (values) => {
-  console.log('Success:', values);
-};
+const { Option } = Select;
 
-const onFinishFailed = (errorInfo) => {
-  console.log('Failed:', errorInfo);
-};
-
-function CreateForm() {
+const CreateForm = () => {
   return (
-  <Form
-    name="basic"
-    labelCol={{
-      span: 8,
-    }}
-    wrapperCol={{
-      span: 16,
-    }}
-    style={{
-      maxWidth: 600,
-    }}
-    initialValues={{
-      remember: true,
-    }}
-    onFinish={onFinish}
-    onFinishFailed={onFinishFailed}
-    autoComplete="off"
-  >
-    <Form.Item
-      label="Username"
-      name="username"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your username!',
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
+    <div className="container">
+      <div className="card">
+        <h1 className="title">Criar carrinho</h1>
+        <h1 className="subTitle">Preencha as informações abaixo para iniciar a bipagem</h1>
+        <div className="field">
+          <Input placeholder="Responsável" />
+        </div>
+        <div className="field">
+          <Input placeholder="Área de atuação" />
+        </div>
+        <div className="field">
+          <Select placeholder="Tipo de carrinho" style={{ width: '100%' }}>
+            <Option value="tipo1">Tipo 1</Option>
+            <Option value="tipo2">Tipo 2</Option>
+            {/* Outras opções */}
+          </Select>
+        </div>
+        {/* Outras opções */}
+      </div>
+    </div>
+  );
+};
 
-    <Form.Item
-      label="Password"
-      name="password"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your password!',
-        },
-      ]}
-    >
-      <Input.Password />
-    </Form.Item>
-
-    <Form.Item
-      name="remember"
-      valuePropName="checked"
-      wrapperCol={{
-        offset: 8,
-        span: 16,
-      }}
-    >
-      <Checkbox>Remember me</Checkbox>
-    </Form.Item>
-
-    <Form.Item
-      wrapperCol={{
-        offset: 8,
-        span: 16,
-      }}
-    >
-      <Button type="primary" htmlType="submit">
-        Submit
-      </Button>
-    </Form.Item>
-  </Form>
-)
-}
 export default CreateForm;

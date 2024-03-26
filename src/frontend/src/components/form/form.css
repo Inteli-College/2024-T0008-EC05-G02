@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 1rem;
+    /* Espaço ao redor do conteúdo para evitar que toque as bordas */
+    box-sizing: border-box;
+    /* Garante que o padding não adicione à largura total */
+}
+
+.card {
+    width: 100vw;
+    max-width: 600px;
+    /* Largura máxima do cartão */
+    margin: 16px;
+    /* Espaçamento externo */
+    padding: 40px;
+    /* Espaçamento interno */
+    background: #ffffff;
+    /* Fundo branco para o cartão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra para destacar o cartão */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    border: 2px solid #6636F4;
+    /* Borda sutil */
+}
+
+/* Estilização para os campos de input do formulário */
+.field input,
+.field .ant-select-selector {
+    width: 100%;
+    /* Faz com que os inputs e selects ocupem toda a largura */
+    padding: 7px 11px;
+    /* Espaçamento interno dos campos */
+    margin-bottom: 16px;
+    /* Espaçamento abaixo dos campos */
+    border: 1px solid #d9d9d9;
+    /* Cor da borda dos campos */
+    /* Borda arredondada para os campos */
+    border-radius: 4px;
+}
+
+/* Estilização do título do formulário */
+.title {
+    text-align: center;
+    /* Centraliza o título */
+    font-size: 24px;
+    /* Tamanho da fonte para o título */
+    color: #333;
+    /* Cor da fonte para o título */
+    margin-bottom: 24px;
+    /* Espaço abaixo do título */
+}
+
+.subTitle{
+    text-align: center;
+    /* Centraliza o título */
+    font-size: 14px;
+    /* Tamanho da fonte para o título */
+    color: #333;
+    /* Cor da fonte para o título */
+    margin-bottom: 24px;
+    /* Espaço abaixo do título */
+}
+
+/* Ajustes para os botões, se você tiver algum */
+.button-group button {
+    width: 100%;
+    /* Faz com que os botões ocupem toda a largura */
+    margin-bottom: 16px;
+    /* Espaçamento abaixo dos botões */
+    /* Mais estilos do botão podem ser adicionados aqui */
+}
+
+/* Corrige o estilo do rodapé se ele estiver cobrindo o conteúdo */
