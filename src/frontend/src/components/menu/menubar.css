@@ -1,0 +1,61 @@
+.logo {
+  width: 40px; /* Tamanho da logo */
+  height: auto; /* Proporção da imagem é mantida */
+  margin-left: 10px; /* Espaço à esquerda da logo */
+}
+
+.pageBody{
+  width: 100%;
+  height: auto;
+  position: fixed;
+}
+
+.header-group{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.colorful-bar{
+  background-image: linear-gradient(to right, #23b6e6, #02d39a);
+  height: 8px;
+}
+
+.logo{
+  width: 40px,;
+  height: 40px;
+  margin: 0 50px;
+  padding: 8px;
+}
+
+.menu-fixed-top {
+  /* position: fixed;
+  top: 0;
+  z-index: 1000;  */
+  width: 100%;
+  display: flex; 
+  /* justify-content: center;  */
+  border-bottom: 3px solid linear-gradient(to right, #23b6e6, #02d39a)fill; 
+}
+
+.menu-fixed-top .ant-menu-item {
+  padding: 0 0/* Adjust this value as needed */
+}
+
+.ant-menu-horizontal {
+  width: 100%; 
+  display: flex;
+  border-bottom: none; 
+}
+/* .ant-menu-item-selected {
+  background-color: #007bff;
+  font-weight: bold;
+  color: #ffffff;
+} */
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}

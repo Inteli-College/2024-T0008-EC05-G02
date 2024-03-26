@@ -1,17 +1,21 @@
 import './App.css';
 import React from 'react';
+import NavBar from './components/menu';
 
-import Home from './pages/home';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  
+import { Checkbox, Input, Button } from 'antd';
 
+// const onFinish = (values) => {
+//   console.log('Success:', values);
+// };
+// const onFinishFailed = (errorInfo) => {
+//   console.log('Failed:', errorInfo);
+// };
 
-export default function App() {
+function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* Add more rotes as needed */}
-      </Routes>
-    </Router>
+    <div className="App">
+      <NavBar />
+
+    </div>
   );
 }
