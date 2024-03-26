@@ -2,17 +2,17 @@ import Title from 'antd/es/skeleton/Title';
 import StyledButton from '../../components/styledButton';
 import './home.css';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleCreateCart = () => {
-        history.push('/create-cart');
+        navigate('/create-cart');
     };
 
     const handleRefillCart = () => {
-        history.push('/refill-cart');
+        navigate('/refill-cart');
     };
 
     return (
