@@ -8,16 +8,16 @@ function Home() {
     const navigate = useNavigate();
 
     const handleCreateCart = () => {
-        navigate('/create-cart');
+        navigate('/criar');
     };
 
     const handleRefillCart = () => {
-        navigate('/refill-cart');
+        navigate('/abastecer');
     };
 
     return (
         <div className="Home">
-            <div className='logo'>
+            <div className='home-logo'>
                 <img src='/logo075x.png' alt="Logo" />
             </div>
             <div className='Title'>

@@ -8,6 +8,8 @@
   width: 100%;
   height: auto;
   position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .header-group{
@@ -17,10 +19,9 @@
 }
 
 .colorful-bar{
-  background-image: linear-gradient(to right, #23b6e6, #02d39a);
-  height: 8px;
+  background-image: linear-gradient(to right, #6A2FF5, #23B6E6, #B5E4E4);
+  height: 6px;
 }
-
 .logo{
   width: 40px,;
   height: 40px;
@@ -35,23 +36,12 @@
   width: 100%;
   display: flex; 
   /* justify-content: center;  */
-  border-bottom: 3px solid linear-gradient(to right, #23b6e6, #02d39a)fill; 
 }
 
 .menu-fixed-top .ant-menu-item {
-  padding: 0 0/* Adjust this value as needed */
+  padding:0 0;
+  text-align: center;
 }
-
-.ant-menu-horizontal {
-  width: 100%; 
-  display: flex;
-  border-bottom: none; 
-}
-/* .ant-menu-item-selected {
-  background-color: #007bff;
-  font-weight: bold;
-  color: #ffffff;
-} */
 
 
 body, html {

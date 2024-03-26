@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
 import './menubar.css';
 import logo from './logo.png'; 
@@ -6,7 +7,7 @@ import logo from './logo.png';
 const items = [
   {
     label: 'Manual de Instruções',
-    key: 'manual',
+    key: "manual",
   },
   {
     label: 'Criar Carrinho',
@@ -22,29 +23,32 @@ const items = [
   },
 ];
 
-const NavBar = () => {
-  const [current, setCurrent] = useState('manual');
+const NavBar = ({onMenuClick}) => {
+  const [current, setCurrent] = useState("");
 
   const onClick = (e) => {
     setCurrent(e.key);
+    return onMenuClick(e.key);
   };
 
   return (
     <div className='pageBody'>
       <div className='header-group'>
-      <img className="logo" src={logo} alt="Logo" />
+      <Link to="/">
+          <img className="logo" src={logo} alt="Logo"/>
+        </Link>
       <Menu
         onClick={onClick}
         horizontalItemSelectedBg='#EBF5FD'
-        horizontalItemHoverBg='#F2F2F2'
+        horizontalItemHoverBg='#EBF5FD'
         selectedKeys={[current]}
         mode="inline"
         items={items}
-        
+        inlineIndent={0}
         className="menu-fixed-top"
       />
       </div>
-      {/* <div className='colorful-bar'></div> */}
+      <div className='colorful-bar'></div>
     </div> 
   );
 };

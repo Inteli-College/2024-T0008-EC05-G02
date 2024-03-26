@@ -1,5 +1,5 @@
 .Home{
-    padding: 5vh;
+    padding: 18vh 5vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,7 +20,7 @@
 .slogan{
     margin:0;
 }
-.logo{
+.home-logo{
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -28,7 +28,9 @@
 
 .home-botoes{
     display: flex;
+    align-self: center;
     flex-direction: row;
     justify-content: space-between;
     padding: 0 5vw;
+    width: 36vw;
 }
