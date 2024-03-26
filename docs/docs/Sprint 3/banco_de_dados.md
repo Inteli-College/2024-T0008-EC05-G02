@@ -2,7 +2,7 @@
 title: "Banco de dados e rotas"
 ---
 
-Para sustentar o projeto e as requisções que serão feitas na aplicação, o grupo montou uma estrutura de banco ed dados relacional, que tem como objetivo guardar informações importantes pertencentes ao fluxo de utilização.
+Para sustentar o projeto e as requisições que serão feitas na aplicação, o grupo montou uma estrutura de banco de dados relacional, que tem como objetivo guardar informações importantes pertencentes ao fluxo de utilização.
 O esquema do banco pode ser acompanhada a seguir:
 
 ![Banco de Dados](../../static/img/banco_de_dados.png)
