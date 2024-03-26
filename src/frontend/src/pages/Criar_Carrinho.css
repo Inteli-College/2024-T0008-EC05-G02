@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Faz a altura mínima da página inteira */
+    background-color: black; /* Cor de fundo da página */
+  }
+  
+  .card {
+    width: 80%;
+    max-width: 500px; /* Largura máxima do cartão */
+    background: #ffffff;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 2rem;
+  }
+  
+  .title {
+    color: #5c5c5c; /* Cor do título conforme o design */
+    text-align: center;
+    margin-bottom: 2rem; /* Espaço abaixo do título */
+  }
+  
+  /* Espaço entre os campos e os botões */
+  .field, .button-group {
+    margin-bottom: 1rem;
+  }
+  
+
+  

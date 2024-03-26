@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input, InputNumber, Select } from 'antd';
 
-
 const onFinish = (values) => {
-  console.log('Success:', values);};
+  console.log('Success:', values);
+};
 
 const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
@@ -15,9 +15,8 @@ function CreateForm() {
   const handleVarrerClick = () => {
     setVarrer(true);
   }
-
   return (
-  <div className='forms-carrinho'>
+    <div className='forms-carrinho'>
   <h3>Preencha as informações abaixo para iniciar a bipagem:</h3>
   <Form
   labelWrap
