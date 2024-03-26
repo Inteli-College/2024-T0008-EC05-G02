@@ -1,22 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
 import './menubar.css';
 import logo from './logo.png'; 
 
 const items = [
   {
-    label: (
-      <div className='divLogo'>
-        <img src={logo} alt="Logo" style={{ width: '40px', height: '40px', marginRight: '50px', alignSelf: 'center' }} />
-        
-      </div>
-    ),
-    
-  },
-
-  {
     label: 'Manual de Instruções',
-    key: 'manual',
+    key: "manual",
   },
   {
     label: 'Criar Carrinho',
@@ -32,22 +23,32 @@ const items = [
   },
 ];
 
-const NavBar = () => {
-  const [current, setCurrent] = useState('manual');
+const NavBar = ({onMenuClick}) => {
+  const [current, setCurrent] = useState("");
 
   const onClick = (e) => {
     setCurrent(e.key);
+    return onMenuClick(e.key);
   };
 
   return (
     <div className='pageBody'>
+      <div className='header-group'>
+      <Link to="/">
+          <img className="logo" src={logo} alt="Logo"/>
+        </Link>
       <Menu
         onClick={onClick}
+        horizontalItemSelectedBg='#EBF5FD'
+        horizontalItemHoverBg='#EBF5FD'
         selectedKeys={[current]}
-        mode="horizontal"
+        mode="inline"
         items={items}
+        inlineIndent={0}
         className="menu-fixed-top"
       />
+      </div>
+      <div className='colorful-bar'></div>
     </div> 
   );
 };

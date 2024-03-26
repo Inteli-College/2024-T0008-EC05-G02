@@ -48,13 +48,13 @@ Esta etapa serve para garantirmos mais segurança na operação.
 
 A câmera foi integrada ao sistema do robô para que ele consiga identificar os medicamentos que serão bipados, auxiliando tanto no registro da montagem de novos carrinhos quanto no reabastcimento, com a verificação de quais medicamentos permanecem no carrinho. Essa etapa é fundamental para garantir a rastreabilidade e segurança do processo, evitando a troca de medicamentos e garantindo que os medicamentos estejam dentro do prazo de validade e com a dosagem correta. 
 
- Em relação ao posicionamento da câmera, ela foi fixada entre a bandeja de itens a serem veficados e a bandeja dos itens já verificados, como mostra a imagem abaixo.
+ Em relação ao posicionamento da câmera, ela foi fixada entre a bandeja de itens a serem verificados e a bandeja dos itens já verificados, como mostra a imagem abaixo.
 
 ![Câmera com reconhecimento de QR Codes](../../static/img/camera_qrcode.jpg)
 
 Dessa forma, a movimentação do robô é facilitada por estar entre as bandejas e, como já está no meio do caminho percorrido pelo robô, o processo de bipagem se torna otimizado.
 
-Para a integração da câmera, foi necessário instalar as bibliotecas `opencv`, usada no tratamento da visão computacional, e `qreader`, responsável por decodificar os QR Codes. A grande vantagem do `qreader ` se dá pela sua habilidade em captar os códigos até mesmo em ângulos não tão favorecidos devido ao seu modelo de treinamento amplo e variado, permitindo a identificação de QR Codes em diversas imagens e situações. 
+Para a integração da câmera, foi necessário instalar as bibliotecas `opencv`, usada no tratamento da visão computacional, e `qreader`, responsável por decodificar os QR Codes. A grande vantagem do `qreader` se dá pela sua habilidade em captar os códigos até mesmo em ângulos não tão favorecidos devido ao seu modelo de treinamento amplo e variado, permitindo a identificação de QR Codes em diversas imagens e situações. 
 
 Apesar do potencial do `qreader`, a verificação por meio da câmera ainda está em fase de testes para garantir a eficiência do reconhecimento dos QR Codes. No momento atual de desenvolvimento, a câmera é acionada e assim que o QR code é identificado, a câmera captura uma foto, salva no arquivo local e exibe as informações decodificadas no terminal, além de trazer uma validação se o medicamento está em conformidade, vencido ou com a dosagem errada.
 

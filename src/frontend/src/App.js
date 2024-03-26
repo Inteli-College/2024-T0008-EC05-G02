@@ -1,9 +1,19 @@
 import React from 'react';
 import './App.css';
 import CreateForm from './components/form';
+import './components/drugCard/drug-card.css';
+import atom from './components/drugCard/atom.png';
+import React from 'react';
 import NavBar from './components/menu/navbar.js';
-import { Button } from 'antd';
 
+import { Checkbox, Input, Button } from 'antd';
+
+// const onFinish = (values) => {
+//   console.log('Success:', values);
+// };
+// const onFinishFailed = (errorInfo) => {
+//   console.log('Failed:', errorInfo);
+// };
 
 function App() {
   return (
@@ -19,7 +29,9 @@ function App() {
         Desenvolvido pelo Grupo (AdAlma) - Inteli - Instituto de Tecnologia e Liderança
       </footer>
     </div>
-  );
+  )
 }
 
 export default App;
+
+
