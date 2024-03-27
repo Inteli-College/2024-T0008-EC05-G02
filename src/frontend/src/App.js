@@ -34,7 +34,9 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 
 function App() {
   return (
+
     <Router>
+      
       <div className="App">
         <NavBarWrapper />
         <Routes>
