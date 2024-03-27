@@ -47,5 +47,14 @@ Por meio da tag v2.0.0 é possível ter acesso aos arquivos referentes a Sprint 
 
 Para acessar a CLI do projeto e conferir o que foi realizado, siga o caminho da pasta para ..\2024-T0008-EC05-G02\codigo. Execute `venv\Scripts\activate` (ou `source venv/bin/activate`, caso não seja ambiente Windows). Após isso, execute pip `install -r requirements.txt`. Agora, navegue até a pasta CLI, executando `cd src` seguido de `cd CLI`. Por fim, execute `python3 main.py` no terminal, assegurando de que está no caminho `(venv)..\2024-T0008-EC05-G02\codigo\src\CLI`
 
+# Acesso ao desenvolvimento da Sprint 3
+Por meio da tag v3.0.0 é possível ter acesso aos arquivos referentes a Sprint 3. Ao abrir a pasta, siga o caminho: ..\2024-T0008-EC05-G02\docs\docs e execute `npm start` no terminal. Essa ação permitirá acessar o que foi realizado na documentação refeernte a Sprint 2.
+
+Para acessar o banco de dados do projeto, siga o seguinte caminho : ..\2024-T0008-EC05-G02\src\backend\data para visualizar a estrutura do banco de dados do projeto, estando organizado em quatro tabelas ('sqlite_sequence', 'carrinhos', 'bipagem', 'operacoes'); Para visualizar o arquivo com as nossas rotas basta seguir o seguinte caminho: ..\2024-T0008-EC05-G02\src\backend\rotas.py .
+
+Para acessar os arquivos referentes aos hardwares periféricos, basta seguir o seguinte caminho, para acessar o leitor de qrcode, é necessário seguir o seguinte caminho ..\2024-T0008-EC05-G02\src\qrcode.py e executar o seguinte comando `python3 qrcode.py` no terminal, caso queira registrar um QRCode siga esse caminho ..\2024-T0008-EC05-G02\src\QRCode\cadastrar-qrcode.py e executar o comando `python3 cadastrar_qrcode.py` no terminal. Vale resaltar que para transitar entre as pastas seria necessário executar o seguinte comando `cd ...` com o nome da pasta que deseja acessar no lugar do '...'.
+
+# Acesso ao desenvolvimento da Sprint 4
+
 # Acesso à documentação atualizada
 Para acessar a documentação em sua versão mais atualizada e remotamente, acesse o site: [Docusaurus Ad Alma](https://inteli-college.github.io/2024-T0008-EC05-G02/)
