@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import NavBar from './components/menu';
 import Home from './pages/home';
+import MedicamentoConformidade from './components/medicamentos-conformidade';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 
@@ -33,7 +34,9 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 
 function App() {
   return (
+
     <Router>
+      
       <div className="App">
         <NavBarWrapper />
         <Routes>
@@ -42,6 +45,7 @@ function App() {
          <Route path="/criar" element={<div>criar carrinho</div>} />
          <Route path="/abastecer" element={<div>abastecer carrinho</div>} />
          <Route path="/historico" element={<div>historico</div>} />
+         <Route path="/conformidade" element={<MedicamentoConformidade />} />
         </Routes>
         <div className="footer">Desenvolvido pelo Grupo 2 Inteli - Instituto de Tecnologia e Liderança</div>
       </div>
