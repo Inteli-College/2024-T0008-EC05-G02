@@ -1,0 +1,51 @@
+.logo {
+  width: 40px; /* Tamanho da logo */
+  height: auto; /* Proporção da imagem é mantida */
+  margin-left: 10px; /* Espaço à esquerda da logo */
+}
+
+.pageBody{
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header-group{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.colorful-bar{
+  background-image: linear-gradient(to right, #6A2FF5, #23B6E6, #B5E4E4);
+  height: 6px;
+}
+.logo{
+  width: 40px,;
+  height: 40px;
+  margin: 0 50px;
+  padding: 8px;
+}
+
+.menu-fixed-top {
+  /* position: fixed;
+  top: 0;
+  z-index: 1000;  */
+  width: 100%;
+  display: flex; 
+  /* justify-content: center;  */
+}
+
+.menu-fixed-top .ant-menu-item {
+  padding:0 0;
+  text-align: center;
+}
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
