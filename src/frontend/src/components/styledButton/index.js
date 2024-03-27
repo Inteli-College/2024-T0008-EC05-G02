@@ -4,7 +4,7 @@ import { Button } from 'antd';
 const StyledButton = (props) => { 
     let buttonColor = '';
     let textColor = '';
-    switch (props.textColor) {
+    switch (props.colorbutton) {
         case 'green':
             buttonColor = '#ADF3A6';
             textColor = 'black';
