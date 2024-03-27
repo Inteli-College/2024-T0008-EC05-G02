@@ -1,15 +1,11 @@
 import React from 'react';
-import { View, Button, Text } from 'react-native';
+import './criar-carrinho.css';
+import CreateForm from '../../components/form';
 
-const Page2 = () => (
-  <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text>About</Text>
-  </View>
-);
-
-Page2.navigationOptions = {
-  title: 'About',
+export default function CriarCarrinho() {
+    return (
+        <div className='criar-carrinho'>
+            <CreateForm />
+        </div>
+    );
 }
-
-
-export default Page2;

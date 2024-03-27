@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import NavBar from './components/menu';
 import Home from './pages/home';
+import CriarCarrinho from './pages/criar_carrinho';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 
@@ -39,7 +40,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/manual" element={<div>manual</div>} />
-         <Route path="/criar" element={<div>criar carrinho</div>} />
+         <Route path="/criar" element={<CriarCarrinho />} />
          <Route path="/abastecer" element={<div>abastecer carrinho</div>} />
          <Route path="/historico" element={<div>historico</div>} />
         </Routes>
