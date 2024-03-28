@@ -75,14 +75,14 @@ function BipagemFinalizada() {
       <h1 className="paragraphText">Bipagem finalizada!</h1>
       <p className="paragraphText">A partir dos medicamentos identificados, foram encontradas irregularidades:</p>
       <div className="infoContainer">
-        <p className="infoTextRed">Medicamentos vencidos: 25</p>
+        <p className="infoTextRed">Medicamentos vencidos: 1</p>
         <p className="infoTextYellow">Medicamentos com dosagem errada: 2</p>
       </div>
       <p className="paragraphText">Os seguintes não foram encontrados durante a separação: </p>
       <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 3 }}/>
       <div className="infoButtonContainer">
-        <StyledButton text="Ver relatório completo" textColor="blue" onClick={handleRelatorioCompleto}></StyledButton>
-        <StyledButton text="Reabastecer itens faltantes" textColor="green" onClick={handleReabastcerFaltantes}></StyledButton>
+        <StyledButton text="Ver relatório completo" textColor="blue" onFinish={handleRelatorioCompleto}></StyledButton>
+        <StyledButton text="Reabastecer itens faltantes" textColor="green" onFinish={handleReabastcerFaltantes}></StyledButton>
       </div>
     </div>
   );

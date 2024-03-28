@@ -4,10 +4,11 @@ import CreateForm from '../../components/form';
 import {useNavigate} from 'react-router-dom';
 
 export default function CriarCarrinho() {
+
     let navigate = useNavigate();
     return (
         <div className='criar-carrinho'>
-            <CreateForm onFinish={navigate("criar/em-conformidade")}/>
+            <CreateForm onFinish={() => console.log("zzzzz")}/>
         </div>
     );
 }
