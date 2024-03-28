@@ -2,7 +2,7 @@ import React from 'react';
 import { Anchor, Row, Col } from 'antd';
 import './style.css';
 
-const App = () => (
+const Indice = () => (
     <Row>
       <Col span={16}>
         <div
@@ -53,12 +53,12 @@ const App = () => (
 
 function ManualInstrucoes() {
     return (
-        <div>
-          <div id="navbar"></div>
+        <div className="manual">
           <h1>Manual de Instruções</h1>
           <div id="menu">
             <ul id="indice">
               <h1>Índice</h1>
+              <Indice/>
               <a href="#header1">Introdução</a>
               <br />
               <a href="#header2">Criar</a>
@@ -95,3 +95,5 @@ function ManualInstrucoes() {
       </div>
       );
 }
+
+export default ManualInstrucoes;
