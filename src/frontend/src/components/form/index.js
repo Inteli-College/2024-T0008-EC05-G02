@@ -1,13 +1,10 @@
 import React from 'react';
-import { Button, Checkbox, Form, Input, InputNumber, Select } from 'antd';
+import {Checkbox, Form, Input, InputNumber, Select } from 'antd';
+import StyledButton from '../styledButton';
 
 
 const onFinish = (values) => {
   console.log('Success:', values);};
-
-const onFinishFailed = (errorInfo) => {
-  console.log('Failed:', errorInfo);
-};
 
 function CreateForm() {
   const [varrer, setVarrer] = React.useState(false);
@@ -31,7 +28,6 @@ function CreateForm() {
     }}
     style={{padding: '12px'}}
     onFinish={onFinish}
-    onFinishFailed={onFinishFailed}
     autoComplete="off"
   >
     <Form.Item
@@ -106,17 +102,13 @@ function CreateForm() {
       <InputNumber />
     </Form.Item>
     <Form.Item
-      wrapperCol={{
-        offset: 8,
-        span: 16,
-      }}
     >
-      <Button type="primary" htmlType="submit">
+      <StyledButton onClick={handleVarrerClick} text="verificar bandeja" colorbutton="yellow">
         Submit
-      </Button>
-      <Button onClick={handleVarrerClick} style={{backgroundImage: 'linear-gradient(to right, #4f81c7, #a763c9)', fontStyle: "white"}}>
+      </StyledButton>
+      <StyledButton type="primary" htmlType="submit" text="iniciar bipagem" colorbutton="green" >
         Submit
-      </Button>
+      </StyledButton>
     </Form.Item>
   </Form>
   </div>
