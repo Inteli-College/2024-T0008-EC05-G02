@@ -5,6 +5,7 @@ import Home from './pages/home';
 import MedicamentoConformidade from './pages/medicamentos-conformidade';
 import CriarCarrinho from './pages/criar_carrinho';
 import BipagemFinalizada from '../src/pages/bipagem_finalizada_incompleta';
+import ManualInstrucoes from './pages/manual';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import BipagemFinalizada from './pages/bipagem_finalizada_incompleta';
 
@@ -44,7 +45,7 @@ function App() {
         <NavBarWrapper />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/manual" element={<div>manual</div>} />
+          <Route path="/manual" element={<ManualInstrucoes/>} />
          <Route path="/criar" element={<CriarCarrinho />} />
          <Route path="/abastecer" element={<div>abastecer carrinho</div>} />
          <Route path="/historico" element={<div>historico</div>} />
