@@ -1,0 +1,27 @@
+.App {
+    display: inline;
+  }
+  
+  .footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebebeb;
+    color: black;
+    height: 8vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+  
+  }
+  
+  h1{
+    font-size: 3rem;
+    color: #6A2FF5;
+  }
+  
+  h2{
+    font-size: 1.5rem;
+    color: #3E82EB;
+  }
