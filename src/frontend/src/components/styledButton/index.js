@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Link } from 'react-router-dom';
+import './styled-button.css';
+
 
 const StyledButton = (props) => { 
     let buttonColor = '';
@@ -34,9 +36,9 @@ const StyledButton = (props) => {
             break;
     }
     return (
-        <Button  
-        style={{ background: buttonColor, color: textColor, minHeight:"8vh", minWidth:"10vw", borderRadius:"25"}} 
-        onClick={props.onClick}>{props.text}</Button>
+        <Link  
+        style={{ padding: "8px", borderRadius:"25%", background: buttonColor, color: textColor, minHeight:"8vh", minWidth:"10vw", borderRadius:"25", textDecoration: "none" }} 
+        to={props.route} onClick={props.onClick}>{props.text}</Link>
     );}
 
 export default StyledButton;

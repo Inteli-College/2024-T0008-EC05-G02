@@ -1,13 +1,14 @@
 .card{
-    width: 70%;
-    height: 100%;
+    width: 600px;
+    height: 320px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 20px;
     align-self: center;
+    justify-content: center;
 }
 
-.title{
+.card-title{
     font-size: 32px;
     font-weight: bold;
     padding: 8px 16px;

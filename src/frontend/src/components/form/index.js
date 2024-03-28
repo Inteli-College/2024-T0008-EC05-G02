@@ -1,17 +1,38 @@
 import React from 'react';
+import Axios from 'axios';
 import {Checkbox, Form, Input, InputNumber, Select } from 'antd';
 import StyledButton from '../styledButton';
 
 
-const onFinish = (values) => {
-  console.log('Success:', values);};
+// const onFinish = (values) => {
+//   console.log('Success:', values);};
 
-function CreateForm() {
+function CreateForm(props) {
   const [varrer, setVarrer] = React.useState(false);
 
   const handleVarrerClick = () => {
     setVarrer(true);
   }
+
+  const handleIniciarBipagem = async (values) => {
+    console.log('Success:', values);
+    try {
+      // Assuming 'values' is an object with keys and values you want to send as query parameters
+      // Construct query parameters from 'values'
+      const queryParams = new URLSearchParams(values).toString();
+  
+      // Append the query parameters to your endpoint
+      const response = await Axios.get(`your_api_endpoint?${queryParams}`);
+  
+      console.log(response.data);
+      // Optionally, do something with the response data, like redirecting the user
+      // For example, if you want to redirect to another route on success:
+      // props.history.push('/bipagem-finalizada');
+    } catch (error) {
+      console.error('There was an error!', error);
+    }
+  };
+  
 
   return (
   <div className='forms-carrinho'>
@@ -27,7 +48,7 @@ function CreateForm() {
       remember: true,
     }}
     style={{padding: '12px'}}
-    onFinish={onFinish}
+    onFinish={props.onFinish}
     autoComplete="off"
   >
     <Form.Item
@@ -103,10 +124,7 @@ function CreateForm() {
     </Form.Item>
     <Form.Item
     >
-      <StyledButton onClick={handleVarrerClick} text="verificar bandeja" colorbutton="yellow">
-        Submit
-      </StyledButton>
-      <StyledButton type="primary" htmlType="submit" text="iniciar bipagem" colorbutton="green" >
+      <StyledButton type="primary" htmlType="submit" text="iniciar bipagem" colorbutton="green" onClick={handleIniciarBipagem}>
         Submit
       </StyledButton>
     </Form.Item>

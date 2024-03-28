@@ -26,8 +26,8 @@ function Home() {
             </div>
             <h2 style={{color:"black", fontWeight:"400"}}>Qual das operações você gostaria de realizar?</h2>
             <div className='home-botoes'>
-                <StyledButton text="Criar carrinho" textColor="blue" onClick={handleCreateCart}></StyledButton>
-                <StyledButton text="Abastecer carrinho" textColor="purple" onClick={handleRefillCart}></StyledButton>
+                <StyledButton route="/criar" text="Criar carrinho" colorbutton="blue" onClick={handleCreateCart}></StyledButton>
+                <StyledButton route="/abastecer" text="Abastecer carrinho" colorbutton="purple" onClick={handleRefillCart}></StyledButton>
             </div>
         </div>
     );

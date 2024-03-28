@@ -39,8 +39,6 @@ const NavBar = ({onMenuClick}) => {
         </Link>
       <Menu
         onClick={onClick}
-        horizontalItemSelectedBg='#EBF5FD'
-        horizontalItemHoverBg='#EBF5FD'
         selectedKeys={[current]}
         mode="inline"
         items={items}
