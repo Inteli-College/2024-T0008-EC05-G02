@@ -2,7 +2,7 @@
 
 /* Altera o tamanho da div que engloba o componente */
 .divContainer {
-    margin: 20px;
+    margin: 50px 20px;
     padding-top: 20px;
     padding-left: 30px;
     padding-right: 30px;
@@ -45,10 +45,9 @@
   }
 
   .infoButtonContainer{
-    display: flex; /* ativa o Flexbox */
+    width: 100%;
     justify-content: space-between; /* espaça os elementos uniformemente */
     align-items: center; /* centraliza os elementos verticalmente */
     gap: 10px; /* opcional: adiciona espaço entre os elementos */
-    width: calc(30% - 10px); /* Subtrai o espaço do gap dividido por dois */
   }
   

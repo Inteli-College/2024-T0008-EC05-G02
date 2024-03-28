@@ -4,14 +4,17 @@ import './Norepinefrina.jpg';
 import './style.css';
 import remedio from './Norepinefrina.jpg';
 import DrugCard from '../../components/drugCard';
+import { useNavigate } from 'react-router-dom';
 
 function MedicamentoConformidade() {
+  const navigate = useNavigate();
+
   return (
     <div className="conformidade">
-    <h1 className="title">Em Criação...</h1>
+    <h1 className="page-title">Em Criação...</h1>
         <DrugCard 
         color="green" 
-        status="em conformidade" 
+        status="Em conformidade" 
         image={remedio} 
         name="Norepinefrina"
         dose="5mg"
@@ -22,7 +25,7 @@ function MedicamentoConformidade() {
     {/* </div> */}
     <div className="card-footer">
         <Button type="primary" className="pause-button">Pausar Bipagem</Button>
-        <Button type="danger" className="finish-button">Finalizar Bipagem</Button>
+        <Button type="danger" className="finish-button" onClick={()=> navigate("/fim-bipagem")}>Finalizar Bipagem</Button>
       </div>
  </div>
   );

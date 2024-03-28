@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './styled-button.css';
 
 
 const StyledButton = (props) => { 
@@ -35,8 +36,7 @@ const StyledButton = (props) => {
             break;
     }
     return (
-        <Link  
-        style={{ padding: "8px", borderRadius:"25%", background: buttonColor, color: textColor, minHeight:"8vh", minWidth:"10vw", borderRadius:"25", textDecoration: "none" }} 
+        <Link className='botao' style={{background: buttonColor, color: textColor}}
         to={props.route}>{props.text}</Link>
     );}
 

@@ -3,7 +3,7 @@ import "./drug-card.css"
 const DrugCard = (props) => {
     return (
         <div className="card" >
-            <div className="title" style={{ backgroundColor: props.color }}>{props.status}</div> 
+            <div className="card-title" style={{ backgroundColor: props.color }}>{props.status}</div> 
             <div className="content">
                 <div className="drug_image">
                     <img src={props.image} className="image" alt="Foto do medicamento"/>
