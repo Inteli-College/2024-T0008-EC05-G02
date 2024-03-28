@@ -25,6 +25,13 @@ const Indice = () => (
             height: '100vh',
             background: 'rgba(0,0,255,0.02)',
           }}
+        />  
+        <div
+          id="part-4"
+          style={{
+            height: '100vh',
+            background: 'rgba(0,0,255,0.02)',
+          }}
         />
       </Col>
       <Col span={8}>
@@ -33,18 +40,23 @@ const Indice = () => (
             {
               key: 'part-1',
               href: '#part-1',
-              title: 'Part 1',
+              title: 'Introdução',
             },
             {
               key: 'part-2',
               href: '#part-2',
-              title: 'Part 2',
+              title: 'Criar',
             },
             {
               key: 'part-3',
               href: '#part-3',
-              title: 'Part 3',
+              title: 'Abastecer',
             },
+            {
+              key: 'part-4',
+              href: '#part-4',
+              title: 'Itens faltantes',
+            }
           ]}
         />
       </Col>
@@ -57,15 +69,7 @@ function ManualInstrucoes() {
           <h1>Manual de Instruções</h1>
           <div id="menu">
             <ul id="indice">
-              <h1>Índice</h1>
               <Indice/>
-              <a href="#header1">Introdução</a>
-              <br />
-              <a href="#header2">Criar</a>
-              <br />
-              <a href="#header3">Abastecer</a>
-              <br />
-              <a href="#header4">Itens Faltantes</a>
             </ul>
           </div>
           <div className="header" id="header1">
