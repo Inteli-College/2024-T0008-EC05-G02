@@ -81,8 +81,8 @@ function BipagemFinalizada() {
       <p className="paragraphText">Os seguintes não foram encontrados durante a separação: </p>
       <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 3 }}/>
       <div className="infoButtonContainer">
-        <StyledButton text="Ver relatório completo" textColor="blue" onFinish={handleRelatorioCompleto}></StyledButton>
-        <StyledButton text="Reabastecer itens faltantes" textColor="green" onFinish={handleReabastcerFaltantes}></StyledButton>
+        <StyledButton text="Ver relatório completo" colorbutton="blue" onClick={handleRelatorioCompleto}></StyledButton>
+        <StyledButton route="/em-conformidade" text="Reabastecer itens faltantes" colorbutton="green" onClick={handleReabastcerFaltantes}></StyledButton>
       </div>
     </div>
   );

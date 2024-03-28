@@ -6,6 +6,7 @@ import MedicamentoConformidade from './pages/medicamentos-conformidade';
 import CriarCarrinho from './pages/criar_carrinho';
 import BipagemFinalizada from '../src/pages/bipagem_finalizada_incompleta';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import BipagemFinalizada from './pages/bipagem_finalizada_incompleta';
 
 
 // function App() {
