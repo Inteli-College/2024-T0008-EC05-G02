@@ -36,8 +36,9 @@ const StyledButton = (props) => {
             break;
     }
     return (
-        <Link className='botao' style={{background: buttonColor, color: textColor}}
-        to={props.route}>{props.text}</Link>
+        <Link  
+        style={{ padding: "8px", borderRadius:"25%", background: buttonColor, color: textColor, minHeight:"8vh", minWidth:"10vw", borderRadius:"25", textDecoration: "none" }} 
+        to={props.route} onClick={props.onClick}>{props.text}</Link>
     );}
 
 export default StyledButton;
