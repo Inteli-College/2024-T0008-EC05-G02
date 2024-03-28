@@ -3,6 +3,7 @@ import React from 'react';
 import NavBar from './components/menu';
 import Home from './pages/home';
 import CriarCarrinho from './pages/criar_carrinho';
+import ManualInstrucoes from './pages/manual';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 
@@ -41,7 +42,7 @@ function App() {
         <NavBarWrapper />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/manual" element={<div>manual</div>} />
+          <Route path="/manual" element={<ManualInstrucoes/>} />
          <Route path="/criar" element={<CriarCarrinho />} />
          <Route path="/abastecer" element={<div>abastecer carrinho</div>} />
          <Route path="/historico" element={<div>historico</div>} />
