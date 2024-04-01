@@ -11,7 +11,7 @@ Para resolver esses problemas, o projeto propõe a automatização do processo d
 
 A implementação dessa solução tecnológica não apenas reduzirá os erros humanos, mas também permitirá uma gestão mais eficiente dos recursos, garantindo que os carrinhos estejam sempre prontos para uso, o que é crucial em situações de emergência. Além disso, a automatização liberará os funcionários para se concentrarem em tarefas mais complexas e de maior valor agregado, contribuindo para uma equipe mais motivada e produtiva.
 
-## Leane Inception
+## Lean Inception
 ![lean inception](../static/img/lean_inception.jpg)
 
 ## Backlog do projeto
