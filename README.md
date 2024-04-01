@@ -42,16 +42,24 @@ A implementação dessa solução tecnológica não apenas reduzirá os erros hu
 Por meio da tag v1.0.0 é possível ter acesso aos arquivos referentes a Sprint 1. Ao abrir a pasta, siga o caminho: ..\2024-T0008-EC05-G02\docs\docs e execute `npm start` no terminal. Essa ação permitirá acessar o que foi realizado na documentação referente a Sprint 1.
 
 # Acesso ao desenvolvimento da Sprint 2
-Por meio da tag v2.0.0 é possível ter acesso aos arquivos referentes a Sprint 2. Ao abrir a pasta, siga o caminho: ..\2024-T0008-EC05-G02\docs\docs e execute `npm start` no terminal. Essa ação permitirá acessar o que foi realizado na documentação refeernte a Sprint 2.
+Por meio da tag v2.0.0 é possível ter acesso aos arquivos referentes a Sprint 2. Ao abrir a pasta, siga o caminho: ..\2024-T0008-EC05-G02\docs\docs e execute `npm start` no terminal. Essa ação permitirá acessar o que foi realizado na documentação referente a Sprint 2.
 
 Para acessar a CLI do projeto e conferir o que foi realizado, siga o caminho da pasta para ..\2024-T0008-EC05-G02\codigo. Execute `venv\Scripts\activate` (ou `source venv/bin/activate`, caso não seja ambiente Windows). Após isso, execute pip `install -r requirements.txt`. Agora, navegue até a pasta CLI, executando `cd src` seguido de `cd CLI`. Por fim, execute `python3 main.py` no terminal, assegurando de que está no caminho `(venv)..\2024-T0008-EC05-G02\codigo\src\CLI`
 
 # Acesso ao desenvolvimento da Sprint 3
-Por meio da tag v3.0.0 é possível ter acesso aos arquivos referentes a Sprint 3. Ao abrir a pasta, siga o caminho: ..\2024-T0008-EC05-G02\docs\docs e execute `npm start` no terminal. Essa ação permitirá acessar o que foi realizado na documentação refeernte a Sprint 3.
+Por meio da tag v3.0.0 é possível ter acesso aos arquivos referentes a Sprint 3. Ao abrir a pasta, siga o caminho: ..\2024-T0008-EC05-G02\docs\docs e execute `npm start` no terminal. Essa ação permitirá acessar o que foi realizado na documentação referente a Sprint 3.
 
 Para acessar a CLI do projeto e conferir o que foi realizado, siga o caminho da pasta para ..\2024-T0008-EC05-G02\codigo. Execute `venv\Scripts\activate` (ou `source venv/bin/activate`, caso não seja ambiente Windows). Após isso, siga o caminho da pasta para ..\2024-T0008-EC05-G02\src e execute pip `install -r requirements.txt`. Agora, navegue até a pasta CLI, executando  `cd CLI`. Por fim, execute `python3 main.py` no terminal, assegurando de que está no caminho `(venv)..\2024-T0008-EC05-G02\codigo\src\CLI`
 
 Para acessar as rotas criadas até o momento, no caminho ..\2024-T0008-EC05-G02\src\backend, execute no terminal: `uvicorn main:app --reload`e entre no servidor que será mostrado. Para checar as rotas, adicione cada uma no servidor que está sendo utilizado. 
+
+# Acesso ao desenvolvimento da Sprint 4
+Por meio da tag v4.0.0 é possível ter acesso aos arquivos referentes a Sprint 4. Ao abrir a pasta, siga o caminho:..\2024-T0008-EC05-G02\docs\docs e execute `npm start` no terminal. Essa ação permitirá acessar o que foi realizado na documentação referente a Sprint 4. 
+
+Para acessar as páginas web realizadas e conferir como elas estão, siga o caminho da para ..\2024-T0008-EC05-G02\src\frontend\src\pages, dentro desta pasta, primeiramente digite o seguinte comando `npm i` para instalar todas dependências e aguarde enquanto a instalação é feita, 
+após isso basta escolher a página web que deseja e digitar o seguinte comando `npm start`, verifique  se você tem as dependências instaladas e está na pasta correta, desta maneira você deve ver a página em seu navegador.
+
+Para conseguir acessar o Backend e fazer as requisições pelo front, siga o seguinte caminho : ..\2024-T0008-EC05-G02\backend\ e rodar o arquivo "main.py" com o seguinte comando  `python3 main.py`, dessa maneira você deve conseguir realizar requisições através do front.
 
 # Acesso à documentação atualizada
 Para acessar a documentação em sua versão mais atualizada e remotamente, acesse o site: [Docusaurus Ad Alma](https://inteli-college.github.io/2024-T0008-EC05-G02/)
