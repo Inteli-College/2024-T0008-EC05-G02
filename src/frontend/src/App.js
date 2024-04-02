@@ -5,6 +5,7 @@ import Home from './pages/home';
 import MedicamentoConformidade from './pages/medicamentos-conformidade';
 import CriarCarrinho from './pages/criar_carrinho';
 import ManualInstrucoes from './pages/manual';
+import BipagemFinalizada from './pages/bipagem_finalizada_incompleta';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
 
