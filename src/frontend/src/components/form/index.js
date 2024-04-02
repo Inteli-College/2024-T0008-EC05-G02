@@ -14,24 +14,24 @@ function CreateForm(props) {
     setVarrer(true);
   }
 
-  // const handleIniciarBipagem = async (values) => {
-  //   console.log('Success:', values);
-  //   try {
-  //     // Assuming 'values' is an object with keys and values you want to send as query parameters
-  //     // Construct query parameters from 'values'
-  //     const queryParams = new URLSearchParams(values).toString();
+  const handleIniciarBipagem = async (values) => {
+    console.log('Success:', values);
+    try {
+      // Assuming 'values' is an object with keys and values you want to send as query parameters
+      // Construct query parameters from 'values'
+      const queryParams = new URLSearchParams(values).toString();
   
       // Append the query parameters to your endpoint
       const response = await Axios.get('http://127.0.0.1:5000/demonstracao' );
   
-  //     console.log(response.data);
-  //     // Optionally, do something with the response data, like redirecting the user
-  //     // For example, if you want to redirect to another route on success:
-  //     // props.history.push('/bipagem-finalizada');
-  //   } catch (error) {
-  //     console.error('There was an error!', error);
-  //   }
-  // };
+      console.log(response.data);
+      // Optionally, do something with the response data, like redirecting the user
+      // For example, if you want to redirect to another route on success:
+      // props.history.push('/bipagem-finalizada');
+    } catch (error) {
+      console.error('There was an error!', error);
+    }
+  };
   
 
   return (
