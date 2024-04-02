@@ -1,0 +1,33 @@
+{
+    "layouts": [
+      {
+        "id": "layout_01",
+        "nc": 4,
+        "nl": 2,
+        "remedios": ["dipirona", "paracetamol", "ibuprofeno", "dorflex", "neosaldina", "buscopan", "tylenol", "novalgina"]
+      },
+      {
+        "id": "layout_02",
+        "nc": 2,
+        "nl": 2,
+        "remedios": ["dipirona", "paracetamol", "ibuprofeno", "dorflex"]
+      },
+      {
+        "id": "layout_03",
+        "nc": 1,
+        "nl": 5,
+        "remedios": ["dipirona", "paracetamol", "ibuprofeno", "dorflex", "neosaldina"]
+      },
+      {
+        "id": "layout_04",
+        "nc": 4,
+        "nl": 3,
+        "remedios": [
+          "dipirona", "paracetamol", "ibuprofeno", "dorflex", 
+          "neosaldina", "buscopan", "tylenol", "novalgina",
+          "aspirina", "cataflam", "celecoxibe", "etoricoxibe"
+        ]
+      }
+    ]
+  }
+  
