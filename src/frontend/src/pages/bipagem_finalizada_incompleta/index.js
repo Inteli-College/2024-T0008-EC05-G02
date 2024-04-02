@@ -69,7 +69,7 @@ const handleReabastcerFaltantes = () => {
   console.log("Reabastecendo...")
 };
 
-function BipagemFinalizada() {
+function BipagemIncompletaFinalizada() {
   return (
     <div className="divContainer">
       <h1 className="paragraphText">Bipagem finalizada!</h1>
@@ -88,4 +88,4 @@ function BipagemFinalizada() {
   );
 }
 
-export default BipagemFinalizada;
+export default BipagemIncompletaFinalizada;
