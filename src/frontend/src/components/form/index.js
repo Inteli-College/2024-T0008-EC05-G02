@@ -21,8 +21,8 @@ function CreateForm(props) {
   //     // Construct query parameters from 'values'
   //     const queryParams = new URLSearchParams(values).toString();
   
-  //     // Append the query parameters to your endpoint
-  //     const response = await Axios.get(`your_api_endpoint?${queryParams}`);
+      // Append the query parameters to your endpoint
+      const response = await Axios.get('http://127.0.0.1:5000/demonstracao' );
   
   //     console.log(response.data);
   //     // Optionally, do something with the response data, like redirecting the user

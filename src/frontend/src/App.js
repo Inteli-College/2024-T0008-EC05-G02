@@ -7,6 +7,7 @@ import CriarCarrinho from './pages/criar_carrinho';
 import ManualInstrucoes from './pages/manual';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 
+
 // function App() {
 //   const navigate = useNavigate();
 
