@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css'; // Importa o arquivo CSS
+import './bipagem_completa.css'; // Importa o arquivo CSS
 import StyledButton from '../../components/styledButton';
 
 

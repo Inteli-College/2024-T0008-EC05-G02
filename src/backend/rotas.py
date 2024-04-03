@@ -80,11 +80,8 @@ async def get_bipagem(id_operacao: int):
 
     bipagem_formatted = []
     for bipagem_item in bipagem_results:
-        # Assuming the order of fields in your SELECT matches the order here.
-        # Adjust the field names and order as necessary to match your database and Bipagem model.
         bipagem_dict = {field_name: value for field_name, value in zip(["id_item", "nome", "lote", "validade", "fornecedor", "id_operacao"], bipagem_item)}
         
-        # Convert to appropriate types if necessary, e.g.,
         bipagem_dict['id_operacao'] = int(bipagem_dict['id_operacao'])
         bipagem_dict['validade'] = str(bipagem_dict['validade'])  # Assuming it's a date field, you might want to format it.
         
@@ -92,22 +89,6 @@ async def get_bipagem(id_operacao: int):
 
     return bipagem_formatted
 
-# @app.get("/bipagem/{id_operacao}", response_model=List[Bipagem])
-# async def get_usuarios(id_operacao: int):
-#     cur.execute("SELECT * FROM bipagem WHERE id_operacao=?", (id_operacao,))
-#     bipagem = cur.fetchall()
-#     bipagem_dict = []
-    
-    # for row in bipagem:
-    #     bipagem_dict.append({
-    #         'id_item': row[0],
-    #         'nome': row[1],
-    #         'lote': row[2],
-    #         'validade': row[3],
-    #         'fornecedor': row[4],
-    #         'id_operacao': row[5]
-    #     })
-    # return bipagem_dict
 
 @app.get("/carrinhos/")
 async def get_usuarios():
