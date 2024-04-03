@@ -8,6 +8,22 @@ from datetime import datetime
 import json
 from dateutil.relativedelta import relativedelta
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+origins = [
+    "http://localhost:5000",  # Permitir CORS para este site
+    # Adicione outros sites se necessário
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 qreader = QReader(model_size = 'l', min_confidence = 0.3)
 last_qr_data = None
@@ -77,11 +93,11 @@ def read_qr_code():
                         # if name == drug_name and due_date > six_months_ahead and dose == drug_dose:
                         if due_date > six_months_ahead:
                             print(name,six_months_ahead, due_date, dose)
-                            return("em conformidade")
+                            return({"nome": name, "validade": due_date, "dose": dose, "lote": lot, "fornecedor": supplier, "status": "em conformidade"})
                         # elif name == drug_name and due_date < six_months_ahead and dose == drug_dose:
                         else:
                             print(name,six_months_ahead, due_date, dose)
-                            return("vencido")
+                            return({"nome": name, "validade": due_date, "dose": dose, "lote": lot, "fornecedor": supplier, "status": "vencido"})
                         # elif name == drug_name and due_date > six_months_ahead and dose != drug_dose:
                         #     print(name,six_months_ahead, due_date, dose, drug_dose)
                         #     return("dose incorreta")
@@ -119,4 +135,4 @@ async def deactivate_tool():
         return {"error": "Dobot is not connected"}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000)
+    uvicorn.run(app, host="localhost", port=5000)

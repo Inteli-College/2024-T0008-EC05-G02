@@ -48,7 +48,7 @@ function App() {
          <Route path="/criar" element={<CriarCarrinho />} />
          <Route path="/abastecer" element={<div>abastecer carrinho</div>} />
          <Route path="/historico" element={<div>historico</div>} />
-         <Route path="/em-conformidade" element={<MedicamentoConformidade />} />
+         <Route path="/bipagem" element={<MedicamentoConformidade />} />
          <Route path="/fim-bipagem" element={<BipagemFinalizada />} />
         </Routes>
         <div className="footer">Desenvolvido pelo Grupo 2 Inteli - Instituto de Tecnologia e Liderança</div>

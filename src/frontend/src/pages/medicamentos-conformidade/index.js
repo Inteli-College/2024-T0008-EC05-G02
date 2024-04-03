@@ -1,26 +1,45 @@
-import React from 'react';
+import {React, useEffect, useState} from 'react';
 import { Button } from 'antd';
 import './Norepinefrina.jpg';
 import './style.css';
 import remedio from './Norepinefrina.jpg';
 import DrugCard from '../../components/drugCard';
 import { useNavigate } from 'react-router-dom';
+import Axios from 'axios';
+
 
 function MedicamentoConformidade() {
   const navigate = useNavigate();
+  const [informacao_med, setInformacao_med] = useState({});
+
+  // Get do endpoint
+
+  useEffect(() => { 
+    const getMedicamento = async () => {
+      try {
+        const response = await Axios.get('http://localhost:5000/qreader/');
+        console.log(response.data);
+        setInformacao_med(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    getMedicamento();
+  }, []);
 
   return (
     <div className="conformidade">
     <h1 className="page-title">Em Criação...</h1>
         <DrugCard 
-        color="green" 
-        status="Em conformidade" 
+        color={informacao_med.status === "Em conformidade" ? "green" : "red"}
+        status= {informacao_med.status }
         image={remedio} 
-        name="Norepinefrina"
-        dose="5mg"
-        expiration="01/10/2024  "
-        batch="A2023"
-        supplier="NovaFarma"
+        name={informacao_med.nome}
+        dose={informacao_med.dose}
+        expiration={informacao_med.validade}
+        batch={informacao_med.lote}
+        supplier={informacao_med.fornecedor}
         />
     {/* </div> */}
     <div className="card-footer">
