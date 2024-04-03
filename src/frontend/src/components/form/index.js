@@ -29,7 +29,10 @@ function CreateForm() {
     console.log(formData);
 
     try {
-        const response = await Axios.post('http://localhost:8000/adicionar_operacao', formData);
+        const response = await Promise.all([
+        
+        Axios.post('http://localhost:8000/adicionar_operacao', formData),
+        Axios.get('http://127.0.0.1:5000/demonstracao' )])
         console.log(response.data);
     } catch (error) {
         alert(error);

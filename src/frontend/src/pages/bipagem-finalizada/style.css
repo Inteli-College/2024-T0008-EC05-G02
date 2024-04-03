@@ -1,0 +1,49 @@
+/* BipagemFinalizada.css */
+
+.divContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 500px; /* Adjust this value as needed to match the width in the first image */
+}
+
+.paragraphText {
+    color: #000000;
+    font-size: 24px; /* Adjust the font size as needed */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.infoContainer {
+    display: flex;
+    justify-content: center;
+    border:  3px solid #EDEEEE;/* Replace these colors with the actual gradient from the first image */
+    border-radius: 20px;
+    padding: 100px;
+    margin-bottom: 30px;
+    width: 100%; /* This ensures that the container takes full width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+}
+
+.infoTextGradient{
+    color: rgb(0, 0, 0); /* Adjust the text color to contrast with the gradient background */
+    font-size: 30px; /* Adjust the font size as needed */
+    text-align: center;
+    width: 100%; /* This makes the text occupy the full width of its container */
+}
+
+.infoButtonContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* This ensures that the buttons are spaced out over the full width of the container */
+}
+
+/* Additional styles for the buttons if needed */
+.styledButton {
+    flex: 1; /* This allows the buttons to grow and fill the space */
+    margin: 0 10px; /* This adds spacing between the buttons */
+}

@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Cronograma de Tarefas'
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Cronograma de Tarefas
