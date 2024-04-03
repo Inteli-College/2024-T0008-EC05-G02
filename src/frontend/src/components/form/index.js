@@ -1,38 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
-import {Checkbox, Form, Input, InputNumber, Select } from 'antd';
+import './form.css';
+import { Select, Form, Input} from 'antd';
 import StyledButton from '../styledButton';
+import { useNavigate } from 'react-router-dom';
 
 
-// const onFinish = (values) => {
-//   console.log('Success:', values);};
 
-function CreateForm(props) {
-  const [varrer, setVarrer] = React.useState(false);
+function CreateForm() {
+  const [form, setForm] = useState({});
+  const currentDate = new Date().toLocaleString("pt-BR", {timeZone: "America/Sao_Paulo"});
+  const navigate = useNavigate();
 
-  const handleVarrerClick = () => {
-    setVarrer(true);
-  }
+  const submitForm = async () => {
+    // console.log("Forms values:")
+    // console.log(form);
 
-  const handleIniciarBipagem = async (values) => {
-    console.log('Success:', values);
-    try {
-      // Assuming 'values' is an object with keys and values you want to send as query parameters
-      // Construct query parameters from 'values'
-      const queryParams = new URLSearchParams(values).toString();
-  
-      // Append the query parameters to your endpoint
-      const response = await Axios.get('http://127.0.0.1:5000/demonstracao' );
-  
-      console.log(response.data);
-      // Optionally, do something with the response data, like redirecting the user
-      // For example, if you want to redirect to another route on success:
-      // props.history.push('/bipagem-finalizada');
-    } catch (error) {
-      console.error('There was an error!', error);
+    const formData = {
+      ...form,
+      "id_responsavel": parseInt(form.id_responsavel),
+      "id_carrinho": parseInt(form.id_carrinho),
+      "data": currentDate,
+      // "tipo_operacao": form.tipo_operacao,
+      "tipo_operacao": "criar",
+      "tipo_carrinho": form.tipo_carrinho
     }
-  };
-  
+
+    console.log(formData);
+
+    try {
+        const response = await Promise.all([
+        
+        Axios.post('http://localhost:8000/adicionar_operacao', formData),
+        Axios.get('http://127.0.0.1:5000/demonstracao' )])
+        console.log(response.data);
+    } catch (error) {
+        alert(error);
+    }
+    navigate('/bipagem');
+  }
 
   return (
   <div className='forms-carrinho'>
@@ -48,12 +54,12 @@ function CreateForm(props) {
       remember: true,
     }}
     style={{padding: '12px'}}
-    onFinish={props.onFinish}
+    onFinish={submitForm}
     autoComplete="off"
   >
     <Form.Item
       label="Responsável"
-      name="owner"
+      name="id_responsavel"
       rules={[
         {
           required: true,
@@ -61,24 +67,15 @@ function CreateForm(props) {
         },
       ]}
     >
-      <Input />
-    </Form.Item>
-
-    <Form.Item
-      label="Área de atuação"
-      name="area"
-      rules={[
-        {
-          required: true,
-          message: 'Insira a área de atuação!',
-        },
-      ]}
-    >
       <Select
-      options={[
-        { value: 'Emergência', label: 'Emergência' },
-        { value: 'Enfermaria', label: 'Enfermaria' },
-      ]}
+      options={
+       [ {label:'Luiza', 'value':'1'},
+        {label:'João', 'value':'2'},
+        {label:'Maria', 'value':'3'},
+        {label:'José', 'value':'4'}, 
+        {label:'Ana', 'value':'5'}]
+      }
+      onChange={(value)=> setForm({...form, "id_responsavel": value})}
       />
     </Form.Item>
     <Form.Item
@@ -96,37 +93,25 @@ function CreateForm(props) {
         { value: 'Infantil', label: 'Infantil' },
         { value: 'Adulto', label: 'Adulto' },
       ]}
+      onChange={(value)=> setForm({...form, "tipo_carrinho": value})}
       />
     </Form.Item>
     <Form.Item
-      label="Qtd. colunas de compartimento da bandeja"
-      name="columns"
+      label="Insira o ID do carrinho"
+      name="car_id"
       rules={[
         {
           required: true,
-          message: 'Por favor insira a quantidade de colunas de compartimento da bandeja!',
+          message: 'Por favor insira o id do carrinho a ser criado!',
         },
       ]}
+      onChange={(value)=> setForm({...form, "id_carrinho": value.target.value})}
     >
-      <InputNumber />
-    </Form.Item>
-    <Form.Item
-      label="Qtd. linhas de compartimento da bandeja"
-      name="rows"
-      rules={[
-        {
-          required: true,
-          message: 'Por favor insira a quantidade de linhas de compartimento da bandeja!',
-        },
-      ]}
-    >
-      <InputNumber />
+      <Input />
     </Form.Item>
     <Form.Item
     >
-      <StyledButton route="/em-conformidade" type="primary" htmlType="submit" text="iniciar bipagem" colorbutton="green" 
-      // onClick={handleIniciarBipagem}
-      >
+      <StyledButton type="primary" htmlType="submit" text="iniciar bipagem" colorbutton="green" onClick={submitForm}>
         Submit
       </StyledButton>
     </Form.Item>

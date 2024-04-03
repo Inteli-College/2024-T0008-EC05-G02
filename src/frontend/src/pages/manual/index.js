@@ -4,12 +4,12 @@ import './style.css';
 
 const Indice = () => (
     <Row>
-      <Col span={16}>
+      <Col >
         <div
           id="part-1"
           style={{
             height: '100vh',
-            background: 'rgba(255,0,0,0.02)',
+            background: 'rgba(255,0,0,0.02)'
           }}
         />
         <div
@@ -34,7 +34,7 @@ const Indice = () => (
           }}
         />
       </Col>
-      <Col span={8}>
+      <Col >
         <Anchor
           items={[
             {
@@ -66,12 +66,8 @@ const Indice = () => (
 function ManualInstrucoes() {
     return (
         <div className="manual">
+          <div id="conteudo">
           <h1>Manual de Instruções</h1>
-          <div id="menu">
-            <ul id="indice">
-              <Indice/>
-            </ul>
-          </div>
           <div className="header" id="header1">
             <h2>Introdução</h2>
             <p>
@@ -97,6 +93,12 @@ function ManualInstrucoes() {
             </p>
         </div>
       </div>
+      <div id="menu">
+            <div id="indice">
+              <Indice/>
+            </div>
+          </div>
+    </div>
       );
 }
 
