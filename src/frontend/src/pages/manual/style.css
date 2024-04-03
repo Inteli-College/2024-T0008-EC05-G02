@@ -1,32 +1,21 @@
-
 .manual {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    margin-bottom:50px;
-}
-
-.indice {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    padding: 0 16px;
+    /* or overflow: auto; */
 }
 
 #menu {
-    display: flex;
-    justify-content: flex-end;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    right: 15px;
+    width: 15%;
 }
 
 #indice {
-    justify-content: center;
+    justify-content:end;
     margin-top: 50px;
 }
 
@@ -35,4 +24,14 @@ p {
     font-weight: 400;
     line-height: 24px;
     max-width: 1200px;
+/* or overflow: auto; */
+}
+
+.header{
+    flex-wrap: wrap; 
+    width: 80%;
+}
+
+.conteudo{
+    width: 80%;
 }
