@@ -4,6 +4,9 @@ from pydantic import BaseModel
 import sqlite3
 import uvicorn
 import datetime
+from typing import List, Optional
+
+
 
 # Criar conexão com o banco de dados SQLite
 conn = sqlite3.connect('../data/ad_alma.db')
@@ -28,6 +31,7 @@ class Bipagem(BaseModel):
     fornecedor: str
 
 class Operacao(BaseModel):
+    id_operacao: Optional[int] = None
     id_responsavel: int
     id_carrinho: int
     data: str
@@ -66,11 +70,21 @@ async def get_bipagem(id_operacao: int):
         })
     return bipagem_dict
 
-@app.get("/operacoes/")
+@app.get("/operacoes/", response_model=List[Operacao])
 async def get_usuarios():
     cur.execute("SELECT * FROM operacoes")
     operacoes = cur.fetchall()
-    return operacoes
+    # return [Operacao(**{field_name: value for field_name, value in zip(["id_responsavel", "id_carrinho", "data", "tipo_operacao", "tipo_carrinho"], operacao)}) for operacao in operacoes]
+    print(operacoes)
+    operacoes_formatted = []
+    for operacao in operacoes:
+        operacao_dict = {field_name: value for field_name, value in zip(["id_operacao", "id_responsavel", "data","id_carrinho", "tipo_operacao", "tipo_carrinho"], operacao)}
+        operacao_dict['id_carrinho'] = int(operacao_dict['id_carrinho'])
+        operacao_dict['data'] = str(operacao_dict['data'])
+        operacao_dict['tipo_operacao'] = str(operacao_dict['tipo_operacao']) if operacao_dict['tipo_operacao'] is not None else ''
+        operacao_dict['tipo_carrinho'] = str(operacao_dict['tipo_carrinho']) if operacao_dict['tipo_carrinho'] is not None else ''
+        operacoes_formatted.append(Operacao(**operacao_dict))
+    return operacoes_formatted
 
 @app.get("/carrinhos/")
 async def get_usuarios():

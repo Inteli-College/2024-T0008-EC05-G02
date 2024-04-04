@@ -1,0 +1,14 @@
+.historico{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 0 16px;
+}
+
+th{
+    background-color: transparent!important;
+}
+
+thead{
+        background-image: linear-gradient(to right, #A38FF7, #89D5F0, #CDEDEF)!important;
+}
