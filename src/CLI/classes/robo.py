@@ -59,18 +59,22 @@ class Robo():
         self.robo.move_to(posicoes["adeq"]["p2"]["x"], posicoes["adeq"]["p2"]["y"], posicoes["adeq"]["p2"]["z"], self.r, wait=True)
         self.robo.suck(True)
         self.robo.move_to(posicoes["adeq"]["p3"]["x"], posicoes["adeq"]["p3"]["y"], posicoes["adeq"]["p3"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["adeq"]["p4"]["x"], posicoes["adeq"]["p4"]["y"], posicoes["adeq"]["p4"]["z"], self.r, wait=True)
+        self.robo.move_to(posicoes["adeq"
+        ]["p3"]["x"], posicoes["adeq"]["p3"]["y"], posicoes["adeq"]["p3"]["z"], posicoes["adeq"]["p4"]["r"], wait=True) 
+        self.robo.move_to(posicoes["adeq"]["p4"]["x"], posicoes["adeq"]["p4"]["y"], posicoes["adeq"]["p4"]["z"], posicoes["adeq"]["p4"]["r"], wait=True)
+        self.robo.move_to(posicoes["adeq"]["p5"]["x"], posicoes["adeq"]["p5"]["y"], posicoes["adeq"]["p5"]["z"], posicoes["adeq"]["p4"]["r"], wait=True)
         # Faz validar QrCode
         resposta = read_qr_code()
         if resposta == "em conformidade":
             print('Medicamento em conformidade')
-            self.robo.move_to(posicoes["adeq"]["p5"]["x"], posicoes["adeq"]["p5"]["y"], posicoes["adeq"]["p5"]["z"], self.r, wait=True)
-            self.robo.move_to(posicoes["adeq"]["p6"]["x"], posicoes["adeq"]["p6"]["y"], posicoes["adeq"]["p6"]["z"], self.r, wait=True)
+            self.robo.move_to(posicoes["adeq"]["p6"]["x"], posicoes["adeq"]["p6"]["y"], posicoes["adeq"]["p6"]["z"], posicoes["adeq"]["p6"]["r"], wait=True)
+            self.robo.move_to(posicoes["adeq"]["p7"]["x"], posicoes["adeq"]["p7"]["y"], posicoes["adeq"]["p7"]["z"], posicoes["adeq"]["p6"]["r"], wait=True)
             self.robo.suck(False)
         elif resposta == "vencido":
             print('Medicamento vencido')
-            self.robo.move_to(posicoes["adeq"]["p5"]["x"], posicoes["adeq"]["p5"]["y"], posicoes["adeq"]["p5"]["z"], self.r, wait=True)
-            self.robo.move_to(posicoes["adeq"]["p6"]["x"], posicoes["adeq"]["p6"]["y"], posicoes["adeq"]["p6"]["z"], self.r, wait=True)
+            self.robo.move_to(posicoes["adeq"]["p4"]["x"], posicoes["adeq"]["p4"]["y"], posicoes["adeq"]["p4"]["z"], posicoes["adeq"]["p4"]["r"], wait=True)
+            self.robo.move_to(posicoes["adeq"]["p6"]["x"], posicoes["adeq"]["p6"]["y"], posicoes["adeq"]["p6"]["z"], posicoes["adeq"]["p6"]["r"], wait=True)
+            self.robo.move_to(posicoes["adeq"]["p7"]["x"], posicoes["adeq"]["p7"]["y"], posicoes["adeq"]["p7"]["z"], posicoes["adeq"]["p6"]["r"], wait=True)
             self.robo.suck(False)
         self.origem_global()
 
