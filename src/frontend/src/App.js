@@ -6,6 +6,7 @@ import MedicamentoConformidade from './pages/medicamentos-conformidade';
 import CriarCarrinho from './pages/criar_carrinho';
 import ManualInstrucoes from './pages/manual';
 import Historico from './pages/historico';
+import Relatorio from './pages/relatorio';
 import BipagemIncompletaFinalizada from './pages/bipagem_finalizada_incompleta';
 import BipagemFinalizada from './pages/bipagem-finalizada';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
@@ -26,6 +27,7 @@ function App() {
          <Route path="/bipagem" element={<MedicamentoConformidade />} />
          <Route path="/fim-bipagem-incompleta" element={<BipagemIncompletaFinalizada />} />
          <Route path="/fim-bipagem" element={<BipagemFinalizada />} />
+         <Route path='/relatorio/:id_operacao' element={<Relatorio />} />
         </Routes>
         <div className="footer">Desenvolvido pelo Grupo 2 Inteli - Instituto de Tecnologia e Liderança</div>
       </div>
