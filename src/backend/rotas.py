@@ -80,7 +80,7 @@ async def get_bipagem(id_operacao: int):
 
     bipagem_formatted = []
     for bipagem_item in bipagem_results:
-        bipagem_dict = {field_name: value for field_name, value in zip(["id_item", "nome", "lote", "validade", "fornecedor", "id_operacao"], bipagem_item)}
+        bipagem_dict = {field_name: value for field_name, value in zip(["id_item", "nome", "lote", "validade", "dose" ,"fornecedor", "id_operacao"], bipagem_item)}
         
         bipagem_dict['id_operacao'] = int(bipagem_dict['id_operacao'])
         bipagem_dict['validade'] = str(bipagem_dict['validade'])  # Assuming it's a date field, you might want to format it.
