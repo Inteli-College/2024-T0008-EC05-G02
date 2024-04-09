@@ -21,7 +21,7 @@ class QrCodeWrapper:
             print("Action called: QRCodeReading")
             await self.ws_client.connect()
             # Call the QR code reader service
-            qr_data = await self.qr_reader.read_qr_code('Agua Destilada')
+            qr_data = await self.qr_reader.read_qr_code('Succinil + Naloxona')
             print(qr_data)
             #ws.send(qrdata)
             await self.ws_client.send_message({'target': 'Frontend', 'data': qr_data})
