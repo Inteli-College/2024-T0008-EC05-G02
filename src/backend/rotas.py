@@ -16,7 +16,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -101,6 +101,15 @@ async def get_bipagem(id_operacao: int):
         bipagem_formatted.append(Bipagem(**bipagem_dict))
 
     return bipagem_formatted
+
+@app.get("/operacao/{id_operacao}")
+async def get_operacao(id_operacao: int):
+    cur.execute("SELECT * FROM operacoes WHERE id=?", (id_operacao,))
+    operacao = cur.fetchone()
+    if operacao is not None:
+        return Operacao(**{field_name: value for field_name, value in zip(["id_operacao", "id_responsavel", "data","id_carrinho", "tipo_operacao", "tipo_carrinho"], operacao)})
+    else:
+        return None
 
 @app.get("/carrinhos/")
 async def get_usuarios():

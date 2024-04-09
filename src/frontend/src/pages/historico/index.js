@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { Table } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import StyledButton from "../../components/styledButton";
 
 function Historico() {
     const navigate = useNavigate();
@@ -82,7 +83,7 @@ function Historico() {
             width: "20%",
             render: (text, record) => {
                 return (
-                    <button onClick={() => navigate(`/relatorio/${text.id_operacao}`)}>exibir PDF</button>
+                    <StyledButton route={`/relatorio/${text.id_operacao}`} text="ver relatório" colorbutton="purple"></StyledButton>
                 );},
                 align: "center",
         }
