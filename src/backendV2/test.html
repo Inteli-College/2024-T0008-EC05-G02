@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Client</title>
+    <style>
+        #messages {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="contactServer()">Click Here</button>
+    <div id="messages"></div>
+</body>
+<script>
+    const socket = new WebSocket('ws://localhost:3000'); // Ensure this matches the server's port
+
+    // Display incoming messages
+    socket.addEventListener('message', function (event) {
+        console.log('Message from server', event.data);
+        displayMessage(event.data);
+    });
+
+    // Send a message to the server
+    const contactServer = () => {
+        const messageToSend = "Message sent at " + new Date().toTimeString();
+        socket.send(messageToSend);
+        displayMessage("Sent: " + messageToSend);
+    };
+
+    // Function to display messages on the page
+    function displayMessage(message) {
+        const messagesDiv = document.getElementById('messages');
+        const messageParagraph = document.createElement('p');
+        messageParagraph.textContent = message;
+        messagesDiv.appendChild(messageParagraph);
+    }
+</script>
+</html>

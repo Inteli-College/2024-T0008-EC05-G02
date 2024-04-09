@@ -26,7 +26,7 @@ class WebSocketWrapper:
                     case 'QrCode':
                         print('Target: QRCODE')
                         # Directly call the QR Code service action
-                        await self.qr_code_service.handle_action(action, data)
+                        await self.qr.handle_action(action, data)
                     case 'Robot':
                         print('Target: ROBOT')
                         # Directly call the Robot service action
