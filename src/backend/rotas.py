@@ -27,6 +27,7 @@ class Bipagem(BaseModel):
     id_operacao: int
     nome: str
     lote: str
+    dose:str
     validade: str
     fornecedor: str
 
@@ -119,7 +120,7 @@ async def get_usuarios():
 
 @app.post("/adicionar_bipagem/")
 async def criar_usuario(Bipagem: Bipagem):
-    cur.execute("INSERT INTO bipagem (id_item,nome, lote, validade, fornecedor, id_operacao) VALUES (?,?,?,?,?,?)", (Bipagem.id_item,Bipagem.nome,Bipagem.lote,Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
+    cur.execute("INSERT INTO bipagem (id_item,nome, lote, dose, validade, fornecedor, id_operacao) VALUES (?,?,?,?,?,?)", (Bipagem.id_item,Bipagem.nome,Bipagem.lote, Bipagem.dose, Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
     conn.commit()
     return {"status": "Bipagem adicionada com sucesso"}
 
@@ -149,7 +150,7 @@ async def atualizar_usuario(Carrinho: Carrinho):
 
 @app.post("/atualizar_bipagem/")
 async def atualizar_usuario(Bipagem: Bipagem):
-    cur.execute("UPDATE bipagem SET id_item=?,nome=?,lote=?,validade=?,fornecedor=? WHERE id_operacao=?", (Bipagem.id_item,Bipagem.nome,Bipagem.lote,Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
+    cur.execute("UPDATE bipagem SET id_item=?,nome=?,lote=?,dose =?, validade=?,fornecedor=? WHERE id_operacao=?", (Bipagem.id_item,Bipagem.nome,Bipagem.lote,Bipagem.dose, Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
     conn.commit()
     return {"status": "Bipagem atualizada com sucesso"}
 
