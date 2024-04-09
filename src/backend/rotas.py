@@ -26,8 +26,8 @@ class Bipagem(BaseModel):
     id_item : int
     id_operacao: int
     nome: str
-    lote: int
-    validade: int
+    lote: str
+    validade: str
     fornecedor: str
 
 class Operacao(BaseModel):
@@ -88,12 +88,12 @@ async def get_usuarios():
 
 @app.get("/bipagem/{id_operacao}", response_model=List[Bipagem])
 async def get_bipagem(id_operacao: int):
-    cur.execute("SELECT * FROM bipagem WHERE id_operacao=?", (id_operacao))
+    cur.execute("SELECT * FROM bipagem WHERE id_operacao=?", (id_operacao,))
     bipagem_results = cur.fetchall()
 
     bipagem_formatted = []
     for bipagem_item in bipagem_results:
-        bipagem_dict = {field_name: value for field_name, value in zip(["id_item", "nome", "lote", "validade", "fornecedor", "id_operacao"], bipagem_item)}
+        bipagem_dict = {field_name: value for field_name, value in zip(["id_item", "nome", "lote", "validade", "dose" ,"fornecedor", "id_operacao"], bipagem_item)}
         
         bipagem_dict['id_operacao'] = int(bipagem_dict['id_operacao'])
         bipagem_dict['validade'] = str(bipagem_dict['validade'])  # Assuming it's a date field, you might want to format it.
@@ -101,6 +101,7 @@ async def get_bipagem(id_operacao: int):
         bipagem_formatted.append(Bipagem(**bipagem_dict))
 
     return bipagem_formatted
+
 
 @app.get("/carrinhos/")
 async def get_usuarios():
