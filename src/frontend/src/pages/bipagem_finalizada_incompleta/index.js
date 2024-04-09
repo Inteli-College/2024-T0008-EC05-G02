@@ -10,11 +10,11 @@ const columns = [
     dataIndex: 'nome',
     key: 'nome',
   },
-  // {
-  //   title: 'Dosagem',
-  //   dataIndex: 'dosagem',
-  //   key: 'dosagem',
-  // },
+  {
+    title: 'Dose',
+    dataIndex: 'dose',
+    key: 'dose',
+  },
   {
     title: 'Data de validade',
     dataIndex: 'validade',
@@ -63,7 +63,7 @@ function BipagemIncompletaFinalizada() {
         <p className="infoTextYellowB">Medicamentos com dosagem errada: 2</p>
       </div>
       <p className="paragraphTextB">Os seguintes não foram encontrados durante a separação: </p>
-      <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 5 }}/>
+      <Table dataSource={dataSource} columns={columns} pagination={{ pageSize: 3 }}/>
       <div className="infoButtonContainerB">
         <StyledButton text="Ver relatório completo" colorbutton="blue" onClick={handleRelatorioCompleto}></StyledButton>
         <StyledButton route="/em-conformidade" text="Reabastecer itens faltantes" colorbutton="green" onClick={handleReabastcerFaltantes}></StyledButton>

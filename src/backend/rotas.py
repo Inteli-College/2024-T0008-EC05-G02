@@ -28,6 +28,7 @@ class Bipagem(BaseModel):
     nome: str
     lote: str
     validade: str
+    dose: str
     fornecedor: str
 
 class Operacao(BaseModel):
