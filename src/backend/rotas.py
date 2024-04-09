@@ -16,7 +16,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -27,6 +27,7 @@ class Bipagem(BaseModel):
     id_operacao: int
     nome: str
     lote: str
+    dose:str
     validade: str
     fornecedor: str
 
@@ -102,6 +103,14 @@ async def get_bipagem(id_operacao: int):
 
     return bipagem_formatted
 
+@app.get("/operacao/{id_operacao}")
+async def get_operacao(id_operacao: int):
+    cur.execute("SELECT * FROM operacoes WHERE id=?", (id_operacao,))
+    operacao = cur.fetchone()
+    if operacao is not None:
+        return Operacao(**{field_name: value for field_name, value in zip(["id_operacao", "id_responsavel", "data","id_carrinho", "tipo_operacao", "tipo_carrinho"], operacao)})
+    else:
+        return None
 
 @app.get("/carrinhos/")
 async def get_usuarios():
@@ -111,7 +120,7 @@ async def get_usuarios():
 
 @app.post("/adicionar_bipagem/")
 async def criar_usuario(Bipagem: Bipagem):
-    cur.execute("INSERT INTO bipagem (id_item,nome, lote, validade, fornecedor, id_operacao) VALUES (?,?,?,?,?,?)", (Bipagem.id_item,Bipagem.nome,Bipagem.lote,Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
+    cur.execute("INSERT INTO bipagem (id_item,nome, lote, dose, validade, fornecedor, id_operacao) VALUES (?,?,?,?,?,?)", (Bipagem.id_item,Bipagem.nome,Bipagem.lote, Bipagem.dose, Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
     conn.commit()
     return {"status": "Bipagem adicionada com sucesso"}
 
@@ -141,7 +150,7 @@ async def atualizar_usuario(Carrinho: Carrinho):
 
 @app.post("/atualizar_bipagem/")
 async def atualizar_usuario(Bipagem: Bipagem):
-    cur.execute("UPDATE bipagem SET id_item=?,nome=?,lote=?,validade=?,fornecedor=? WHERE id_operacao=?", (Bipagem.id_item,Bipagem.nome,Bipagem.lote,Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
+    cur.execute("UPDATE bipagem SET id_item=?,nome=?,lote=?,dose =?, validade=?,fornecedor=? WHERE id_operacao=?", (Bipagem.id_item,Bipagem.nome,Bipagem.lote,Bipagem.dose, Bipagem.validade,Bipagem.fornecedor, Bipagem.id_operacao))
     conn.commit()
     return {"status": "Bipagem atualizada com sucesso"}
 

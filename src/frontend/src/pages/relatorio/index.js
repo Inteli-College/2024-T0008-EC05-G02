@@ -3,19 +3,30 @@ import Axios from 'axios';
 import { Table } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import './relatorio.css';
+import { Link } from 'react-router-dom';
+import StyledButton from '../../components/styledButton';
 
 function Relatorio() {
 	let id_operacao= useParams();	
     const navigate = useNavigate();
     const [relatorio, setRelatorio] = useState([]);
+    const [operacao, setOperacao] = useState([]);
 
     useEffect(() => {
         const getRelatorio = async () => {
+            console.log(id_operacao);
             try {
-                const response = await Axios.get(`http://localhost:8000/bipagem/2`);
-                console.log(response.data);
-				const data = response.data;
-				const groupedData = data.reduce((acc, curr) => {
+                const [response1, response2] = await Promise.all([
+                    Axios.get(`http://localhost:8000/bipagem/${id_operacao.id_operacao}`),
+                    Axios.get(`http://localhost:8000/operacao/${id_operacao.id_operacao}`)
+                ]);
+                
+                console.log(response1.data);
+                console.log(response2.data);
+				const medicamentos = response1.data;
+                const operacao = response2.data;
+				const medicamentos_agrupados = medicamentos.reduce((acc, curr) => {
 					if (acc[curr.nome]) {
 						acc[curr.nome].count += 1;
 					} else {
@@ -23,7 +34,8 @@ function Relatorio() {
 					}
 					return acc;
 				}, {});
-				setRelatorio(Object.values(groupedData));
+                setOperacao(operacao);
+				setRelatorio(Object.values(medicamentos_agrupados));
 				
             } catch (error) {
                 console.error(error);
@@ -42,64 +54,55 @@ function Relatorio() {
             align: "center",
         },
         {
-            title: 'Lote',
-            dataIndex: 'lote',
-            key: 'lote',
+            title: 'Dose',
+            dataIndex: 'dose',
+            key: 'dose',
             width: "15%",
-            render: (text) => {
-                const time = text.split(' ')[1];
-                return <span>{time}</span>;
-            },
             align: "center"
         },
         {
-            title: 'Carrinho',
-            dataIndex: 'id_carrinho',
-            key: 'id_carrinho',
+            title: 'Validade',
+            dataIndex: 'validade',
+            key: 'validade',
             width: "10%",
             align: "center",
         },
         {
-            title: 'Tipo de Carrinho',
-            dataIndex: 'tipo_carrinho',
-            key: 'tipo_carrinho',
+            title: 'Lote',
+            dataIndex: 'lote',
+            key: 'lote',
             width: "15%",
             align: "center",
         },
         {
-            title: 'Responsável',
-            dataIndex: 'id_responsavel',
-            key: 'id_responsavel',
+            title: 'Fornecedor',
+            dataIndex: 'fornecedor',
+            key: 'fornecedor',
             width: "15%",
             align: "center",
-        },
-        {
-            title: 'Operação',
-            dataIndex: 'tipo_operacao',
-            key: 'tipo_operacao',
-            width: "15%",
-            align: "center",
-        },
-        {
-            title: 'Relatório',
-            text: 'id_operacao',
-            width: "20%",
-            render: (text, record) => {
-                return (
-                    <button onClick={() => navigate(`/relatorio/${text.id_operacao}`)}>exibir PDF</button>
-                );},
-                align: "center",
         }
     ];
 
     return (
         <div className="historico">
-            <h1>Histórico de Relatórios</h1>
+            <div className="voltar">
+            <StyledButton  route="/historico" text="Voltar" colorbutton="purple"></StyledButton>
+            </div>
+            <h2>Relatório</h2>
+            <div className='info-operacao'>
+                <p><strong>Carrinho: </strong> {operacao.id_carrinho}</p>
+                <p><strong>Responsável: </strong>{operacao.id_responsavel}</p>
+                <p><strong>Operação: </strong>{operacao.tipo_operacao}</p>
+                <p><strong>Data: </strong>{operacao.data && operacao.data.split(',')[0]}</p>
+                <p><strong>Horário: </strong>{operacao.data && operacao.data.split(',')[1]}</p>
+            </div>
+            
             <Table 
             dataSource={relatorio} 
             columns={columns}
             align="center"
-            headerBg={"#6A2FF5"} />
+            headerBg={"#6A2FF5"}
+            rowKey="id"  />
         </div>
     );  
 }

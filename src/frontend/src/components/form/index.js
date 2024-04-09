@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
-import './form.css';
 import { Select, Form, Input} from 'antd';
 import StyledButton from '../styledButton';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +21,7 @@ function CreateForm() {
       "id_carrinho": parseInt(form.id_carrinho),
       "data": currentDate,
       // "tipo_operacao": form.tipo_operacao,
-      "tipo_operacao": "criar",
+      "tipo_operacao": "criar carrinho",
       "tipo_carrinho": form.tipo_carrinho
     }
 
@@ -46,10 +45,7 @@ function CreateForm() {
   <Form
   labelWrap
   labelAlign='left'
-    wrapperCol={{
-      span: 20,
-      offset: 1,
-    }}
+  
     initialValues={{
       remember: true,
     }}
@@ -109,10 +105,8 @@ function CreateForm() {
     >
       <Input />
     </Form.Item>
-    <Form.Item
-    >
+    <Form.Item>
       <StyledButton type="primary" htmlType="submit" text="iniciar bipagem" colorbutton="green" onClick={submitForm}>
-        Submit
       </StyledButton>
     </Form.Item>
   </Form>
