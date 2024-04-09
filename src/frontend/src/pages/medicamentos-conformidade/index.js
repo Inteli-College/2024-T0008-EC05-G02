@@ -74,7 +74,7 @@ export default function WebSocketClientComponent() {
         case "Medicamento correto, mas próximo da data de validade":
           return (
             <DrugCard
-              color="yellow"
+              color="red"
               status="Próximo da Validade"
               image={remedio}
               name="Correct Drug"
