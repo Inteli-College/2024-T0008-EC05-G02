@@ -18,25 +18,25 @@ class Robo():
         print(f'x:{self.x} y:{self.y} z:{self.z} j1:{self.j1} j2:{self.j2} j3:{self.j3} j4:{self.j4}')
 
     def origem_global(self): 
-        self.robo.move_to(237, -23, 149, self.r, wait=True) 
+        self.robo.movej_to(237, -23, 149, self.r, wait=True) 
 
     def origem_local(self): 
-        self.robo.move_to(self.x, self.y, self.z, self.r, wait=True) 
+        self.robo.movej_to(self.x, self.y, self.z, self.r, wait=True) 
 
     def move_robo_x(self, xaxis=200): #LIMITE = 360
-        self.robo.move_to(self.x + xaxis, self.y, self.z, self.r, wait=True) 
+        self.robo.movej_to(self.x + xaxis, self.y, self.z, self.r, wait=True) 
 
     def move_robo_y(self,yaxis=100):
-        self.robo.move_to(self.x, self.y + yaxis, self.z, self.r, wait=True) 
+        self.robo.movej_to(self.x, self.y + yaxis, self.z, self.r, wait=True) 
 
     def move_robo_z(self,zaxis=100):
-        self.robo.move_to(self.x, self.y, self.z + zaxis, self.r, wait=True) 
+        self.robo.movej_to(self.x, self.y, self.z + zaxis, self.r, wait=True) 
 
     def move_robo_r(self, raxis=100):
-        self.robo.move_to(self.x, self.y, self.z, self.r + raxis, wait=True) 
+        self.robo.movej_to(self.x, self.y, self.z, self.r + raxis, wait=True) 
 
     def move_robo_location(self, xaxis, yaxis, zaxis):
-        self.robo.move_to(xaxis, yaxis, zaxis, self.r, wait=True) 
+        self.robo.movej_to(xaxis, yaxis, zaxis, self.r, wait=True) 
 
     def change_speed(self, value):
         self.robo.speed(value, value)
@@ -55,39 +55,48 @@ class Robo():
     
     def pegar_medicamento(self):
         posicoes = ler_json('./posicoes.json')
-        self.robo.move_to(posicoes["adeq"]["p1"]["x"], posicoes["adeq"]["p1"]["y"], posicoes["adeq"]["p1"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["adeq"]["p2"]["x"], posicoes["adeq"]["p2"]["y"], posicoes["adeq"]["p2"]["z"], self.r, wait=True)
+        self.robo.movej_to(posicoes["adeq"]["p4"]["x"], posicoes["adeq"]["p4"]["y"], posicoes["adeq"]["p4"]["z"], self.r, wait=True)
+        self.robo.movej_to(posicoes["adeq"]["p1"]["x"], posicoes["adeq"]["p1"]["y"], posicoes["adeq"]["p1"]["z"], self.r, wait=True)
+        self.robo.movej_to(posicoes["adeq"]["p2"]["x"], posicoes["adeq"]["p2"]["y"], posicoes["adeq"]["p2"]["z"], self.r, wait=True)
         self.robo.suck(True)
         self.robo.move_to(posicoes["adeq"]["p3"]["x"], posicoes["adeq"]["p3"]["y"], posicoes["adeq"]["p3"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["adeq"
-        ]["p3"]["x"], posicoes["adeq"]["p3"]["y"], posicoes["adeq"]["p3"]["z"], posicoes["adeq"]["p4"]["r"], wait=True) 
-        self.robo.move_to(posicoes["adeq"]["p4"]["x"], posicoes["adeq"]["p4"]["y"], posicoes["adeq"]["p4"]["z"], posicoes["adeq"]["p4"]["r"], wait=True)
-        self.robo.move_to(posicoes["adeq"]["p5"]["x"], posicoes["adeq"]["p5"]["y"], posicoes["adeq"]["p5"]["z"], posicoes["adeq"]["p4"]["r"], wait=True)
+        # self.robo.move_to(posicoes["adeq"
+        # ]["p3"]["x"], posicoes["adeq"]["p3"]["y"], posicoes["adeq"]["p3"]["z"], posicoes["adeq"]["p4"]["r"], wait=True) 
+        self.robo.movej_to(posicoes["adeq"]["p4"]["x"], posicoes["adeq"]["p4"]["y"], posicoes["adeq"]["p4"]["z"], self.r, wait=True)
+        self.robo.movej_to(posicoes["adeq"]["p4"]["x"], posicoes["adeq"]["p4"]["y"], posicoes["adeq"]["p4"]["z"], posicoes["adeq"]["p4"]["r"], wait=True)
+        self.robo.movej_to(posicoes["adeq"]["p5"]["x"], posicoes["adeq"]["p5"]["y"], posicoes["adeq"]["p5"]["z"], posicoes["adeq"]["p4"]["r"], wait=True)
         # Faz validar QrCode
-        resposta = read_qr_code()
-        if resposta == "em conformidade":
-            print('Medicamento em conformidade')
-            self.robo.move_to(posicoes["adeq"]["p6"]["x"], posicoes["adeq"]["p6"]["y"], posicoes["adeq"]["p6"]["z"], posicoes["adeq"]["p6"]["r"], wait=True)
-            self.robo.move_to(posicoes["adeq"]["p7"]["x"], posicoes["adeq"]["p7"]["y"], posicoes["adeq"]["p7"]["z"], posicoes["adeq"]["p6"]["r"], wait=True)
-            self.robo.suck(False)
-        elif resposta == "vencido":
-            print('Medicamento vencido')
-            self.robo.move_to(posicoes["adeq"]["p4"]["x"], posicoes["adeq"]["p4"]["y"], posicoes["adeq"]["p4"]["z"], posicoes["adeq"]["p4"]["r"], wait=True)
-            self.robo.move_to(posicoes["adeq"]["p6"]["x"], posicoes["adeq"]["p6"]["y"], posicoes["adeq"]["p6"]["z"], posicoes["adeq"]["p6"]["r"], wait=True)
-            self.robo.move_to(posicoes["adeq"]["p7"]["x"], posicoes["adeq"]["p7"]["y"], posicoes["adeq"]["p7"]["z"], posicoes["adeq"]["p6"]["r"], wait=True)
-            self.robo.suck(False)
+        # read_qr_code()
+        self.robo.movej_to(posicoes["adeq"]["p6"]["x"], posicoes["adeq"]["p6"]["y"], posicoes["adeq"]["p6"]["z"], posicoes["adeq"]["p4"]["r"], wait=True)
+        self.robo.movej_to(posicoes["adeq"]["p6"]["x"], posicoes["adeq"]["p6"]["y"], posicoes["adeq"]["p6"]["z"], posicoes["adeq"]["p6"]["r"], wait=True)
+        self.robo.movej_to(posicoes["adeq"]["p7"]["x"], posicoes["adeq"]["p7"]["y"], posicoes["adeq"]["p7"]["z"], posicoes["adeq"]["p6"]["r"], wait=True)
+        self.robo.movej_to(posicoes["adeq"]["p8"]["x"], posicoes["adeq"]["p8"]["y"], posicoes["adeq"]["p8"]["z"], posicoes["adeq"]["p6"]["r"], wait=True)        
+        self.robo.suck(False)
+        self.robo.movej_to(posicoes["adeq"]["p7"]["x"], posicoes["inadeq"]["p7"]["y"], posicoes["inadeq"]["p7"]["z"], posicoes["inadeq"]["p6"]["r"], wait=True)
         self.origem_global()
 
     
     def pegar_medicamento_inadequado(self):
         posicoes = ler_json('./posicoes.json')
-        self.robo.move_to(posicoes["inadeq"]["p1"]["x"], posicoes["inadeq"]["p1"]["y"], posicoes["inadeq"]["p1"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["inadeq"]["p2"]["x"], posicoes["inadeq"]["p2"]["y"], posicoes["inadeq"]["p2"]["z"], self.r, wait=True)
+        self.robo.movej_to(posicoes["inadeq"]["p1"]["x"], posicoes["inadeq"]["p1"]["y"], posicoes["inadeq"]["p1"]["z"], self.r, wait=True)
+        self.robo.movej_to(posicoes["inadeq"]["p2"]["x"], posicoes["inadeq"]["p2"]["y"], posicoes["inadeq"]["p2"]["z"], self.r, wait=True)
         self.robo.suck(True)
-        time.sleep(1)
         self.robo.move_to(posicoes["inadeq"]["p3"]["x"], posicoes["inadeq"]["p3"]["y"], posicoes["inadeq"]["p3"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["inadeq"]["p4"]["x"], posicoes["inadeq"]["p4"]["y"], posicoes["inadeq"]["p4"]["z"], self.r, wait=True)
-        self.robo.move_to(posicoes["inadeq"]["p5"]["x"], posicoes["inadeq"]["p5"]["y"], posicoes["inadeq"]["p5"]["z"], self.r, wait=True)
+        # self.robo.move_to(posicoes["adeq"
+        # ]["p3"]["x"], posicoes["adeq"]["p3"]["y"], posicoes["adeq"]["p3"]["z"], posicoes["adeq"]["p4"]["r"], wait=True) 
+        self.robo.movej_to(posicoes["inadeq"]["p4"]["x"], posicoes["inadeq"]["p4"]["y"], posicoes["inadeq"]["p4"]["z"], self.r, wait=True)
+        self.robo.movej_to(posicoes["inadeq"]["p4"]["x"], posicoes["inadeq"]["p4"]["y"], posicoes["inadeq"]["p4"]["z"], posicoes["inadeq"]["p4"]["r"], wait=True)
+        self.robo.movej_to(posicoes["inadeq"]["p5"]["x"], posicoes["inadeq"]["p5"]["y"], posicoes["inadeq"]["p5"]["z"], posicoes["inadeq"]["p4"]["r"], wait=True)
+        # Faz validar QrCode
+        # read_qr_code()
+        self.robo.movej_to(posicoes["inadeq"]["p6"]["x"], posicoes["inadeq"]["p6"]["y"], posicoes["inadeq"]["p6"]["z"], posicoes["inadeq"]["p4"]["r"], wait=True)
+        self.robo.movej_to(posicoes["inadeq"]["p6"]["x"], posicoes["inadeq"]["p6"]["y"], posicoes["inadeq"]["p6"]["z"], posicoes["inadeq"]["p6"]["r"], wait=True)
+        # self.origem_global()
+        self.robo.movej_to(posicoes["inadeq"]["p7"]["x"], posicoes["inadeq"]["p7"]["y"], posicoes["inadeq"]["p7"]["z"], posicoes["inadeq"]["p6"]["r"], wait=True)
+        self.robo.movej_to(posicoes["inadeq"]["p8"]["x"], posicoes["inadeq"]["p8"]["y"], posicoes["inadeq"]["p8"]["z"], posicoes["inadeq"]["p6"]["r"], wait=True)        
+        self.robo.suck(False)
+        self.robo.movej_to(posicoes["inadeq"]["p7"]["x"], posicoes["inadeq"]["p7"]["y"], posicoes["inadeq"]["p7"]["z"], posicoes["inadeq"]["p6"]["r"], wait=True)
+        self.origem_global()
 
 def ler_json(posicoes):
     with open(posicoes, 'r') as posicoes:

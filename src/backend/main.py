@@ -67,6 +67,7 @@ async def root():
 
 @app.get("/qreader/")
 def read_qr_code():
+    print('funcao read qr code chamada')
     # drug_name: str, drug_dose:str):
     cap = cv2.VideoCapture(1)  # 0 é geralmente o ID da primeira webcam detectada
     # Supondo que qreader.detect_and_decode funcione diretamente com imagens no formato do OpenCV
