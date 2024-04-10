@@ -20,7 +20,19 @@ porta_escolhida = inquirer.prompt([inquirer.List("porta", message="Escolha a por
 
 print('Porta escolhida:', porta_escolhida)
 
-robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
+class InteliArm(pydobot.Dobot):
+    def __init__(self, port=None, verbose=False):
+        super().__init__(port=port, verbose=verbose)
+    
+    def movej_to(self, x, y, z, r, wait=True):
+        super()._set_ptp_cmd(x, y, z, r, mode=pydobot.enums.PTPMode.MOVJ_XYZ, wait=wait)
+
+    def move_to(self, x, y, z, r, wait=True):
+        super()._set_ptp_cmd(x, y, z, r, mode=pydobot.enums.PTPMode.MOVL_XYZ, wait=wait)
+
+# Cria uma instância do robô
+robo = InteliArm(port=porta_escolhida, verbose=False)
+# robo = pydobot.Dobot(port=porta_escolhida, verbose=False)
 
 (x, y, z, r, j1, j2, j3, j4) = robo.pose()
 print(f'x:{x} y:{y} z:{z} j1:{j1} j2:{j2} j3:{j3} j4:{j4}')
