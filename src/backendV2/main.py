@@ -7,6 +7,7 @@ async def main():
     # Schedule both tasks to run concurrently
     websocket_task = asyncio.create_task(ws.start())
     
+
     # Wait for both tasks to complete (they may run indefinitely)
     await asyncio.gather(websocket_task)
 

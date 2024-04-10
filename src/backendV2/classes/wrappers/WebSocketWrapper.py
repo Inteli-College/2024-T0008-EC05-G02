@@ -1,14 +1,13 @@
 import asyncio
 import websockets
 import json
-from classes.wrappers.QrCodeWrapper import QrCodeWrapper
 from classes.wrappers.RobotWrapper import RobotWrapper
 class WebSocketWrapper:
     def __init__(self, host, port):
         self.host = host
         self.port = port
-        self.qr = QrCodeWrapper()
-        #self.robot = RobotWrapper()
+        
+        self.robot = RobotWrapper()
         self.clients = set()
 
     async def handler(self, websocket, path):
@@ -23,14 +22,11 @@ class WebSocketWrapper:
                 
                 # Use Python's match-case to handle different targets
                 match target:
-                    case 'QrCode':
-                        print('Target: QRCODE')
-                        # Directly call the QR Code service action
-                        await self.qr.handle_action(action, data)
                     case 'Robot':
                         print('Target: ROBOT')
                         # Directly call the Robot service action
-                        #await self.robot_service.handle_action(action, data)
+                        #await self.robot.bipar_layout(action)
+                        pass
                     case 'Frontend':
                         print('Broadcasting to Frontend.')
                         # Broadcast message to all connected clients
@@ -50,6 +46,6 @@ class WebSocketWrapper:
             await client.send(message)
 
     async def start(self):
-        async with websockets.serve(self.handler, self.host, self.port):
+        async with websockets.serve(self.handler, self.host, self.port): # type: ignore
             print(f"WebSocket Server started at ws://{self.host}:{self.port}")
             await asyncio.Future()  # Keep the server running indefinitely

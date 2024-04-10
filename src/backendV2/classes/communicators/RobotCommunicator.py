@@ -5,18 +5,16 @@ import serial
 from serial.tools import list_ports
 from classes.services.RobotService import RobotService
 class RobotCommunicator:
-
+    _self = None
     def __new__(cls):
-        cls._self = None
         if cls._self is None:
             cls._self = super().__new__(cls)
         return cls._self
     
     def __init__(self):
-        print('RobotWebSocketHandler instantiated')
+        print('Robot Communicator Initialized')
         self.serial_port = self.find_pico_port()
         self.serial_connection = serial.Serial(self.serial_port, baudrate=115200, timeout=1)
-
 
     def find_pico_port(self):
         ports = serial.tools.list_ports.comports()
@@ -26,14 +24,8 @@ class RobotCommunicator:
                 return port.device
         print(f"Device not found on any port")
         return None
-    
-    async def listen_to_websocket(self):
-        async with websockets.connect(self.websocket_url) as ws:
-            while True:
-                message = await ws.recv()
-                print(f"Message from WebSocket: {message}")
-                # Process the message and potentially send data to Pico
     async def listen_to_serial(self):
+        print('Listening to serial port')
         while True:
             if self.serial_connection.in_waiting > 0:
                 serial_data = self.serial_connection.readline().decode('utf-8').rstrip()
@@ -42,8 +34,4 @@ class RobotCommunicator:
 
     async def start(self):
         # Create tasks for WebSocket and serial communication
-        websocket_task = asyncio.create_task(self.listen_to_websocket())
-        serial_task = asyncio.create_task(self.listen_to_serial())
-
-        # Run both tasks concurrently
-        await asyncio.gather(websocket_task, serial_task)
+        await self.listen_to_serial()
