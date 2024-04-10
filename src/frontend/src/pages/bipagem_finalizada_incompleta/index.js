@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import './bipagem_incompleta.css';
 import { Table } from "antd";
 import StyledButton from '../../components/styledButton';
-import axios from 'axios';
+import Axios from 'axios';
 
 const columns = [
   {
@@ -37,11 +37,11 @@ const handleReabastcerFaltantes = () => {
 };
 
 function BipagemIncompletaFinalizada() {
-
+  let id_operacao= useParams();	
   const [dataSource, setDataSource] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/bipagem/5')
+    Axios.get(`http://localhost:8000/bipagem/${id_operacao.id_operacao}`),
       .then(response => {
         var colunas = response.data
         console.log(response.data)
@@ -53,6 +53,38 @@ function BipagemIncompletaFinalizada() {
       });
 
   }, []);
+
+  useEffect(() => {
+    const getItensFaltantes = async () => {
+        console.log(id_operacao);
+        try {
+            const [response1, response2] = await Promise.all([
+                Axios.get(`http://localhost:8000/bipagem/${id_operacao.id_operacao}`),
+                Axios.get(`http://localhost:8000/operacao/${id_operacao.id_operacao}`)
+            ]);
+            
+            console.log(response1.data);
+            console.log(response2.data);
+    const medicamentos = response1.data;
+            const operacao = response2.data;
+    const medicamentos_agrupados = medicamentos.reduce((acc, curr) => {
+      if (acc[curr.nome]) {
+        acc[curr.nome].count += 1;
+      } else {
+        acc[curr.nome] = { ...curr, count: 1 };
+      }
+      return acc;
+    }, {});
+            setOperacao(operacao);
+    setRelatorio(Object.values(medicamentos_agrupados));
+    
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    getItensFaltantes();
+}, [id_operacao]);
 
   return (
     <div className="divContainerB">

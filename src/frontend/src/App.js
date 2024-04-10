@@ -25,9 +25,9 @@ function App() {
          <Route path="/abastecer" element={<div>abastecer carrinho</div>} />
          <Route path="/historico" element={<Historico />} />
          <Route path="/bipagem" element={<MedicamentoConformidade />} />
-         <Route path="/fim-bipagem-incompleta" element={<BipagemIncompletaFinalizada />} />
+         <Route path="/fim-bipagem-incompleta:id_operacao" element={<BipagemIncompletaFinalizada />} />
          <Route path="/fim-bipagem" element={<BipagemFinalizada />} />
-         <Route path='/relatorio/:id_operacao' element={<Relatorio />} />
+         <Route path='/relatorio/:id_operacao' element={<Relatorio/>} />
         </Routes>
         <div className="footer">Desenvolvido pelo Grupo 2 Inteli - Instituto de Tecnologia e Liderança</div>
       </div>
