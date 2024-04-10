@@ -2,12 +2,14 @@ import asyncio
 import websockets
 import json
 from classes.wrappers.RobotWrapper import RobotWrapper
+from classes.wrappers.QrCodeWrapper import QrCodeWrapper
 class WebSocketWrapper:
     def __init__(self, host, port):
         self.host = host
         self.port = port
         
         self.robot = RobotWrapper()
+        self.qr = QrCodeWrapper()
         self.clients = set()
 
     async def handler(self, websocket, path):
@@ -25,7 +27,7 @@ class WebSocketWrapper:
                     case 'QRCODE':
                         print('Target: QRCODE')
                         # Directly call the QRCode service action
-                        await self.robot.qr.handle_action(action, data)
+                        await self.qr.handle_action(action)
                         pass
                     case 'ROBOT':
                         print('Target: ROBOT')

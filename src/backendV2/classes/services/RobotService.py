@@ -2,8 +2,12 @@ from typing import Any
 from pydobot import Dobot
 import serial
 import serial.tools.list_ports 
+
+
 from utils.layout import return_layout_by_id
-#from classes.wrappers.QrCodeWrapper import QrCodeWrapper
+from classes.wrappers.QrCodeWrapper import QrCodeWrapper
+
+
 class RobotService:
     def __new__(cls):
         cls._self = None
@@ -14,7 +18,8 @@ class RobotService:
 
     def __init__(self):
         print('RobotService instantiated')
-        self.robot = self.init_robot_connection()
+        self.robot: Dobot | None = self.init_robot_connection()
+        self.qr = QrCodeWrapper
 
 
     def init_robot_connection(self):
