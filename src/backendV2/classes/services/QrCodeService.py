@@ -35,7 +35,7 @@ class QRCodeService:
         expiration_date_str = qr_data.get("Data de validade")
 
         if qr_data.get('Dosagem') != expected_medication.get('Dosagem'):
-            return 'Dosagem incorreta', qr_data
+            return 'Dosagem incorreta', [qr_data['Nome'],qr_data['Dose'],qr_data['Data de validade'],qr_data['Lote'],qr_data['Fornecedor']]
 
         try:
             expiration_date = datetime.strptime(expiration_date_str, "%d/%m/%Y")
