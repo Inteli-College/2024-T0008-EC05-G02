@@ -1,4 +1,11 @@
-.product-detail-label {
+.messages{
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 100px;
+}
+
+/* .product-detail-label {
     font-weight: bold;
   }
 
@@ -113,4 +120,4 @@ margin-top: 24px;
 }
   
   
-  
+   */
