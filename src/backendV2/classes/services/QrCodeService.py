@@ -1,5 +1,5 @@
-import cv2
-from qreader import QReader
+import cv2 # type: ignore
+from qreader import QReader #type: ignore
 import asyncio
 import json
 from datetime import datetime, timedelta
@@ -41,13 +41,13 @@ class QRCodeService:
         qr_data = json.loads(data[0])
         print(f"QR Code data: {qr_data}")
         if qr_data['Nome'] != target_medication:
-            return 'Medicamento incorreto'
+            return 'Medicamento incorreto', qr_data
         expiration_date_str = qr_data.get("Data de validade")
         try:
             expiration_date = datetime.strptime(expiration_date_str, "%d/%m/%Y")
         except ValueError as e:
             print(f"Error parsing date: {e}")
-            return 'Erro de formatação da data de validade'
+            return 'Erro de formatação da data de validade', qr_data
 
         current_date = datetime.now()
         six_months_ahead = current_date + timedelta(days=6*30)
@@ -55,13 +55,13 @@ class QRCodeService:
         # Compare the expiration date to the current date
         if expiration_date < current_date:
             # Medication is expired
-            return 'Medicamento correto, mas expirado'
+            return 'Medicamento correto, mas expirado', qr_data
         elif expiration_date < six_months_ahead:
             # Medication is close to expiration
-            return 'Medicamento correto, mas próximo da data de validade'
+            return 'Medicamento correto, mas próximo da data de validade', qr_data
         else:
             # Medication is valid
-            return 'Medicamento correto e válido'
+            return 'Medicamento correto e válido', qr_data
         
         
 
