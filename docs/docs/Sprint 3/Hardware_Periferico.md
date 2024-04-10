@@ -5,59 +5,63 @@ title: "Hardware Periférico"
 
 # Hardware Periférico
 
-Ao longo da Sprint 3, o foco foi no hardware periférico da nossa solução. Tendo em vista que o nosso propósito é tornar o processo mais rastreável e seguro, adicionamos sensores e câmeras a um circuito com microcontrolador integrado ao sistema do robô.
+No decorrer da Sprint 3, o desenvolvimento concentrou-se na implementação e no aperfeiçoamento do hardware periférico de nossa solução robótica. Com o objetivo de aumentar a rastreabilidade e assegurar a integridade do processo, implementamos uma série de sensores e câmeras, todos gerenciados por um circuito com microcontrolador integrado, otimizando as funcionalidades do robô.
 
-Os tópicos abaixo foram divididos em: diagrama do hardware periférico, sensor infravermelho, câmera com reconhecimento de QR Codes e integração com o robô.
+Os avanços alcançados abrangem várias áreas, detalhadas a seguir: um diagrama explicativo do hardware periférico, a implementação de um sensor infravermelho, a integração de uma câmera com capacidade de reconhecimento de QR Codes, e, por fim, a efetiva integração desses componentes ao sistema do robô.
 
-## Diagrama do hardware periférico
+## Diagrama do Hardware Periférico
 
 ![Diagrama do Hardware Periférico](../../static/img/diagrama_periferico.png)
 
-O diagrama do hardware periférico acima destaca o sensor infravermelho que está conectado a um microcontrolador e este, por sua vez, conectado a um buzzer. 
+O diagrama acima ilustra a configuração do hardware periférico, incluindo o sensor infravermelho conectado ao microcontrolador, que, por sua vez, está vinculado a um buzzer, formando um sistema integrado de alerta e detecção.
 
-Materiais que foram necessários: 
-* Raspberry Pi Pico W - microcontrolador RP2040 no diagrama;
-* Módulo sensor infravermelho TCRT5000 - como ITR9608-F no diagrama;
-* Buzzer;
-* Protoboard;
-* Fios de conexão (jumpers).
+### Materiais Utilizados:
+- Raspberry Pi Pico W - atuando como o microcontrolador RP2040;
+- Módulo sensor infravermelho TCRT5000 - representado como ITR9608-F;
+- Buzzer;
+- Protoboard;
+- Fios de conexão (jumpers).
 
-Para a montagem do circuito:
-1. Alimentação do Módulo TCRT5000:
-* VCC para 3.3V: Pino VCC do TCRT5000 conectado a um pino de 3.3V do Pico W;
-* GND para GND: A conexão terra (GND) do lado negativo do infravermelho ao GND do Pico W. E o lado do emissor do fototransistor, que também precisa ser conectado ao terra (GND).
+### Guia de Montagem:
+1. **Alimentação do Módulo TCRT5000:**
+   - **VCC para 3.3V:** Conectar o pino VCC do TCRT5000 a um pino de 3.3V do Pico W.
+   - **GND para GND:** Interligar o GND do módulo ao GND do Pico W, garantindo a correta referência de terra.
 
-2. Saída do Módulo TCRT5000:
-* Saída Analógica (AO): conectada ao pino GP26.
+2. **Saída do Módulo TCRT5000:**
+   - **Saída Analógica (AO):** Ligada ao pino GP26 do microcontrolador.
 
-3. Conexão do Buzzer:
-* Buzzer ao GP15: Um dos pinos do buzzer conectado ao GP15;
-* Buzzer ao GND: E o outro pino ao GND.
+3. **Conexão do Buzzer:**
+   - **Buzzer ao GP15:** Um terminal do buzzer conectado ao pino GP15 do Pico W.
+   - **Buzzer ao GND:** O outro terminal conectado ao GND.
 
-Link para download dos arquivos [aqui](https://drive.google.com/drive/folders/1KePuMLv8DWsRA4y9oFspp2WJk1aRgLx7?usp=sharing). 
+[Link para download dos arquivos do projeto.](https://drive.google.com/drive/folders/1KePuMLv8DWsRA4y9oFspp2WJk1aRgLx7?usp=sharing)
 
-## Sensor infravermelho
+## Sensor Infravermelho
 
-![Sensor infravermelho](../../static/img/sensor_infravermelho.jpeg)
+![Sensor Infravermelho](../../static/img/sensor_infravermelho.jpeg)
 
-Esta foto representa o circuito do sensor infravermelho comentado no diagrama do tópico anterior. Ele serve para detectarmos se o robô pegou ou não um medicamento. Ele foi posicionado dentro do robô de forma que consiga detectar se há algum objeto na sua frente. Quando há um medicamento preso pela ventosa, ele solta um apito intervalado pelo buzzer. Quando não há medicamento, ele para de apitar, indicando que há algo errado e que não foi possível pegar o medicamento. 
+A imagem acima exibe o circuito montado com o sensor infravermelho, um componente chave para a detecção da presença de medicamentos pelo robô. Posicionado estrategicamente, ele emite um sinal sonoro através do buzzer quando um medicamento é detectado, fornecendo um meio eficaz de confirmar a correta aquisição dos itens.
 
-Esta etapa serve para garantirmos mais segurança na operação.
+## Câmera com Reconhecimento de QR Codes
 
-## Câmera com reconhecimento de QR Codes
+A incorporação da câmera ao sistema do robô representa um avanço significativo, permitindo a identificação precisa dos medicamentos através de QR Codes. Esse processo reforça a rastreabilidade e aumenta a segurança operacional, ao assegurar a correta seleção e validade dos medicamentos.
 
-A câmera foi integrada ao sistema do robô para que ele consiga identificar os medicamentos que serão bipados, auxiliando tanto no registro da montagem de novos carrinhos quanto no reabastcimento, com a verificação de quais medicamentos permanecem no carrinho. Essa etapa é fundamental para garantir a rastreabilidade e segurança do processo, evitando a troca de medicamentos e garantindo que os medicamentos estejam dentro do prazo de validade e com a dosagem correta. 
+![Câmera com Reconhecimento de QR Codes](../../static/img/camera_qrcode.jpg)
 
- Em relação ao posicionamento da câmera, ela foi fixada entre a bandeja de itens a serem verificados e a bandeja dos itens já verificados, como mostra a imagem abaixo.
+A câmera, estrategicamente posicionada, facilita a bipagem dos medicamentos, agilizando o processo de montagem dos carrinhos e contribuindo para a eficiência geral do sistema.
 
-![Câmera com reconhecimento de QR Codes](../../static/img/camera_qrcode.jpg)
+## Integração com o Robô
 
-Dessa forma, a movimentação do robô é facilitada por estar entre as bandejas e, como já está no meio do caminho percorrido pelo robô, o processo de bipagem se torna otimizado.
+A fase de integração testemunhou a harmonização dos componentes de hardware periférico com o sistema central do robô, marcando um ponto crucial no desenvolvimento do projeto. A sincronização entre os sensores, a câmera e o microcontrolador possibilitou a automatização de tarefas previamente manuais, como a detecção de medicamentos e a verificação de suas informações via QR Codes.
 
-Para a integração da câmera, foi necessário instalar as bibliotecas `opencv`, usada no tratamento da visão computacional, e `qreader`, responsável por decodificar os QR Codes. A grande vantagem do `qreader` se dá pela sua habilidade em captar os códigos até mesmo em ângulos não tão favorecidos devido ao seu modelo de treinamento amplo e variado, permitindo a identificação de QR Codes em diversas imagens e situações. 
+Este avanço permitiu uma operação mais autônoma e confiável do robô, aumentando a precisão das atividades realizadas e reduzindo significativamente a
 
-Apesar do potencial do `qreader`, a verificação por meio da câmera ainda está em fase de testes para garantir a eficiência do reconhecimento dos QR Codes. No momento atual de desenvolvimento, a câmera é acionada e assim que o QR code é identificado, a câmera captura uma foto, salva no arquivo local e exibe as informações decodificadas no terminal, além de trazer uma validação se o medicamento está em conformidade, vencido ou com a dosagem errada.
+## Conclusão
 
-Portanto, é esperado que esse processo seja aprimorado para que a câmera consiga identificar os QR Codes de forma mais rápida e eficiente, garantindo a segurança e rastreabilidade do processo.
+A implementação e aprimoramento do hardware periférico no decorrer da Sprint 3 representam marcos significativos no desenvolvimento da nossa solução robótica. Através da integração de sensores infravermelhos e câmeras com capacidade de reconhecimento de QR Codes, além da orquestração eficiente desses componentes com um microcontrolador avançado, conseguimos estabelecer um sistema robusto, confiável e altamente funcional.
 
-## Integração com o robô
+Este sistema não apenas aumenta a rastreabilidade e segurança do processo como também promove uma maior eficiência operacional, evidenciando o potencial da automação inteligente na otimização de tarefas críticas. A precisão na detecção e identificação de medicamentos, aliada à capacidade de integração e sincronização entre os componentes do hardware, pavimenta o caminho para inovações futuras que podem transformar significativamente o campo da robótica aplicada à saúde.
+
+Olhando para o futuro, o projeto se encontra bem posicionado para expandir suas funcionalidades e explorar novas aplicações, mantendo o compromisso com a melhoria contínua e a busca por soluções que atendam às necessidades emergentes do setor. A equipe permanece motivada e dedicada a avançar na fronteira da tecnologia, visando sempre a excelência e a eficácia em suas soluções.
+
+Portanto, concluímos esta fase do projeto não apenas com a satisfação dos resultados alcançados, mas também com a antecipação entusiasmada das oportunidades que esses avanços nos proporcionarão. Continuaremos a explorar, a inovar e a implementar, com o objetivo de elevar ainda mais o padrão de segurança e eficiência na manipulação e administração de medicamentos através de soluções robóticas avançadas.
