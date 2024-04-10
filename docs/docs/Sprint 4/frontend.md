@@ -28,6 +28,10 @@ Exemplo de um componente reutilizável:
 ![Criação de carrinho](../../static/img/telas/criar_carrinho.png)
 
 
+- **Tabela de histórico**: A tabela é um componente reutilizável adaptado para mostrar os dados relevantes de cada operação. As colunas incluem "Data", "Hora", "Carrinho", "Tipo de Carrinho", "Responsável", "Operação" e um botão "Ver Relatório", permitindo acesso imediato a detalhes específicos de cada entrada.
+
+![Histórico de Relatórios](../../static/img/telas/historico_relatorios.png)
+
 Em relação ao sistema de rotas utilizado no frontend, foi utilizado o React Router, que é uma biblioteca que permite a navegação entre diferentes componentes React. Com o React Router, é possível criar rotas para cada componente do sistema, o que facilita a navegação entre as telas do sistema. Além disso, o React Router também permite a passagem de parâmetros entre as rotas, o que é muito útil para a criação de páginas dinâmicas.
 
 A partir das rotas desenvolvidas e das telas criadas, a integração com o backend foi facilitada e está em andamento, com objetivo de ser finalizado na sprint 5.
