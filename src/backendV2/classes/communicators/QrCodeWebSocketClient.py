@@ -1,4 +1,4 @@
-import asyncio
+
 import websockets
 import json
 
@@ -12,7 +12,7 @@ class QrCodeWebSocketClient:
         self.uri = uri
 
     async def connect(self):
-        self.connection = await websockets.connect(self.uri)
+        self.connection = await websockets.connect(self.uri) # type: ignore
         print(f"QRCode Connected to WebSocket server at {self.uri}")
 
     async def send_message(self, message):

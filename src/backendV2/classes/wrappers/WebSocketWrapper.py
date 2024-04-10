@@ -21,13 +21,18 @@ class WebSocketWrapper:
                 action = data.get('action')
                 
                 # Use Python's match-case to handle different targets
-                match target:
-                    case 'Robot':
+                match target.upper():
+                    case 'QRCODE':
+                        print('Target: QRCODE')
+                        # Directly call the QRCode service action
+                        await self.robot.qr.handle_action(action, data)
+                        pass
+                    case 'ROBOT':
                         print('Target: ROBOT')
                         # Directly call the Robot service action
-                        #await self.robot.bipar_layout(action)
+                        await self.robot.handle_action(action)
                         pass
-                    case 'Frontend':
+                    case 'FRONTEND':
                         print('Broadcasting to Frontend.')
                         # Broadcast message to all connected clients
                         await self.broadcast(json.dumps(data))

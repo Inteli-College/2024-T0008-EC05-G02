@@ -1,4 +1,3 @@
-import asyncio 
 from classes.services.RobotService import RobotService
 from classes.wrappers.QrCodeWrapper import QrCodeWrapper
 #from classes.communicators.RobotCommunicator import RobotCommunicator
@@ -15,3 +14,12 @@ class RobotWrapper():
         self.robot = RobotService()
         print('RobotService instantiated')
 
+    async def handle_action(self, action):
+        # Handle the action received from the WebSocket server
+        if action == 'bipar_layout':
+            print("Action called: bipar_layout")
+            # Call the Robot service action
+            #await self.robot.bipar_layout(data)
+        else:
+            print(f"Unknown action: {action}")
+            return 'Unknown action'

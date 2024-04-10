@@ -1,5 +1,3 @@
-import asyncio
-import json
 from classes.services.QrCodeService import QRCodeService
 from classes.communicators.QrCodeWebSocketClient import QrCodeWebSocketClient
 class QrCodeWrapper:
