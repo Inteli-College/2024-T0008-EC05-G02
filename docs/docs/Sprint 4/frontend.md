@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-## Atualização do frontend
+## Atualização do Frontend
 
 ### Introdução
 
@@ -13,13 +13,13 @@ Em relação ao desenvolvimento da interface, foi utilizado o framework React, q
 
 Durante a sprint 4, o frontend passou por diversas atualizações, principalmente focando no processo de criação de carrinho:
 
-- **Criação de componentes reutilizáveis**: Com o intuito de facilitar a manutenção e a escalabilidade do projeto, foram criados diversos componentes reutilizáveis, como botões, menus, tabelas, entre outros. Esses componentes foram utilizados em diversas telas do sistema, o que facilitou o desenvolvimento e a manutenção do frontend.
+- **Componentes reutilizáveis**: Com o intuito de facilitar a manutenção e a escalabilidade do projeto, foram criados diversos componentes reutilizáveis, como botões, menus, tabelas, entre outros. Esses componentes foram utilizados em diversas telas do sistema, o que facilitou o desenvolvimento e a manutenção do frontend.
 
 Exemplo de um componente reutilizável:
 
 ![menu superior](../../static/img/telas/navbar.png)
 
-- **Tela inicial**: A tela inicial do sistema foi construida a partir do menu superior que contém as opções de navegação do sistema. Além disso, foram adicionados botões para a criação de um novo carrinho e para o abastecimento de um carrinho já utilizado.
+- **Página inicial**: A página inicial do sistema foi construida a partir do menu superior que contém as opções de navegação do sistema. Além disso, foram adicionados botões para a criação de um novo carrinho e para o abastecimento de um carrinho já utilizado.
 
 ![Home](../../static/img/telas/home.png)
 
