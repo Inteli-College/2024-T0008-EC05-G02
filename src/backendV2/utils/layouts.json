@@ -1,0 +1,62 @@
+{
+    "layouts": [
+      {
+        "id": "layout_01",
+        "nc": 4,
+        "nl": 2,
+        "remedios": [
+          {"Nome": "dipirona", "Quantidade": 10, "Dosagem": "500mg"},
+          {"Nome": "paracetamol", "Quantidade": 20, "Dosagem": "750mg"},
+          {"Nome": "ibuprofeno", "Quantidade": 15, "Dosagem": "400mg"},
+          {"Nome": "dorflex", "Quantidade": 5, "Dosagem": "300mg"},
+          {"Nome": "neosaldina", "Quantidade": 10, "Dosagem": "30mg"},
+          {"Nome": "buscopan", "Quantidade": 20, "Dosagem": "10mg"},
+          {"Nome": "tylenol", "Quantidade": 15, "Dosagem": "500mg"},
+          {"Nome": "novalgina", "Quantidade": 5, "Dosagem": "500mg"}
+        ]
+      },
+      {
+        "id": "layout_02",
+        "nc": 2,
+        "nl": 2,
+        "remedios": [
+          {"Nome": "dipirona", "Quantidade": 10, "Dosagem": "500mg"},
+          {"Nome": "paracetamol", "Quantidade": 15, "Dosagem": "750mg"},
+          {"Nome": "ibuprofeno", "Quantidade": 20, "Dosagem": "400mg"},
+          {"Nome": "dorflex", "Quantidade": 5, "Dosagem": "300mg"}
+        ]
+      },
+      {
+        "id": "layout_03",
+        "nc": 1,
+        "nl": 5,
+        "remedios": [
+          {"Nome": "dipirona", "Quantidade": 10, "Dosagem": "500mg"},
+          {"Nome": "paracetamol", "Quantidade": 10, "Dosagem": "750mg"},
+          {"Nome": "ibuprofeno", "Quantidade": 15, "Dosagem": "400mg"},
+          {"Nome": "dorflex", "Quantidade": 20, "Dosagem": "300mg"},
+          {"Nome": "neosaldina", "Quantidade": 5, "Dosagem": "30mg"}
+        ]
+      },
+      {
+        "id": "layout_04",
+        "nc": 4,
+        "nl": 3,
+        "remedios": [
+          {"Nome": "dipirona", "Quantidade": 10, "Dosagem": "500mg"},
+          {"Nome": "paracetamol", "Quantidade": 20, "Dosagem": "750mg"},
+          {"Nome": "ibuprofeno", "Quantidade": 15, "Dosagem": "400mg"},
+          {"Nome": "dorflex", "Quantidade": 5, "Dosagem": "300mg"},
+          {"Nome": "neosaldina", "Quantidade": 10, "Dosagem": "30mg"},
+          {"Nome": "buscopan", "Quantidade": 20, "Dosagem": "10mg"},
+          {"Nome": "tylenol", "Quantidade": 15, "Dosagem": "500mg"},
+          {"Nome": "novalgina", "Quantidade": 5, "Dosagem": "500mg"},
+          {"Nome": "aspirina", "Quantidade": 12, "Dosagem": "100mg"},
+          {"Nome": "cataflam", "Quantidade": 8, "Dosagem": "50mg"},
+          {"Nome": "celecoxibe", "Quantidade": 10, "Dosagem": "200mg"},
+          {"Nome": "etoricoxibe", "Quantidade": 6, "Dosagem": "90mg"}
+        ]
+      }
+    ]
+  }
+  
