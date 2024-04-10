@@ -42,18 +42,18 @@ export default function WebSocketClientComponent() {
     }, []);
 
     function renderDrugCard(message) {
-      switch (message) {
+      switch (message[0]) {
         case "Medicamento incorreto":
           return (
             <DrugCard
               color="red"
               status="Incorreto"
               image={remedio}
-              name="Incorrect Drug"
-              dose="N/A"
-              expiration="N/A"
-              batch="N/A"
-              supplier="N/A"
+              name={message[1][0]}
+              dose={message[1][1]}
+              expiration={message[1][2]}
+              batch={message[1][3]}
+              supplier={message[1][1]}
             />
           );
     
@@ -63,11 +63,11 @@ export default function WebSocketClientComponent() {
               color="yellow"
               status="Expirado"
               image={remedio}
-              name="Correct Drug"
-              dose="5mg"
-              expiration="Expired Date"
-              batch="B2022"
-              supplier="OldPharma"
+              name={message[1][0]}
+              dose={message[1][1]}
+              expiration={message[1][2]}
+              batch={message[1][3]}
+              supplier={message[1][1]}
             />
           );
     
@@ -75,13 +75,13 @@ export default function WebSocketClientComponent() {
           return (
             <DrugCard
               color="red"
-              status="Próximo da Validade"
+              status="Próximo da validade"
               image={remedio}
-              name="Correct Drug"
-              dose="5mg"
-              expiration="Near Expiry Date"
-              batch="C2023"
-              supplier="CurrentPharma"
+              name={message[1][0]}
+              dose={message[1][1]}
+              expiration={message[1][2]}
+              batch={message[1][3]}
+              supplier={message[1][1]}
             />
           );
     
@@ -89,13 +89,27 @@ export default function WebSocketClientComponent() {
           return (
             <DrugCard
               color="green"
-              status="Válido"
+              status="Correto e válido"
               image={remedio}
-              name="Correct Drug"
-              dose="5mg"
-              expiration="Valid Date"
-              batch="A2024"
-              supplier="NewPharma"
+              name={message[1][0]}
+              dose={message[1][1]}
+              expiration={message[1][2]}
+              batch={message[1][3]}
+              supplier={message[1][1]}
+            />
+          );
+
+        case "Dosagem incorreta":
+          return (
+            <DrugCard
+              color="red"
+              status="Inválido. Dosagem incorreta."
+              image={remedio}
+              name={message[1][0]}
+              dose={message[1][1]}
+              expiration={message[1][2]}
+              batch={message[1][3]}
+              supplier={message[1][1]}
             />
           );
     
@@ -107,7 +121,7 @@ export default function WebSocketClientComponent() {
     return (
         <div className="messages">
             {latestMessage && <>
-            <p>{latestMessage.data}</p>
+            {/* <p>{latestMessage.data}</p> */}
             {renderDrugCard(latestMessage.data)}
             </>} {/* Mostra a última mensagem */}
         </div>
