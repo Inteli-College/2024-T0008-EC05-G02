@@ -2,7 +2,7 @@ import qrcode
 import json
 
 # Load the JSON data from the file
-with open('drug_info.json', 'r') as json_file:
+with open('drug_info_pitch.json', 'r') as json_file:
     drug_data_list = json.load(json_file)
 
 # Function to generate and save QR codes
