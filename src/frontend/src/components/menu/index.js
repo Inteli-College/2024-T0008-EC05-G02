@@ -13,10 +13,10 @@ const items = [
     label: 'Criar Carrinho',
     key: 'criar',
   },
-  {
-    label: 'Abastecer Carrinho',
-    key: 'abastecer',
-  },
+  // {
+  //   label: 'Abastecer Carrinho',
+  //   key: 'abastecer',
+  // },
   {
     label: 'Histórico de Relatórios',
     key: 'historico',
