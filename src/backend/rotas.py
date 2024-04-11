@@ -3,11 +3,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import sqlite3
 import uvicorn
-import datetime
+from datetime import datetime
 from typing import List, Optional
-
-
-
+import json
+from dateutil.relativedelta import relativedelta
 # Criar conexão com o banco de dados SQLite
 conn = sqlite3.connect('../data/ad_alma.db')
 cur = conn.cursor()
@@ -103,6 +102,46 @@ async def get_bipagem(id_operacao: int):
         bipagem_formatted.append(Bipagem(**bipagem_dict))
 
     return bipagem_formatted
+
+@app.get("/fim-bipagem/{id_operacao}")
+async def get_fim_bipagem(id_operacao: int):
+    medicamentos = await get_bipagem(id_operacao)
+    six_months_ahead = (datetime.now() + relativedelta(months=6)).strftime("%Y-%m-%d")
+    cur.execute("SELECT * FROM operacoes WHERE id=?", (id_operacao,))
+    operacao_query = cur.fetchone()
+    operacao= {
+        'id_operacao': operacao_query[0],
+        'id_responsavel': operacao_query[1],
+        'data': operacao_query[2],
+        'id_carrinho': operacao_query[3],
+        'tipo_operacao': operacao_query[4],
+        'tipo_carrinho': operacao_query[5]
+    }
+    print("operação:", operacao)
+    with open('layouts.json', 'r') as f:
+        layout = json.load(f)
+        layout = layout['layouts']
+
+    tipo_layout = operacao['tipo_carrinho']
+    modelo = {}
+    vencidos=0
+    dose_errada=0
+    for item in layout:
+        if item["tipo"] == tipo_layout:
+            modelo = item
+
+    for medicamento in medicamentos:
+        nome_medicamento = medicamento.nome
+        dose_medicamento = medicamento.dose
+        medicamento_validade = medicamento.validade
+        for remedios in modelo['remedios']:
+            if remedios['nome'] == nome_medicamento:
+                if remedios['dose'] != dose_medicamento:
+                    dose_errada += 1
+                if medicamento_validade < six_months_ahead:
+                    vencidos += 1
+                remedios['quantidade'] -= 1
+    return modelo['remedios'], vencidos, dose_errada
 
 @app.get("/operacao/{id_operacao}")
 async def get_operacao(id_operacao: int):

@@ -1,0 +1,60 @@
+{
+    "layouts": [
+      {
+        "tipo": "Adulto",
+        "remedios": [
+          {"nome": "dipirona", "quantidade": 10, "dose": "500mg"},
+          {"nome": "paracetamol", "quantidade": 20, "dose": "750mg"},
+          {"nome": "Gluconato De Calcio", "quantidade": 15, "dose": "20mg"},
+          {"nome": "dorflex", "quantidade": 5, "dose": "300mg"},
+          {"nome": "neosaldina", "quantidade": 10, "dose": "30mg"},
+          {"nome": "buscopan", "quantidade": 20, "dose": "10mg"},
+          {"nome": "tylenol", "quantidade": 15, "dose": "500mg"},
+          {"nome": "novalgina", "quantidade": 5, "dose": "500mg"}
+        ]
+      },
+      {
+        "tipo": "infantil",
+        "nc": 2,
+        "nl": 2,
+        "remedios": [
+          {"nome": "dipirona", "quantidade": 10, "dose": "250mg"},
+          {"nome": "paracetamol", "quantidade": 15, "dose": "330mg"},
+          {"nome": "ibuprofeno", "quantidade": 20, "dose": "200mg"},
+          {"nome": "buscopan", "quantidade": 5, "dose": "10mg"}
+        ]
+      },
+      {
+        "tipo": "layout_03",
+        "nc": 1,
+        "nl": 5,
+        "remedios": [
+          {"nome": "dipirona", "quantidade": 10, "dose": "500mg"},
+          {"nome": "paracetamol", "quantidade": 10, "dose": "750mg"},
+          {"nome": "ibuprofeno", "quantidade": 15, "dose": "400mg"},
+          {"nome": "dorflex", "quantidade": 20, "dose": "300mg"},
+          {"nome": "neosaldina", "quantidade": 5, "dose": "30mg"}
+        ]
+      },
+      {
+        "tipo": "layout_04",
+        "nc": 4,
+        "nl": 3,
+        "remedios": [
+          {"nome": "dipirona", "quantidade": 10, "dose": "500mg"},
+          {"nome": "paracetamol", "quantidade": 20, "dose": "750mg"},
+          {"nome": "ibuprofeno", "quantidade": 15, "dose": "400mg"},
+          {"nome": "dorflex", "quantidade": 5, "dose": "300mg"},
+          {"nome": "neosaldina", "quantidade": 10, "dose": "30mg"},
+          {"nome": "buscopan", "quantidade": 20, "dose": "10mg"},
+          {"nome": "tylenol", "quantidade": 15, "dose": "500mg"},
+          {"nome": "novalgina", "quantidade": 5, "dose": "500mg"},
+          {"nome": "aspirina", "quantidade": 12, "dose": "100mg"},
+          {"nome": "cataflam", "quantidade": 8, "dose": "50mg"},
+          {"nome": "celecoxibe", "quantidade": 10, "dose": "200mg"},
+          {"nome": "etoricoxibe", "quantidade": 6, "dose": "90mg"}
+        ]
+      }
+    ]
+  }
+  

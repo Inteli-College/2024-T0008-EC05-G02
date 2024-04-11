@@ -47,14 +47,14 @@ const Indice = () => (
               href: '#part-2',
               title: 'Criar',
             },
+            // {
+            //   key: 'part-3',
+            //   href: '#part-3',
+            //   title: 'Abastecer',
+            // },
             {
               key: 'part-3',
               href: '#part-3',
-              title: 'Abastecer',
-            },
-            {
-              key: 'part-4',
-              href: '#part-4',
               title: 'Itens faltantes',
             }
           ]}
@@ -88,18 +88,18 @@ function ManualInstrucoes() {
 
             </p>
           </div>
-          <div className="header" id="header3" href="#part-3">
+          {/* <div className="header" id="header3" href="#part-3">
             <h2>Abastecer</h2>
             <p>
               Para criar um novo layout para o carrinho, siga estas etapas: <br></br> <br></br>
 
-              1. Na página inicial, clique em "Criar Carrinho". <br></br>
+              1. Na página inicial, clique em "Abastecer Carrinho". <br></br>
               2. Preencha os campos necessários, como tipo do carrinho e informações do responsável. <br></br>
               3. Clique em "Iniciar Bipagem" e aguarde o robô se movimentar.
 
             </p>
-          </div>
-          <div className="header" id="header4" href="#part-4">
+          </div> */}
+          <div className="header" id="header4" href="#part-3">
             <h2>Itens Faltantes</h2>
             <p>
               Nossa interface oferece recursos robustos de relatórios. Veja como acessá-los: <br></br> <br></br>
