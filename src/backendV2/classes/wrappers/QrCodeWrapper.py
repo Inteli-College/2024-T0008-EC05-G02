@@ -10,7 +10,7 @@ class QrCodeWrapper:
 
     def __init__(self):
        self.qr_reader = QRCodeService()
-       self.ws_client = QrCodeWebSocketClient('ws://localhost:3000')
+       self.ws_client = QrCodeWebSocketClient('ws://localhost:5000')
 
 
     async def handle_action(self, action):

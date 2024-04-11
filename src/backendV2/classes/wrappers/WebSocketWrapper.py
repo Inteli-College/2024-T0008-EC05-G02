@@ -7,8 +7,6 @@ class WebSocketWrapper:
     def __init__(self, host, port):
         self.host = host
         self.port = port
-        
-        self.robot = RobotWrapper()
         self.qr = QrCodeWrapper()
         self.clients = set()
 
@@ -29,11 +27,11 @@ class WebSocketWrapper:
                         # Directly call the QRCode service action
                         await self.qr.handle_action(action)
                         pass
-                    case 'ROBOT':
-                        print('Target: ROBOT')
-                        # Directly call the Robot service action
-                        await self.robot.handle_action(action)
-                        pass
+                    # case 'ROBOT':
+                    #     print('Target: ROBOT')
+                    #     # Directly call the Robot service action
+                    #     await self.robot.handle_action(action)
+                    #     pass
                     case 'FRONTEND':
                         print('Broadcasting to Frontend.')
                         # Broadcast message to all connected clients

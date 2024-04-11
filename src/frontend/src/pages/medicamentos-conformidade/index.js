@@ -8,7 +8,7 @@ export default function WebSocketClientComponent() {
     const webSocketRef = React.useRef(null);
 
     useEffect(() => {
-        webSocketRef.current = new WebSocket("ws://127.0.0.1:3000/ws");
+        webSocketRef.current = new WebSocket("ws://127.0.0.1:5000");
 
         const ws = webSocketRef.current;
 

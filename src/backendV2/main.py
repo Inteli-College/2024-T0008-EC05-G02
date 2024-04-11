@@ -3,7 +3,7 @@ from classes.wrappers.WebSocketWrapper import WebSocketWrapper
 
 async def main():
     # Initialize WebSocketWrapper and QrCodeWrapper
-    ws = WebSocketWrapper('localhost', 3000)
+    ws = WebSocketWrapper('localhost', 5000)
     # Schedule both tasks to run concurrently
     websocket_task = asyncio.create_task(ws.start())
     
