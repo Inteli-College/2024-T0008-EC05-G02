@@ -1,0 +1,12 @@
+{
+  "stock": [
+    {"Nome": "dipirona", "Posicao": {"x": 147.45545959472656, "y": -284.4991760253906, "z": -13.32928466796875}},
+    {"Nome": "paracetamol", "Posicao": {"x": 81.19501495361328, "y": -286.10101318359375, "z": -10.154850959777832}},
+    {"Nome": "ibuprofeno", "Posicao": {"x": 14.193495750427246, "y": -281.09490966796875, "z": -3.6418328285217285}},
+    {"Nome": "dorflex", "Posicao": {"x": 40, "y": 5, "z": 15}},
+    {"Nome": "neosaldina", "Posicao": {"x": 50, "y": 5, "z": 15}},
+    {"Nome": "buscopan", "Posicao": {"x": 60, "y": 5, "z": 15}},
+    {"Nome": "tylenol", "Posicao": {"x": 70, "y": 5, "z": 15}},
+    {"Nome": "novalgina", "Posicao": {"x": 80, "y": 5, "z": 15}}
+  ]
+}

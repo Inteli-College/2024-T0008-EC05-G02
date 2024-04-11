@@ -11,7 +11,7 @@ class QRCodeService:
             cls._self = super().__new__(cls)
         return cls._self
     def __init__(self):
-        self.cam = cv2.VideoCapture(0)
+        self.cam = cv2.VideoCapture(1)
         print("Camera initialized")
         self.qr = QReader(model_size='l', min_confidence=0.3)
 

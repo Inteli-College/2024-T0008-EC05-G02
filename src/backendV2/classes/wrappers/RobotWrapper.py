@@ -12,12 +12,12 @@ class RobotWrapper():
         self.robot = RobotService()
         print('RobotService instantiated')
 
-    async def handle_action(self, action):
+    async def handle_action(self, action,layout_id):
         # Handle the action received from the WebSocket server
         if action == 'bipar_layout':
             print("Action called: bipar_layout")
             # Call the Robot service action
-            #await self.robot.bipar_layout(data)
+            await self.robot.bipar_layout(layout_id)
         else:
             print(f"Unknown action: {action}")
             return 'Unknown action'
