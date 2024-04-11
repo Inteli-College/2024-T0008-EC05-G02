@@ -1,0 +1,58 @@
+[
+    {
+        "Nome": "dipirona",
+        "Dose": "500mg",
+        "Data de validade": "18/12/2024",
+        "Lote": "0U75V0",
+        "Fornecedor": "Merck"
+    },
+    {
+        "Nome": "paracetamol",
+        "Dose": "750mg",
+        "Data de validade": "01/12/2024",
+        "Lote": "Q6GERL",
+        "Fornecedor": "Roche"
+    },
+    {
+        "Nome": "ibuprofeno",
+        "Dose": "400mg",
+        "Data de validade": "15/07/2025",
+        "Lote": "E9PFC2",
+        "Fornecedor": "Roche"
+    },
+    {
+        "Nome": "dorflex",
+        "Dose": "300mg",
+        "Data de validade": "25/06/2024",
+        "Lote": "RX5YI6",
+        "Fornecedor": "Johnson & Johnson"
+    },
+    {
+        "Nome": "neosaldina",
+        "Dose": "30mg",
+        "Data de validade": "13/04/2025",
+        "Lote": "0C2BA7",
+        "Fornecedor": "Roche"
+    },
+    {
+        "Nome": "buscopan",
+        "Dose": "10mg",
+        "Data de validade": "25/05/2024",
+        "Lote": "M24KU2",
+        "Fornecedor": "Pfizer"
+    },
+    {
+        "Nome": "tylenol",
+        "Dose": "4000mg",
+        "Data de validade": "26/12/2024",
+        "Lote": "974C9H",
+        "Fornecedor": "Sanofi"
+    },
+    {
+        "Nome": "novalgina",
+        "Dose": "500mg",
+        "Data de validade": "23/03/2025",
+        "Lote": "GU6IEC",
+        "Fornecedor": "Pfizer"
+    }
+]
